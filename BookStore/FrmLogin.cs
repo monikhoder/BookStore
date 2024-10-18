@@ -13,12 +13,9 @@ namespace BookStore
 {
     public partial class FrmLogin : KtWindow
     {
-        private string username;
-        private bool Isloginin = false;
         public FrmLogin()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void ktTextBox1_TextChanged(object sender, EventArgs e)
@@ -60,15 +57,12 @@ namespace BookStore
                 lblPassword.Visible=true;
             }else
             {
-                if(MainClass.IsuserLogin(txtUsername.Text,txtPassword.Text) == true)
+                if(MainClass.IsValidUser(txtUsername.Text,txtPassword.Text) == true)
                 {
-                    username = txtUsername.Text;
-                    this.Hide();
-                    FrmMain frmMain = new FrmMain();
-                    frmMain.FormClosed += (s, args) => this.Close();
-
-                    frmMain.Show();
-
+                    FrmMain.Islogin = true;
+                    FrmMain.Username = txtUsername.Text;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else
                 {

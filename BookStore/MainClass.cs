@@ -10,7 +10,7 @@ namespace BookStore
     {
         private static BookStoreEntities db = new BookStoreEntities();
 
-        public static bool IsuserLogin (string username, string password)
+        public static bool IsValidUser (string username, string password)
         {
             User user = new User();
            user = db.Users.Where(u => u.Username == username && u.UPassword == password).FirstOrDefault();
