@@ -12,15 +12,18 @@ namespace BookStore
 
         public static bool IsValidUser (string username, string password)
         {
-            User user = new User();
-           user = db.Users.Where(u => u.Username == username && u.UPassword == password).FirstOrDefault();
-            if (user != null)
+            User user = db.Users.FirstOrDefault(u => u.Username == username && u.UPassword == password);
+            return user != null;
+        }
+        public static List<Genre> GetGenres(string word)
+        {
+            if (word == null || word == "")
             {
-                return true;
+                return db.Genres.ToList();
             }
             else
             {
-                return false;
+                return db.Genres.Where(g => g.GenreName.ToLower().Contains(word.ToLower())).ToList();
             }
         }
 

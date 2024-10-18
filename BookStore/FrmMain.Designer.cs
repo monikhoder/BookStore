@@ -40,9 +40,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ktButton6 = new KimTools.WinForms.KtButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ktButton1 = new KimTools.WinForms.KtButton();
+            this.btnDashboard = new KimTools.WinForms.KtButton();
             this.ktButton5 = new KimTools.WinForms.KtButton();
-            this.ktButton4 = new KimTools.WinForms.KtButton();
+            this.btnGenres = new KimTools.WinForms.KtButton();
             this.ktButton3 = new KimTools.WinForms.KtButton();
             this.ktButton2 = new KimTools.WinForms.KtButton();
             this.LogoPanel = new System.Windows.Forms.Panel();
@@ -85,14 +85,14 @@
             this.TopPanel.Location = new System.Drawing.Point(247, 0);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.ShowBorders = true;
-            this.TopPanel.Size = new System.Drawing.Size(1005, 63);
+            this.TopPanel.Size = new System.Drawing.Size(1018, 63);
             this.TopPanel.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.ktPictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(898, 0);
+            this.panel4.Location = new System.Drawing.Point(911, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(107, 63);
             this.panel4.TabIndex = 3;
@@ -160,14 +160,14 @@
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.ShowBorders = true;
-            this.LeftPanel.Size = new System.Drawing.Size(247, 705);
+            this.LeftPanel.Size = new System.Drawing.Size(247, 715);
             this.LeftPanel.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.ktButton6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 627);
+            this.panel2.Location = new System.Drawing.Point(0, 637);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(247, 78);
             this.panel2.TabIndex = 4;
@@ -200,9 +200,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ktButton1);
+            this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.ktButton5);
-            this.panel1.Controls.Add(this.ktButton4);
+            this.panel1.Controls.Add(this.btnGenres);
             this.panel1.Controls.Add(this.ktButton3);
             this.panel1.Controls.Add(this.ktButton2);
             this.panel1.Location = new System.Drawing.Point(0, 110);
@@ -210,31 +210,31 @@
             this.panel1.Size = new System.Drawing.Size(247, 511);
             this.panel1.TabIndex = 3;
             // 
-            // ktButton1
+            // btnDashboard
             // 
-            this.ktButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ktButton1.BackColor = System.Drawing.Color.Empty;
-            this.ktButton1.Bg = KimTools.WinForms.KtColor.None;
-            this.ktButton1.BorderShape = KimTools.WinForms.KtSize.Default;
-            this.ktButton1.BorderSize = KimTools.WinForms.KtSize.Default;
-            this.ktButton1.CustomColors = new System.Drawing.Color[0];
-            this.ktButton1.FlatAppearance.BorderSize = 0;
-            this.ktButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.ktButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.ktButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ktButton1.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ktButton1.ForeColor = System.Drawing.Color.Black;
-            this.ktButton1.IconName = "Tabler.outline.layout_dashboard";
-            this.ktButton1.IconSize = 22;
-            this.ktButton1.IconStroke = 2D;
-            this.ktButton1.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.ktButton1.Location = new System.Drawing.Point(12, 9);
-            this.ktButton1.Name = "ktButton1";
-            this.ktButton1.Size = new System.Drawing.Size(232, 67);
-            this.ktButton1.Style = KimTools.WinForms.KtStyle.Ghost;
-            this.ktButton1.TabIndex = 2;
-            this.ktButton1.Text = "Dashboard  ";
-            this.ktButton1.UseVisualStyleBackColor = false;
+            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDashboard.BackColor = System.Drawing.Color.Empty;
+            this.btnDashboard.Bg = KimTools.WinForms.KtColor.None;
+            this.btnDashboard.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnDashboard.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnDashboard.CustomColors = new System.Drawing.Color[0];
+            this.btnDashboard.FlatAppearance.BorderSize = 0;
+            this.btnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
+            this.btnDashboard.IconName = "Tabler.outline.layout_dashboard";
+            this.btnDashboard.IconSize = 22;
+            this.btnDashboard.IconStroke = 2D;
+            this.btnDashboard.LabelShade = KimTools.WinForms.KtShade.Light_60;
+            this.btnDashboard.Location = new System.Drawing.Point(12, 9);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(232, 67);
+            this.btnDashboard.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnDashboard.TabIndex = 2;
+            this.btnDashboard.Text = "Dashboard  ";
+            this.btnDashboard.UseVisualStyleBackColor = false;
             // 
             // ktButton5
             // 
@@ -262,31 +262,32 @@
             this.ktButton5.Text = "User            ";
             this.ktButton5.UseVisualStyleBackColor = false;
             // 
-            // ktButton4
+            // btnGenres
             // 
-            this.ktButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ktButton4.BackColor = System.Drawing.Color.Empty;
-            this.ktButton4.Bg = KimTools.WinForms.KtColor.None;
-            this.ktButton4.BorderShape = KimTools.WinForms.KtSize.Default;
-            this.ktButton4.BorderSize = KimTools.WinForms.KtSize.Default;
-            this.ktButton4.CustomColors = new System.Drawing.Color[0];
-            this.ktButton4.FlatAppearance.BorderSize = 0;
-            this.ktButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.ktButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.ktButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ktButton4.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ktButton4.ForeColor = System.Drawing.Color.Black;
-            this.ktButton4.IconName = "Tabler.outline.category";
-            this.ktButton4.IconSize = 22;
-            this.ktButton4.IconStroke = 2D;
-            this.ktButton4.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.ktButton4.Location = new System.Drawing.Point(12, 238);
-            this.ktButton4.Name = "ktButton4";
-            this.ktButton4.Size = new System.Drawing.Size(232, 67);
-            this.ktButton4.Style = KimTools.WinForms.KtStyle.Ghost;
-            this.ktButton4.TabIndex = 2;
-            this.ktButton4.Text = "Genres         ";
-            this.ktButton4.UseVisualStyleBackColor = false;
+            this.btnGenres.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenres.BackColor = System.Drawing.Color.Empty;
+            this.btnGenres.Bg = KimTools.WinForms.KtColor.None;
+            this.btnGenres.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnGenres.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnGenres.CustomColors = new System.Drawing.Color[0];
+            this.btnGenres.FlatAppearance.BorderSize = 0;
+            this.btnGenres.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGenres.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnGenres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenres.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenres.ForeColor = System.Drawing.Color.Black;
+            this.btnGenres.IconName = "Tabler.outline.category";
+            this.btnGenres.IconSize = 22;
+            this.btnGenres.IconStroke = 2D;
+            this.btnGenres.LabelShade = KimTools.WinForms.KtShade.Light_60;
+            this.btnGenres.Location = new System.Drawing.Point(12, 238);
+            this.btnGenres.Name = "btnGenres";
+            this.btnGenres.Size = new System.Drawing.Size(232, 67);
+            this.btnGenres.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnGenres.TabIndex = 2;
+            this.btnGenres.Text = "Genres         ";
+            this.btnGenres.UseVisualStyleBackColor = false;
+            this.btnGenres.Click += new System.EventHandler(this.btnGenres_Click);
             // 
             // ktButton3
             // 
@@ -361,16 +362,17 @@
             // 
             // CenterPanel
             // 
-            this.CenterPanel.Location = new System.Drawing.Point(269, 69);
+            this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CenterPanel.Location = new System.Drawing.Point(247, 63);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(971, 552);
+            this.CenterPanel.Size = new System.Drawing.Size(1018, 652);
             this.CenterPanel.TabIndex = 2;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 705);
+            this.ClientSize = new System.Drawing.Size(1265, 715);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.LeftPanel);
@@ -406,9 +408,9 @@
         private KimTools.WinForms.KtButton ktButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private KimTools.WinForms.KtButton ktButton1;
+        private KimTools.WinForms.KtButton btnDashboard;
         private KimTools.WinForms.KtButton ktButton5;
-        private KimTools.WinForms.KtButton ktButton4;
+        private KimTools.WinForms.KtButton btnGenres;
         private KimTools.WinForms.KtButton ktButton3;
         private KimTools.WinForms.KtButton ktButton6;
         private System.Windows.Forms.Panel panel2;

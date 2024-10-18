@@ -13,8 +13,8 @@ namespace BookStore
 {
     public partial class FrmMain : KtWindow
     {
-        public static string Username;
-        public static bool Islogin = false;
+        public static string Username = "XXX";
+        public static bool Islogin = true;
         public FrmMain()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace BookStore
             if (Islogin)
             {
                 lblWelcome.Text = $"Welcome {Username}";
-                AddControls(new View.FrmGenresView());
+                AddControls(new Pages.FrmGenresView());
             }
             else
             {
@@ -33,7 +33,7 @@ namespace BookStore
                 if (frmLogin.ShowDialog() == DialogResult.OK) // Show as modal
                 {
                     lblWelcome.Text = $"Welcome {Username}";
-                    AddControls(new View.FrmGenresView());
+                    AddControls(new Pages.FrmGenresView());
                 }
                 else
                 {
@@ -48,6 +48,11 @@ namespace BookStore
             form.TopLevel = false;
             CenterPanel.Controls.Add(form);
             form.Show();
+        }
+
+        private void btnGenres_Click(object sender, EventArgs e)
+        {
+            AddControls(new Pages.FrmGenresView());
         }
     }
 }
