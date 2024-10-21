@@ -26,6 +26,39 @@ namespace BookStore
                 return db.Genres.Where(g => g.GenreName.ToLower().Contains(word.ToLower())).ToList();
             }
         }
+        public static void EditGenre(int id, string name)
+        {
+            Genre genreToEdit = db.Genres.FirstOrDefault(g => g.GenreID == id);
+            genreToEdit.GenreName = name;
+            genreToEdit.Updated = DateTime.Now;
+            db.SaveChanges();
+        }
+        public static void AddGenre(string name)
+        {
+            Genre newGenre = new Genre();
+            newGenre.GenreName = name;
+            newGenre.Created = DateTime.Now;
+            newGenre.Updated = DateTime.Now;
+            db.Genres.Add(newGenre);
+            db.SaveChanges();
+        }
+        public static void DeleteGenre(int id) {
+            Genre genre = db.Genres.FirstOrDefault(gen => gen.GenreID == id);
+            db.Genres.Remove(genre);
+            db.SaveChanges();
+        }
+        public static int GetGenreFirstID()
+        {
+            if (db.Genres.Count() == 0)
+            {
+                return -1;
+            }
+            return db.Genres.First().GenreID;
+        }
+        public static int GetGenreCount()
+        {
+            return db.Genres.Count();
+        }
 
 
     }

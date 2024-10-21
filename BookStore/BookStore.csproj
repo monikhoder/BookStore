@@ -125,6 +125,18 @@
     <Compile Include="Book.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Component\AddGenre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\AddGenre.Designer.cs">
+      <DependentUpon>AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\DeleteDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\DeleteDialog.Designer.cs">
+      <DependentUpon>DeleteDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +188,12 @@
     <Compile Include="Pages\FrmGenresView.Designer.cs">
       <DependentUpon>FrmGenresView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component\AddGenre.resx">
+      <DependentUpon>AddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\DeleteDialog.resx">
+      <DependentUpon>DeleteDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
