@@ -14,11 +14,11 @@ using System.Xml.Linq;
 
 namespace BookStore.Component
 {
-    public partial class AddBook : Form
+    public partial class UpdateBook : Form
     {
         CRUD db = new CRUD();
         private string selectedImagePath;
-        public AddBook()
+        public UpdateBook()
         {
             InitializeComponent();
         }
@@ -34,6 +34,20 @@ namespace BookStore.Component
             LoadAuthor();
             LoadPublisher();
             LoadGenres();
+            LoadBookCover();
+        }
+        private void LoadBookCover()
+        {
+            int Id = Convert.ToInt32(txbId.Text);
+            byte[] imageData = db.GetBookCoverById(Id);
+
+            if (imageData != null)
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    BookCover.Image = Image.FromStream(ms);
+                }
+            }
         }
 
         private void LoadAuthor()
@@ -119,16 +133,16 @@ namespace BookStore.Component
             {
                 isTextNotnull = true;
             }
-            if (cmbAuthor.SelectedIndex != -1 && cmbGenre.SelectedIndex != -1 && cmbPublisher.SelectedIndex != -1)
+            if (cmbAuthor.Text != null && cmbGenre.Text != null && cmbPublisher.Text != null)
             {
                 isSelectCombo = true;
             }
 
             if (isTextNotnull && isSelectCombo) {
-                btnAdd.Enabled = true;
+                btnUpdate.Enabled = true;
             }else
             {
-                btnAdd.Enabled = false;
+                btnUpdate.Enabled = false;
             }
 
         }
@@ -166,22 +180,7 @@ namespace BookStore.Component
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            byte[] bookcover = null;
-            if (selectedImagePath != null)
-            {
-                bookcover = ConvertImageToByteArray(selectedImagePath);
-            }
-            bool Sequal = IsSequelSwith.Checked;
-            int genId = db.GetGenreIdByName(cmbGenre.Text);
-            int autId = db.GetAuthorIdByName(cmbAuthor.Text);
-            int pubId = db.GetPublisherIdByName(cmbPublisher.Text);
-            int stock = Convert.ToInt32(txbStock.Text);
-            float costPrice = float.Parse(txbCostPrice.Text);
-            float salePrice = float.Parse(txbSalePrice.Text);
-            int page = Convert.ToInt32(txbPages.Text);
-            DateTime publishDate = PublishingDatePicker.Value;
-            db.AddBook(txtTitle.Text, genId, autId, pubId, publishDate,costPrice, salePrice, stock,page, bookcover, Sequal);
-            this.Close();
+
         }
         public byte[] ConvertImageToByteArray(string imagePath)
         {
@@ -213,7 +212,25 @@ namespace BookStore.Component
         {
             enableBtnAdd();
         }
-        
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(txbId.Text);
+            if (selectedImagePath != null)
+            {
+                db.ChangeBookCover(Id, ConvertImageToByteArray(selectedImagePath));
+            }
+            int genreID = db.GetGenreIdByName(cmbGenre.Text);
+            int authorID = db.GetAuthorIdByName(cmbAuthor.Text);
+            int publisherID = db.GetPublisherIdByName(cmbPublisher.Text);
+            DateTime publishDate = PublishingDatePicker.Value;
+            bool isSequel = IsSequelSwith.Checked;
+            float costPrice = float.Parse(txbCostPrice.Text);
+            float salePrice = float.Parse(txbSalePrice.Text);
+            int stock = int.Parse(txbStock.Text);
+            int pages = int.Parse(txbPages.Text);
+            db.EditBook(Id,txtTitle.Text,genreID,authorID,publisherID,publishDate,costPrice, salePrice,stock,pages,isSequel);
+            this.Close();
+        }
     }
 }

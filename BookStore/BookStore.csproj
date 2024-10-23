@@ -149,6 +149,12 @@
     <Compile Include="Component\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Component\UpdateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\UpdateBook.Designer.cs">
+      <DependentUpon>UpdateBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\UpdatePublisher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Component\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UpdateBook.resx">
+      <DependentUpon>UpdateBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\UpdatePublisher.resx">
       <DependentUpon>UpdatePublisher.cs</DependentUpon>

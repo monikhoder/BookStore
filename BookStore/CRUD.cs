@@ -342,6 +342,78 @@ namespace BookStore
             _db.Books.Add(newBook);
             _db.SaveChanges();
         }
+        //Get book
+        public List<Book> GetBooks(string word = "")
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                return _db.Books.ToList();
+            }
+            return _db.Books.Where(b => b.Name.ToLower().Contains(word.ToLower())).ToList();
+        }
+        // Get book cover by Id
+        public byte[] GetBookCoverById(int id)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
+            return book?.BookCover;
+        }
 
+        //Delete book
+        public void DeleteBook(int id)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
+            if (book != null)
+            {
+                _db.Books.Remove(book);
+                _db.SaveChanges();
+            }
+        }
+        // Get first book ID
+        public int GetBookFirstID()
+        {
+            return _db.Books.FirstOrDefault()?.BookID ?? -1;
+        }
+        //Get Book title by Id
+        public string GetBookTitleById(int id)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
+            return book?.Name;
+        }
+        //Get book by Id
+        public List<Book> GetBookById(int id)
+        {
+            return _db.Books.Where(b => b.BookID == id).ToList();
+        }
+        //Edit book
+        public void EditBook(int id, string name, int genreID, int authorID, int publisherID, DateTime publishDate, float costprice, float saleprice, int stock, int Pages, bool isSequel)
+        {
+            Book bookToEdit = _db.Books.FirstOrDefault(b => b.BookID == id);
+            if (bookToEdit != null)
+            {
+                bookToEdit.Name = name;
+                bookToEdit.GenreID = genreID;
+                bookToEdit.AuthorID = authorID;
+                bookToEdit.PublisherID = publisherID;
+                bookToEdit.PublishingDate = publishDate;
+                bookToEdit.CostPrice = costprice;
+                bookToEdit.SalePrice = saleprice;
+                bookToEdit.Stock = stock;
+                bookToEdit.Pages = Pages;
+                bookToEdit.IsSequel = isSequel;
+                bookToEdit.Updated = DateTime.Now;
+                _db.SaveChanges();
+            }
+        }
+            // Change book cover
+        public void ChangeBookCover(int id, byte[] bookcover)
+        {
+                Book bookToEdit = _db.Books.FirstOrDefault(b => b.BookID == id);
+                if (bookToEdit != null)
+                {
+                    bookToEdit.BookCover = bookcover;
+                    _db.SaveChanges();
+                }
+        }
+        
     }
 }
