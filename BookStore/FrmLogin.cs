@@ -13,6 +13,7 @@ namespace BookStore
 {
     public partial class FrmLogin : KtWindow
     {
+        CRUD db = new CRUD();
         public FrmLogin()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace BookStore
                 lblPassword.Visible=true;
             }else
             {
-                if(MainClass.IsValidUser(txtUsername.Text,txtPassword.Text) == true)
+                if(db.IsValidUser(txtUsername.Text,txtPassword.Text) == true)
                 {
                     FrmMain.Islogin = true;
                     FrmMain.Username = txtUsername.Text;

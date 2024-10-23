@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace BookStore.Component
 {
-    public partial class AddGenre : Form
+    public partial class UpdateUser : Form
     {
         CRUD db = new CRUD();
-        public AddGenre()
+        public UpdateUser()
         {
             InitializeComponent();
         }
@@ -42,8 +42,13 @@ namespace BookStore.Component
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            db.AddGenre(txtName.Text);
+            db.EditUser(Convert.ToInt32(txtId.Text), txtName.Text, cmbRole.Text);
             this.Close();
+        }
+
+        private void lblAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

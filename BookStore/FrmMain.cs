@@ -54,5 +54,15 @@ namespace BookStore
         {
             AddControls(new Pages.FrmGenresView());
         }
+
+        private void btnPH_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            AddControls(new Pages.FrmUsersView());
+        }
     }
 }

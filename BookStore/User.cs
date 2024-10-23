@@ -14,12 +14,22 @@ namespace BookStore
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.Sales = new HashSet<Sale>();
+        }
+    
         public int UserID { get; set; }
         public string UName { get; set; }
         public string Username { get; set; }
         public string UPassword { get; set; }
         public string Role { get; set; }
+        public byte[] ProfilePicture { get; set; }
         public System.DateTime Created { get; set; }
         public System.DateTime Updated { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sale> Sales { get; set; }
     }
 }

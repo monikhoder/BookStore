@@ -21,13 +21,14 @@
           <Property Name="BookID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="AuthorID" Type="int" Nullable="false" />
-          <Property Name="PublishingHouseID" Type="int" Nullable="false" />
+          <Property Name="PublisherID" Type="int" Nullable="false" />
           <Property Name="Pages" Type="int" Nullable="false" />
           <Property Name="GenreID" Type="int" Nullable="false" />
           <Property Name="PublishingDate" Type="date" Nullable="false" />
           <Property Name="CostPrice" Type="float" Nullable="false" />
           <Property Name="SalePrice" Type="float" Nullable="false" />
           <Property Name="IsSequel" Type="bit" Nullable="false" />
+          <Property Name="BookCover" Type="varbinary(max)" />
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
         </EntityType>
@@ -40,25 +41,39 @@
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="PublishingHouses">
+        <EntityType Name="Publisher">
           <Key>
-            <PropertyRef Name="PublishingHouseID" />
+            <PropertyRef Name="PublisherID" />
           </Key>
-          <Property Name="PublishingHouseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PublisherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublisherName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" />
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SaleDetail">
+          <Key>
+            <PropertyRef Name="SaleDetailId" />
+          </Key>
+          <Property Name="SaleDetailId" Type="int" Nullable="false" />
+          <Property Name="SaleId" Type="int" />
+          <Property Name="BookId" Type="int" />
+          <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="UnitPrice" Type="float" />
+          <Property Name="TotalPrice" Type="float" />
         </EntityType>
         <EntityType Name="Sales">
           <Key>
             <PropertyRef Name="SaleID" />
           </Key>
-          <Property Name="SaleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BookID" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
-          <Property Name="DateOfSale" Type="datetime" Nullable="false" />
-          <Property Name="DiscountPercentage" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="SaleID" Type="int" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="TotalAmount" Type="float" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -80,6 +95,7 @@
           <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="UPassword" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProfilePicture" Type="varbinary(max)" />
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
         </EntityType>
@@ -108,26 +124,50 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Books__Publishin__4222D4EF">
-          <End Role="PublishingHouses" Type="Self.PublishingHouses" Multiplicity="1" />
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
           <End Role="Books" Type="Self.Books" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PublishingHouses">
-              <PropertyRef Name="PublishingHouseID" />
+            <Principal Role="Publisher">
+              <PropertyRef Name="PublisherID" />
             </Principal>
             <Dependent Role="Books">
-              <PropertyRef Name="PublishingHouseID" />
+              <PropertyRef Name="PublisherID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Sales__BookID__46E78A0C">
-          <End Role="Books" Type="Self.Books" Multiplicity="1" />
-          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+        <Association Name="FK_SaleDaetail_Books">
+          <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+          <End Role="SaleDetail" Type="Self.SaleDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="BookID" />
             </Principal>
+            <Dependent Role="SaleDetail">
+              <PropertyRef Name="BookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SaleDaetail_Sales">
+          <End Role="Sales" Type="Self.Sales" Multiplicity="0..1" />
+          <End Role="SaleDetail" Type="Self.SaleDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sales">
+              <PropertyRef Name="SaleID" />
+            </Principal>
+            <Dependent Role="SaleDetail">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
             <Dependent Role="Sales">
-              <PropertyRef Name="BookID" />
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -135,10 +175,21 @@
           <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PublishingHouses" EntityType="Self.PublishingHouses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleDetail" EntityType="Self.SaleDetail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SaleDetail].[SaleDetailId] AS [SaleDetailId], 
+    [SaleDetail].[SaleId] AS [SaleId], 
+    [SaleDetail].[BookId] AS [BookId], 
+    [SaleDetail].[Discount] AS [Discount], 
+    [SaleDetail].[Quantity] AS [Quantity], 
+    [SaleDetail].[UnitPrice] AS [UnitPrice], 
+    [SaleDetail].[TotalPrice] AS [TotalPrice]
+    FROM [dbo].[SaleDetail] AS [SaleDetail]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Books__AuthorID__412EB0B6" Association="Self.FK__Books__AuthorID__412EB0B6">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
@@ -148,11 +199,19 @@
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
           <AssociationSet Name="FK__Books__Publishin__4222D4EF" Association="Self.FK__Books__Publishin__4222D4EF">
-            <End Role="PublishingHouses" EntitySet="PublishingHouses" />
+            <End Role="Publisher" EntitySet="Publisher" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK__Sales__BookID__46E78A0C" Association="Self.FK__Sales__BookID__46E78A0C">
+          <AssociationSet Name="FK_SaleDaetail_Books" Association="Self.FK_SaleDaetail_Books">
             <End Role="Books" EntitySet="Books" />
+            <End Role="SaleDetail" EntitySet="SaleDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleDaetail_Sales" Association="Self.FK_SaleDaetail_Sales">
+            <End Role="Sales" EntitySet="Sales" />
+            <End Role="SaleDetail" EntitySet="SaleDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Users" Association="Self.FK_Sales_Users">
+            <End Role="Users" EntitySet="Users" />
             <End Role="Sales" EntitySet="Sales" />
           </AssociationSet>
         </EntityContainer>
@@ -178,19 +237,20 @@
           <Property Name="BookID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AuthorID" Type="Int32" Nullable="false" />
-          <Property Name="PublishingHouseID" Type="Int32" Nullable="false" />
+          <Property Name="PublisherID" Type="Int32" Nullable="false" />
           <Property Name="Pages" Type="Int32" Nullable="false" />
           <Property Name="GenreID" Type="Int32" Nullable="false" />
           <Property Name="PublishingDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="CostPrice" Type="Double" Nullable="false" />
           <Property Name="SalePrice" Type="Double" Nullable="false" />
           <Property Name="IsSequel" Type="Boolean" Nullable="false" />
+          <Property Name="BookCover" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Author" Relationship="Self.FK__Books__AuthorID__412EB0B6" FromRole="Books" ToRole="Authors" />
           <NavigationProperty Name="Genre" Relationship="Self.FK__Books__GenreID__4316F928" FromRole="Books" ToRole="Genres" />
-          <NavigationProperty Name="PublishingHous" Relationship="Self.FK__Books__Publishin__4222D4EF" FromRole="Books" ToRole="PublishingHouses" />
-          <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__BookID__46E78A0C" FromRole="Books" ToRole="Sales" />
+          <NavigationProperty Name="Publisher" Relationship="Self.FK__Books__Publishin__4222D4EF" FromRole="Books" ToRole="Publisher" />
+          <NavigationProperty Name="SaleDetails" Relationship="Self.FK_SaleDaetail_Books" FromRole="Books" ToRole="SaleDetail" />
         </EntityType>
         <EntityType Name="Genre">
           <Key>
@@ -202,28 +262,29 @@
           <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Books" Relationship="Self.FK__Books__GenreID__4316F928" FromRole="Genres" ToRole="Books" />
         </EntityType>
-        <EntityType Name="PublishingHous">
+        <EntityType Name="Publisher">
           <Key>
-            <PropertyRef Name="PublishingHouseID" />
+            <PropertyRef Name="PublisherID" />
           </Key>
-          <Property Name="PublishingHouseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PublisherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublisherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Books" Relationship="Self.FK__Books__Publishin__4222D4EF" FromRole="PublishingHouses" ToRole="Books" />
+          <NavigationProperty Name="Books" Relationship="Self.FK__Books__Publishin__4222D4EF" FromRole="Publisher" ToRole="Books" />
         </EntityType>
         <EntityType Name="Sale">
           <Key>
             <PropertyRef Name="SaleID" />
           </Key>
-          <Property Name="SaleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BookID" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="DateOfSale" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DiscountPercentage" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="SaleID" Type="Int32" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="TotalAmount" Type="Double" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="Book" Relationship="Self.FK__Sales__BookID__46E78A0C" FromRole="Sales" ToRole="Books" />
+          <NavigationProperty Name="SaleDetails" Relationship="Self.FK_SaleDaetail_Sales" FromRole="Sales" ToRole="SaleDetail" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Sales_Users" FromRole="Sales" ToRole="Users" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -244,8 +305,24 @@
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="UPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProfilePicture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Sales" Relationship="Self.FK_Sales_Users" FromRole="Users" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="SaleDetail">
+          <Key>
+            <PropertyRef Name="SaleDetailId" />
+          </Key>
+          <Property Name="SaleDetailId" Type="Int32" Nullable="false" />
+          <Property Name="SaleId" Type="Int32" />
+          <Property Name="BookId" Type="Int32" />
+          <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UnitPrice" Type="Double" />
+          <Property Name="TotalPrice" Type="Double" />
+          <NavigationProperty Name="Book" Relationship="Self.FK_SaleDaetail_Books" FromRole="SaleDetail" ToRole="Books" />
+          <NavigationProperty Name="Sale" Relationship="Self.FK_SaleDaetail_Sales" FromRole="SaleDetail" ToRole="Sales" />
         </EntityType>
         <Association Name="FK__Books__AuthorID__412EB0B6">
           <End Role="Authors" Type="Self.Author" Multiplicity="1" />
@@ -272,37 +349,62 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Books__Publishin__4222D4EF">
-          <End Role="PublishingHouses" Type="Self.PublishingHous" Multiplicity="1" />
+          <End Role="Publisher" Type="Self.Publisher" Multiplicity="1" />
           <End Role="Books" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PublishingHouses">
-              <PropertyRef Name="PublishingHouseID" />
+            <Principal Role="Publisher">
+              <PropertyRef Name="PublisherID" />
             </Principal>
             <Dependent Role="Books">
-              <PropertyRef Name="PublishingHouseID" />
+              <PropertyRef Name="PublisherID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Sales__BookID__46E78A0C">
-          <End Role="Books" Type="Self.Book" Multiplicity="1" />
-          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+        <Association Name="FK_SaleDaetail_Books">
+          <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+          <End Role="SaleDetail" Type="Self.SaleDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Books">
               <PropertyRef Name="BookID" />
             </Principal>
-            <Dependent Role="Sales">
-              <PropertyRef Name="BookID" />
+            <Dependent Role="SaleDetail">
+              <PropertyRef Name="BookId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BookStoreEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_SaleDaetail_Sales">
+          <End Role="Sales" Type="Self.Sale" Multiplicity="0..1" />
+          <End Role="SaleDetail" Type="Self.SaleDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sales">
+              <PropertyRef Name="SaleID" />
+            </Principal>
+            <Dependent Role="SaleDetail">
+              <PropertyRef Name="SaleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Sales" Type="Self.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BookStoreDatabase" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Authors" EntityType="Self.Author" />
           <EntitySet Name="Books" EntityType="Self.Book" />
           <EntitySet Name="Genres" EntityType="Self.Genre" />
-          <EntitySet Name="PublishingHouses" EntityType="Self.PublishingHous" />
+          <EntitySet Name="Publishers" EntityType="Self.Publisher" />
           <EntitySet Name="Sales" EntityType="Self.Sale" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="SaleDetails" EntityType="Self.SaleDetail" />
           <AssociationSet Name="FK__Books__AuthorID__412EB0B6" Association="Self.FK__Books__AuthorID__412EB0B6">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
@@ -312,11 +414,19 @@
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
           <AssociationSet Name="FK__Books__Publishin__4222D4EF" Association="Self.FK__Books__Publishin__4222D4EF">
-            <End Role="PublishingHouses" EntitySet="PublishingHouses" />
+            <End Role="Publisher" EntitySet="Publishers" />
             <End Role="Books" EntitySet="Books" />
           </AssociationSet>
-          <AssociationSet Name="FK__Sales__BookID__46E78A0C" Association="Self.FK__Sales__BookID__46E78A0C">
+          <AssociationSet Name="FK_SaleDaetail_Books" Association="Self.FK_SaleDaetail_Books">
             <End Role="Books" EntitySet="Books" />
+            <End Role="SaleDetail" EntitySet="SaleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SaleDaetail_Sales" Association="Self.FK_SaleDaetail_Sales">
+            <End Role="Sales" EntitySet="Sales" />
+            <End Role="SaleDetail" EntitySet="SaleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Users" Association="Self.FK_Sales_Users">
+            <End Role="Users" EntitySet="Users" />
             <End Role="Sales" EntitySet="Sales" />
           </AssociationSet>
         </EntityContainer>
@@ -325,7 +435,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities">
+        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreDatabase">
           <EntitySetMapping Name="Authors">
             <EntityTypeMapping TypeName="BookStoreModel.Author">
               <MappingFragment StoreEntitySet="Authors">
@@ -342,13 +452,14 @@
                 <ScalarProperty Name="BookID" ColumnName="BookID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
-                <ScalarProperty Name="PublishingHouseID" ColumnName="PublishingHouseID" />
+                <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
                 <ScalarProperty Name="Pages" ColumnName="Pages" />
                 <ScalarProperty Name="GenreID" ColumnName="GenreID" />
                 <ScalarProperty Name="PublishingDate" ColumnName="PublishingDate" />
                 <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
                 <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
                 <ScalarProperty Name="IsSequel" ColumnName="IsSequel" />
+                <ScalarProperty Name="BookCover" ColumnName="BookCover" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Updated" ColumnName="Updated" />
               </MappingFragment>
@@ -364,11 +475,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PublishingHouses">
-            <EntityTypeMapping TypeName="BookStoreModel.PublishingHous">
-              <MappingFragment StoreEntitySet="PublishingHouses">
-                <ScalarProperty Name="PublishingHouseID" ColumnName="PublishingHouseID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+          <EntitySetMapping Name="Publishers">
+            <EntityTypeMapping TypeName="BookStoreModel.Publisher">
+              <MappingFragment StoreEntitySet="Publisher">
+                <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+                <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Updated" ColumnName="Updated" />
@@ -379,10 +490,10 @@
             <EntityTypeMapping TypeName="BookStoreModel.Sale">
               <MappingFragment StoreEntitySet="Sales">
                 <ScalarProperty Name="SaleID" ColumnName="SaleID" />
-                <ScalarProperty Name="BookID" ColumnName="BookID" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="DateOfSale" ColumnName="DateOfSale" />
-                <ScalarProperty Name="DiscountPercentage" ColumnName="DiscountPercentage" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Updated" ColumnName="Updated" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -406,8 +517,22 @@
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="UPassword" ColumnName="UPassword" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Updated" ColumnName="Updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleDetails">
+            <EntityTypeMapping TypeName="BookStoreModel.SaleDetail">
+              <MappingFragment StoreEntitySet="SaleDetail">
+                <ScalarProperty Name="SaleDetailId" ColumnName="SaleDetailId" />
+                <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

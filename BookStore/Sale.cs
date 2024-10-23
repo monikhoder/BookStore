@@ -14,13 +14,21 @@ namespace BookStore
     
     public partial class Sale
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sale()
+        {
+            this.SaleDetails = new HashSet<SaleDetail>();
+        }
+    
         public int SaleID { get; set; }
-        public int BookID { get; set; }
-        public int Quantity { get; set; }
-        public System.DateTime DateOfSale { get; set; }
-        public Nullable<decimal> DiscountPercentage { get; set; }
+        public Nullable<decimal> Discount { get; set; }
+        public int UserId { get; set; }
+        public double TotalAmount { get; set; }
+        public System.DateTime Created { get; set; }
         public System.DateTime Updated { get; set; }
     
-        public virtual Book Book { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SaleDetail> SaleDetails { get; set; }
+        public virtual User User { get; set; }
     }
 }

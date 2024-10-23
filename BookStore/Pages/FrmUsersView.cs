@@ -12,36 +12,40 @@ using System.Windows.Forms;
 
 namespace BookStore.Pages
 {
-    public partial class FrmGenresView : KtWindow
+    public partial class FrmUsersView : KtWindow
     {
 
         private int Id = 0;
-        private string GenreName = string.Empty;
+        private string UName = string.Empty;
+        private string URole = string.Empty;
         CRUD db = new CRUD();
-        public FrmGenresView()
+        public FrmUsersView()
         {
             InitializeComponent();
         }
 
         private void FrmGenresView_Load(object sender, EventArgs e)
         {
-            LoadGenres();
+            LoadUsers();
             
            
         }
-        private void LoadGenres()
+        private void LoadUsers()
         {
-            tblGenres.Clear();
-            var dtGenres = db.GetGenres(txtSearch.Text);
+            tblUser.Clear();
+            var dtUser = db.GetUser(txtSearch.Text);
 
-            foreach (var genre in dtGenres) {
-                var genres = tblGenres.NewRow();
-                genres["tblID"] = genre.GenreID;
-                genres["tblName"] = genre.GenreName;
-                genres["tblCreated"] = genre.Created;
-                genres["tblUpdated"] = genre.Updated;
+            foreach (var user in dtUser)
+            {
+                var Users = tblUser.NewRow();
+                Users["tblID"] = user.UserID;
+                Users["tblProfile"] = user.ProfilePicture;
+                Users["tblName"] = user.UName;
+                Users["tblRole"] = user.Role;
+                Users["tblCreated"] = user.Created;
+                Users["tblUpdated"] = user.Updated;
             }
-            if (db.GetUserCount() == 0)
+            if (db.GetGenreCount() == 0)
             {
                 btnDelete.Enabled = false;
                 btnEdit.Enabled = false;
@@ -55,34 +59,34 @@ namespace BookStore.Pages
 
         private void txtSearch_TextChange(object sender, EventArgs e)
         {
-            LoadGenres();
+            LoadUsers();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddGenre addGenre = new AddGenre();
-            addGenre.StartPosition = FormStartPosition.CenterScreen;
-            addGenre.ShowDialog();
-            LoadGenres();
+           AddUser addUser = new AddUser();
+            addUser.StartPosition = FormStartPosition.CenterParent;
+           addUser.ShowDialog();
+            LoadUsers();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteDialog deleteDialog = new DeleteDialog();
-            deleteDialog.lblQ.Text = "Are you sure you want to delete this genre?";
+            deleteDialog.lblQ.Text = "Are you sure you want to delete this User?";
             deleteDialog.ShowDialog();
             if (deleteDialog.DialogResult == DialogResult.OK)
             {
 
-                db.DeleteGenre(Id);
-                LoadGenres();
+                db.DeleteUser(Id);
+                LoadUsers();
             }
         }
 
         private void tblGenres_CellClick(KtTable table, KtTableRow row, KtTableColumn column)
         {
             Id = Convert.ToInt32(row["tblID"]);
-            GenreName = row["tblName"].ToString();
+            UName = row["tblName"].ToString();
         }
 
         private void tblGenres_RowSelected(KtTable table, KtTableRow row)
@@ -90,24 +94,24 @@ namespace BookStore.Pages
             if (row != null)
             {
                 Id = Convert.ToInt32(row["tblID"]);
-                GenreName = row["tblName"].ToString();
+                UName = row["tblName"].ToString();
             }
             else
             {
-                Id = db.GetGenreFirstID();
-                GenreName = db.GetGenreName(Id);
+                Id = db.GetUserFirstID();
+                UName = db.GetUserName(Id);
             }
-            
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            UpdateGenre updateGenre = new UpdateGenre();
-            updateGenre.txtId.Text = Id.ToString();
-            updateGenre.txtName.Text = GenreName.ToString();
-            updateGenre.StartPosition = FormStartPosition.CenterParent;
-            updateGenre.ShowDialog();
-            LoadGenres();
+            UpdateUser updateUser = new UpdateUser();
+            updateUser.txtId.Text = Id.ToString();
+            updateUser.txtName.Text = UName.ToString();
+            updateUser.StartPosition = FormStartPosition.CenterParent;
+            updateUser.ShowDialog();
         }
+
     }
 }

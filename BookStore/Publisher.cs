@@ -12,16 +12,16 @@ namespace BookStore
     using System;
     using System.Collections.Generic;
     
-    public partial class PublishingHous
+    public partial class Publisher
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PublishingHous()
+        public Publisher()
         {
             this.Books = new HashSet<Book>();
         }
     
-        public int PublishingHouseID { get; set; }
-        public string Name { get; set; }
+        public int PublisherID { get; set; }
+        public string PublisherName { get; set; }
         public string Address { get; set; }
         public System.DateTime Created { get; set; }
         public System.DateTime Updated { get; set; }

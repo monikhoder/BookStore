@@ -46,7 +46,8 @@
             // 
             // btnyes
             // 
-            this.btnyes.BackColor = System.Drawing.Color.Empty;
+            this.btnyes.BackColor = System.Drawing.Color.Red;
+            this.btnyes.Bg = KimTools.WinForms.KtColor.BackColor;
             this.btnyes.BorderShape = KimTools.WinForms.KtSize.Default;
             this.btnyes.BorderSize = KimTools.WinForms.KtSize.Default;
             this.btnyes.CustomColors = new System.Drawing.Color[0];
@@ -64,14 +65,13 @@
             this.btnyes.Size = new System.Drawing.Size(120, 48);
             this.btnyes.Style = KimTools.WinForms.KtStyle.Tailwind;
             this.btnyes.TabIndex = 1;
-            this.btnyes.Text = "YES";
+            this.btnyes.Text = "Delete";
             this.btnyes.UseVisualStyleBackColor = false;
             this.btnyes.Click += new System.EventHandler(this.btnyes_Click);
             // 
             // btnNo
             // 
             this.btnNo.BackColor = System.Drawing.Color.Red;
-            this.btnNo.Bg = KimTools.WinForms.KtColor.BackColor;
             this.btnNo.BorderShape = KimTools.WinForms.KtSize.Default;
             this.btnNo.BorderSize = KimTools.WinForms.KtSize.Default;
             this.btnNo.CustomColors = new System.Drawing.Color[0];
@@ -97,13 +97,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(425, 163);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnyes);
             this.Controls.Add(this.lblQ);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteDialog";
             this.Opacity = 1D;

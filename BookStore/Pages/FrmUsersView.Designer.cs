@@ -1,6 +1,6 @@
 ﻿namespace BookStore.Pages
 {
-    partial class FrmGenresView
+    partial class FrmUsersView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,9 @@
             KimTools.WinForms.KtTableColumn ktTableColumn2 = new KimTools.WinForms.KtTableColumn();
             KimTools.WinForms.KtTableColumn ktTableColumn3 = new KimTools.WinForms.KtTableColumn();
             KimTools.WinForms.KtTableColumn ktTableColumn4 = new KimTools.WinForms.KtTableColumn();
-            this.tblGenres = new KimTools.WinForms.KtTable();
+            KimTools.WinForms.KtTableColumn ktTableColumn5 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn6 = new KimTools.WinForms.KtTableColumn();
+            this.tblUser = new KimTools.WinForms.KtTable();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.TopLeftPanel = new System.Windows.Forms.Panel();
             this.btnDelete = new KimTools.WinForms.KtButton();
@@ -47,17 +49,17 @@
             this.centerpanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tblGenres
+            // tblUser
             // 
-            this.tblGenres.AutoScroll = true;
-            this.tblGenres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            ktTableColumn1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.tblUser.AutoScroll = true;
+            this.tblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            ktTableColumn1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn1.Fill = "";
             ktTableColumn1.Format = "";
             ktTableColumn1.Group = "";
             ktTableColumn1.IsPrimaryKey = true;
             ktTableColumn1.Key = "tblID";
-            ktTableColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             ktTableColumn1.Search = false;
             ktTableColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn1.Template = "";
@@ -66,78 +68,114 @@
             ktTableColumn1.Type = KimTools.WinForms.KtTableColumnTypes.Text;
             ktTableColumn1.Value = "tblId";
             ktTableColumn1.Visible = true;
-            ktTableColumn1.Width = 70;
-            ktTableColumn1.Width_ = "70";
+            ktTableColumn1.Width = 50;
+            ktTableColumn1.Width_ = "50";
             ktTableColumn2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             ktTableColumn2.Fill = "";
             ktTableColumn2.Format = "";
             ktTableColumn2.Group = "";
             ktTableColumn2.IsPrimaryKey = false;
-            ktTableColumn2.Key = "tblName";
-            ktTableColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn2.Search = true;
+            ktTableColumn2.Key = "tblProfile";
+            ktTableColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            ktTableColumn2.Search = false;
             ktTableColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn2.Template = "";
-            ktTableColumn2.Title = "Genres";
+            ktTableColumn2.Title = "Profile";
             ktTableColumn2.ToolTip = "";
-            ktTableColumn2.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn2.Type = KimTools.WinForms.KtTableColumnTypes.Image;
             ktTableColumn2.Value = "";
             ktTableColumn2.Visible = true;
-            ktTableColumn2.Width = 0;
-            ktTableColumn2.Width_ = "";
-            ktTableColumn3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            ktTableColumn2.Width = 50;
+            ktTableColumn2.Width_ = "50";
+            ktTableColumn3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn3.Fill = "";
             ktTableColumn3.Format = "";
             ktTableColumn3.Group = "";
             ktTableColumn3.IsPrimaryKey = false;
-            ktTableColumn3.Key = "tblCreated";
+            ktTableColumn3.Key = "tblName";
             ktTableColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
             ktTableColumn3.Search = true;
             ktTableColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn3.Template = "";
-            ktTableColumn3.Title = "Created";
+            ktTableColumn3.Title = "Name";
             ktTableColumn3.ToolTip = "";
             ktTableColumn3.Type = KimTools.WinForms.KtTableColumnTypes.Text;
             ktTableColumn3.Value = "";
             ktTableColumn3.Visible = true;
             ktTableColumn3.Width = 0;
             ktTableColumn3.Width_ = "";
-            ktTableColumn4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            ktTableColumn4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn4.Fill = "";
             ktTableColumn4.Format = "";
             ktTableColumn4.Group = "";
             ktTableColumn4.IsPrimaryKey = false;
-            ktTableColumn4.Key = "tblUpdated";
+            ktTableColumn4.Key = "tblRole";
             ktTableColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
             ktTableColumn4.Search = true;
             ktTableColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn4.Template = "";
-            ktTableColumn4.Title = "Updated";
+            ktTableColumn4.Title = "Role";
             ktTableColumn4.ToolTip = "";
             ktTableColumn4.Type = KimTools.WinForms.KtTableColumnTypes.Text;
             ktTableColumn4.Value = "";
             ktTableColumn4.Visible = true;
             ktTableColumn4.Width = 0;
             ktTableColumn4.Width_ = "";
-            this.tblGenres.Columns = new KimTools.WinForms.KtTableColumn[] {
+            ktTableColumn5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            ktTableColumn5.Fill = "";
+            ktTableColumn5.Format = "";
+            ktTableColumn5.Group = "";
+            ktTableColumn5.IsPrimaryKey = false;
+            ktTableColumn5.Key = "tblCreated";
+            ktTableColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn5.Search = true;
+            ktTableColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn5.Template = "";
+            ktTableColumn5.Title = "Created";
+            ktTableColumn5.ToolTip = "";
+            ktTableColumn5.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn5.Value = "";
+            ktTableColumn5.Visible = true;
+            ktTableColumn5.Width = 0;
+            ktTableColumn5.Width_ = "";
+            ktTableColumn6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            ktTableColumn6.Fill = "";
+            ktTableColumn6.Format = "";
+            ktTableColumn6.Group = "";
+            ktTableColumn6.IsPrimaryKey = false;
+            ktTableColumn6.Key = "tblUpdated";
+            ktTableColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn6.Search = true;
+            ktTableColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn6.Template = "";
+            ktTableColumn6.Title = "Updated";
+            ktTableColumn6.ToolTip = "";
+            ktTableColumn6.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn6.Value = "";
+            ktTableColumn6.Visible = true;
+            ktTableColumn6.Width = 0;
+            ktTableColumn6.Width_ = "";
+            this.tblUser.Columns = new KimTools.WinForms.KtTableColumn[] {
         ktTableColumn1,
         ktTableColumn2,
         ktTableColumn3,
-        ktTableColumn4};
-            this.tblGenres.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblGenres.KeyCaseSensitive = false;
-            this.tblGenres.Latency = 500;
-            this.tblGenres.Location = new System.Drawing.Point(0, 0);
-            this.tblGenres.MultiSelect = false;
-            this.tblGenres.Name = "tblGenres";
-            this.tblGenres.Padding = new System.Windows.Forms.Padding(5);
-            this.tblGenres.ShowFooter = true;
-            this.tblGenres.ShowHeader = false;
-            this.tblGenres.ShowSearch = false;
-            this.tblGenres.Size = new System.Drawing.Size(872, 476);
-            this.tblGenres.TabIndex = 0;
-            this.tblGenres.CellClick += new KimTools.WinForms.KtTable.KtTableRowCellEventArgs(this.tblGenres_CellClick);
-            this.tblGenres.RowSelected += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblGenres_RowSelected);
+        ktTableColumn4,
+        ktTableColumn5,
+        ktTableColumn6};
+            this.tblUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblUser.KeyCaseSensitive = false;
+            this.tblUser.Latency = 500;
+            this.tblUser.Location = new System.Drawing.Point(0, 0);
+            this.tblUser.MultiSelect = false;
+            this.tblUser.Name = "tblUser";
+            this.tblUser.Padding = new System.Windows.Forms.Padding(5);
+            this.tblUser.ShowFooter = true;
+            this.tblUser.ShowHeader = false;
+            this.tblUser.ShowSearch = false;
+            this.tblUser.Size = new System.Drawing.Size(872, 476);
+            this.tblUser.TabIndex = 0;
+            this.tblUser.CellClick += new KimTools.WinForms.KtTable.KtTableRowCellEventArgs(this.tblGenres_CellClick);
+            this.tblUser.RowSelected += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblGenres_RowSelected);
             // 
             // TopPanel
             // 
@@ -277,7 +315,7 @@
             // 
             // centerpanel
             // 
-            this.centerpanel.Controls.Add(this.tblGenres);
+            this.centerpanel.Controls.Add(this.tblUser);
             this.centerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centerpanel.Location = new System.Drawing.Point(0, 56);
             this.centerpanel.Name = "centerpanel";
@@ -302,7 +340,7 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // FrmGenresView
+            // FrmUsersView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -312,7 +350,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmGenresView";
+            this.Name = "FrmUsersView";
             this.Opacity = 1D;
             this.Text = "FrmGenresView";
             this.Load += new System.EventHandler(this.FrmGenresView_Load);
@@ -326,7 +364,7 @@
         #endregion
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private KimTools.WinForms.KtTable tblGenres;
+        private KimTools.WinForms.KtTable tblUser;
         private System.Windows.Forms.Panel TopPanel;
         private KimTools.WinForms.KtTextBox txtSearch;
         private System.Windows.Forms.Panel centerpanel;
