@@ -125,6 +125,12 @@
     <Compile Include="Book.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Component\AddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\AddBook.Designer.cs">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\AddPublisher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     <Compile Include="User.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component\AddBook.resx">
+      <DependentUpon>AddBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\AddPublisher.resx">
       <DependentUpon>AddPublisher.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,7 @@
       <DependentUpon>ModelDatabase.edmx</DependentUpon>
       <LastGenOutput>ModelDatabase.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\add-book.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

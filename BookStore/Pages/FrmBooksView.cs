@@ -32,7 +32,9 @@ namespace BookStore.Pages
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+           AddBook addBook = new AddBook();
+            addBook.StartPosition = FormStartPosition.CenterScreen;
+            addBook.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
