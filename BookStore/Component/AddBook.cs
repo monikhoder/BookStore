@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace BookStore.Component
 {
     public partial class AddBook : Form
     {
         CRUD db = new CRUD();
+        private string selectedImagePath;
         public AddBook()
         {
             InitializeComponent();
@@ -29,14 +34,6 @@ namespace BookStore.Component
             LoadAuthor();
             LoadPublisher();
             LoadGenres();
-        }
-
-        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
 
         private void LoadAuthor()
@@ -86,6 +83,7 @@ namespace BookStore.Component
             Image img = Image.FromFile(filePath);
             RotateImageIfRequired(img);
             BookCover.Image = img;
+            selectedImagePath = filePath;
         }
         private void RotateImageIfRequired(Image img)
         {
@@ -117,8 +115,7 @@ namespace BookStore.Component
         {
             bool isSelectCombo = false;
             bool isTextNotnull = false;
-
-            if(txtStock.Text.Length > 0 && txtTitle.Text.Length > 0 && txbCostPrice.Text.Length > 0 && txbSalePrice.Text.Length > 0)
+            if(txbStock.Text.Length > 0 && txtTitle.Text.Length > 0 && txbCostPrice.Text.Length > 0 && txbSalePrice.Text.Length > 0)
             {
                 isTextNotnull = true;
             }
@@ -126,6 +123,7 @@ namespace BookStore.Component
             {
                 isSelectCombo = true;
             }
+
             if (isTextNotnull && isSelectCombo) {
                 btnAdd.Enabled = true;
             }else
@@ -135,22 +133,7 @@ namespace BookStore.Component
 
         }
 
-        private void txtTitle_TextChange(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
-        private void txtStock_TextChange(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
-        private void txbSalePrice_TextChange(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
-        private void txbCostPrice_TextChange(object sender, EventArgs e)
+        private void TextBook_TextChange(object sender, EventArgs e)
         {
             enableBtnAdd();
         }
@@ -173,7 +156,7 @@ namespace BookStore.Component
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
-                e.Handled = true; // Ignore the key press
+                e.Handled = true;
             }
 
             // Allow only one decimal point
@@ -183,29 +166,54 @@ namespace BookStore.Component
             }
         }
 
-        private void cmbAuthor_SelectedValueChanged(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
-        private void cmbPublisher_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
-        private void cmbGenre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
-        private void cmbAuthor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            enableBtnAdd();
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            byte[] bookcover = null;
+            if (selectedImagePath != null)
+            {
+                bookcover = ConvertImageToByteArray(selectedImagePath);
+            }
+            bool Sequal = IsSequelSwith.Checked;
+            int genId = db.GetGenreIdByName(cmbGenre.Text);
+            int autId = db.GetAuthorIdByName(cmbAuthor.Text);
+            int pubId = db.GetPublisherIdByName(cmbPublisher.Text);
+            int stock = Convert.ToInt32(txbStock.Text);
+            float costPrice = float.Parse(txbCostPrice.Text);
+            float salePrice = float.Parse(txbSalePrice.Text);
+            int page = Convert.ToInt32(txbPages.Text);
+            DateTime publishDate = PublishingDatePicker.Value;
+            db.AddBook(txtTitle.Text, genId, autId, pubId, publishDate,costPrice, salePrice, stock,page, bookcover, Sequal);
+            this.Close();
+        }
+        public byte[] ConvertImageToByteArray(string imagePath)
+        {
+            byte[] imageBytes = null;
+            using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+            {
+                using (BinaryReader br = new BinaryReader(fs))
+                {
+                    imageBytes = br.ReadBytes((int)fs.Length);
+                }
+            }
+            return imageBytes;
+        }
 
+        private void IsSequelSwith_CheckedChanged(object sender, KimTools.WinForms.KtSwitch.CheckedChangedEventArgs e)
+        {
+           
+        }
+
+        private void Number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            enableBtnAdd();
         }
     }
 }

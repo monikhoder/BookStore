@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBook));
-            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState25 = new KimTools.WinForms.KtSwitch.KtSwitchState();
-            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState26 = new KimTools.WinForms.KtSwitch.KtSwitchState();
+            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState3 = new KimTools.WinForms.KtSwitch.KtSwitchState();
+            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState4 = new KimTools.WinForms.KtSwitch.KtSwitchState();
             this.Toppanel = new System.Windows.Forms.Panel();
+            this.txtTitle = new KimTools.WinForms.KtTextBox();
             this.lblBookTitle = new KimTools.WinForms.KtLabel();
+            this.BookCover = new System.Windows.Forms.PictureBox();
             this.lblAuthor = new KimTools.WinForms.KtLabel();
             this.cmbAuthor = new KimTools.WinForms.KtComboBox();
             this.cmbPublisher = new KimTools.WinForms.KtComboBox();
@@ -43,24 +45,22 @@
             this.lblCostPrice = new KimTools.WinForms.KtLabel();
             this.lblSalePrice = new KimTools.WinForms.KtLabel();
             this.lblIsSequel = new KimTools.WinForms.KtLabel();
-            this.lblStock = new KimTools.WinForms.KtLabel();
             this.IsSequelSwith = new KimTools.WinForms.KtSwitch();
             this.btnClose = new KimTools.WinForms.KtButton();
             this.btnAdd = new KimTools.WinForms.KtButton();
             this.txbSalePrice = new KimTools.WinForms.KtTextBox();
             this.txbCostPrice = new KimTools.WinForms.KtTextBox();
             this.PublishingDatePicker = new KimTools.WinForms.KtDate();
-            this.txtStock = new KimTools.WinForms.KtTextBox();
-            this.txtTitle = new KimTools.WinForms.KtTextBox();
-            this.BookCover = new System.Windows.Forms.PictureBox();
+            this.ktLabel1 = new KimTools.WinForms.KtLabel();
+            this.lblPages = new KimTools.WinForms.KtLabel();
+            this.txbStock = new KimTools.WinForms.KtTextBox();
+            this.txbPages = new KimTools.WinForms.KtTextBox();
             this.Toppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookCover)).BeginInit();
             this.SuspendLayout();
             // 
             // Toppanel
             // 
-            this.Toppanel.Controls.Add(this.txtStock);
-            this.Toppanel.Controls.Add(this.lblStock);
             this.Toppanel.Controls.Add(this.txtTitle);
             this.Toppanel.Controls.Add(this.lblBookTitle);
             this.Toppanel.Controls.Add(this.BookCover);
@@ -69,6 +69,48 @@
             this.Toppanel.Name = "Toppanel";
             this.Toppanel.Size = new System.Drawing.Size(671, 170);
             this.Toppanel.TabIndex = 1;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.AcceptsReturn = false;
+            this.txtTitle.AcceptsTab = false;
+            this.txtTitle.AnimationSpeed = 200;
+            this.txtTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtTitle.AutoSizeHeight = true;
+            this.txtTitle.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.txtTitle.Bg = KimTools.WinForms.KtColor.ForeColor;
+            this.txtTitle.Content = KimTools.WinForms.KtColor.BackColor;
+            this.txtTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTitle.CustomBorderColor = System.Drawing.Color.Empty;
+            this.txtTitle.CustomBorderColorActive = System.Drawing.Color.Empty;
+            this.txtTitle.CustomBorderColorDisabled = System.Drawing.Color.Empty;
+            this.txtTitle.CustomFillColor = System.Drawing.Color.White;
+            this.txtTitle.CustomIconLeft = null;
+            this.txtTitle.CustomIconRight = null;
+            this.txtTitle.CustomPlaceholderColor = System.Drawing.Color.Empty;
+            this.txtTitle.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.ForeColor = System.Drawing.Color.Black;
+            this.txtTitle.HideSelection = true;
+            this.txtTitle.Lines = new string[0];
+            this.txtTitle.Location = new System.Drawing.Point(165, 60);
+            this.txtTitle.MaxLength = 32767;
+            this.txtTitle.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtTitle.Modified = false;
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Password = false;
+            this.txtTitle.PasswordChar = '\0';
+            this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTitle.SelectedText = "";
+            this.txtTitle.SelectionLength = 0;
+            this.txtTitle.SelectionStart = 0;
+            this.txtTitle.ShortcutsEnabled = true;
+            this.txtTitle.Size = new System.Drawing.Size(341, 52);
+            this.txtTitle.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Custom;
+            this.txtTitle.TabIndex = 2;
+            this.txtTitle.TextMarginBottom = 0;
+            this.txtTitle.TextPlaceholder = "";
+            this.txtTitle.TextChange += new System.EventHandler(this.TextBook_TextChange);
             // 
             // lblBookTitle
             // 
@@ -82,6 +124,18 @@
             this.lblBookTitle.Size = new System.Drawing.Size(96, 25);
             this.lblBookTitle.TabIndex = 1;
             this.lblBookTitle.Text = "Book Title";
+            // 
+            // BookCover
+            // 
+            this.BookCover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BookCover.Image = global::BookStore.Properties.Resources.add_book;
+            this.BookCover.Location = new System.Drawing.Point(34, 17);
+            this.BookCover.Name = "BookCover";
+            this.BookCover.Size = new System.Drawing.Size(100, 135);
+            this.BookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BookCover.TabIndex = 0;
+            this.BookCover.TabStop = false;
+            this.BookCover.Click += new System.EventHandler(this.BookCover_Click);
             // 
             // lblAuthor
             // 
@@ -134,9 +188,10 @@
             this.cmbAuthor.Name = "cmbAuthor";
             this.cmbAuthor.Size = new System.Drawing.Size(236, 32);
             this.cmbAuthor.TabIndex = 3;
+            this.cmbAuthor.Text = null;
             this.cmbAuthor.TextAlignment = KimTools.WinForms.KtComboBox.TextAlign.Left;
             this.cmbAuthor.TextLeftMargin = 5;
-            this.cmbAuthor.SelectedIndexChanged += new System.EventHandler(this.cmbAuthor_SelectedIndexChanged);
+            this.cmbAuthor.SelectedIndexChanged += new System.EventHandler(this.cmbBox_SelectedIndexChanged_1);
             // 
             // cmbPublisher
             // 
@@ -176,9 +231,10 @@
             this.cmbPublisher.Name = "cmbPublisher";
             this.cmbPublisher.Size = new System.Drawing.Size(236, 32);
             this.cmbPublisher.TabIndex = 5;
+            this.cmbPublisher.Text = null;
             this.cmbPublisher.TextAlignment = KimTools.WinForms.KtComboBox.TextAlign.Left;
             this.cmbPublisher.TextLeftMargin = 5;
-            this.cmbPublisher.SelectedIndexChanged += new System.EventHandler(this.cmbPublisher_SelectedIndexChanged);
+            this.cmbPublisher.SelectedIndexChanged += new System.EventHandler(this.cmbBox_SelectedIndexChanged_1);
             // 
             // lblPublisher
             // 
@@ -244,9 +300,10 @@
             this.cmbGenre.Name = "cmbGenre";
             this.cmbGenre.Size = new System.Drawing.Size(236, 32);
             this.cmbGenre.TabIndex = 7;
+            this.cmbGenre.Text = null;
             this.cmbGenre.TextAlignment = KimTools.WinForms.KtComboBox.TextAlign.Left;
             this.cmbGenre.TextLeftMargin = 5;
-            this.cmbGenre.SelectedIndexChanged += new System.EventHandler(this.cmbGenre_SelectedIndexChanged);
+            this.cmbGenre.SelectedIndexChanged += new System.EventHandler(this.cmbBox_SelectedIndexChanged_1);
             // 
             // lblGenre
             // 
@@ -294,24 +351,11 @@
             this.lblIsSequel.ForeColor = System.Drawing.Color.Black;
             this.lblIsSequel.KtFontSize = KimTools.WinForms.KtFont.Default;
             this.lblIsSequel.LabelColor = KimTools.WinForms.KtColor.Tailwind_Black;
-            this.lblIsSequel.Location = new System.Drawing.Point(38, 525);
+            this.lblIsSequel.Location = new System.Drawing.Point(38, 639);
             this.lblIsSequel.Name = "lblIsSequel";
             this.lblIsSequel.Size = new System.Drawing.Size(87, 25);
             this.lblIsSequel.TabIndex = 14;
             this.lblIsSequel.Text = "Is Sequel";
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStock.ForeColor = System.Drawing.Color.Black;
-            this.lblStock.KtFontSize = KimTools.WinForms.KtFont.Default;
-            this.lblStock.LabelColor = KimTools.WinForms.KtColor.Tailwind_Black;
-            this.lblStock.Location = new System.Drawing.Point(547, 20);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(56, 25);
-            this.lblStock.TabIndex = 3;
-            this.lblStock.Text = "Stock";
             // 
             // IsSequelSwith
             // 
@@ -320,21 +364,22 @@
             this.IsSequelSwith.BackColor = System.Drawing.Color.Transparent;
             this.IsSequelSwith.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IsSequelSwith.BackgroundImage")));
             this.IsSequelSwith.Checked = false;
-            ktSwitchState25.Bg = System.Drawing.Color.Empty;
-            ktSwitchState25.Thumb = System.Drawing.Color.Empty;
-            this.IsSequelSwith.CustomStateOff = ktSwitchState25;
-            ktSwitchState26.Bg = System.Drawing.Color.Empty;
-            ktSwitchState26.Thumb = System.Drawing.Color.Empty;
-            this.IsSequelSwith.CustomStateOn = ktSwitchState26;
+            ktSwitchState3.Bg = System.Drawing.Color.Empty;
+            ktSwitchState3.Thumb = System.Drawing.Color.Empty;
+            this.IsSequelSwith.CustomStateOff = ktSwitchState3;
+            ktSwitchState4.Bg = System.Drawing.Color.Empty;
+            ktSwitchState4.Thumb = System.Drawing.Color.Empty;
+            this.IsSequelSwith.CustomStateOn = ktSwitchState4;
             this.IsSequelSwith.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.IsSequelSwith.InnerCirclePadding = 5;
-            this.IsSequelSwith.Location = new System.Drawing.Point(141, 523);
+            this.IsSequelSwith.Location = new System.Drawing.Point(141, 637);
             this.IsSequelSwith.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.IsSequelSwith.Name = "IsSequelSwith";
             this.IsSequelSwith.Size = new System.Drawing.Size(61, 35);
             this.IsSequelSwith.TabIndex = 15;
             this.IsSequelSwith.ThumbMargin = 5;
             this.IsSequelSwith.Value = false;
+            this.IsSequelSwith.CheckedChanged += new System.EventHandler<KimTools.WinForms.KtSwitch.CheckedChangedEventArgs>(this.IsSequelSwith_CheckedChanged);
             // 
             // btnClose
             // 
@@ -351,7 +396,7 @@
             this.btnClose.IconName = "";
             this.btnClose.IconSize = 16;
             this.btnClose.IconStroke = 2.5D;
-            this.btnClose.Location = new System.Drawing.Point(364, 525);
+            this.btnClose.Location = new System.Drawing.Point(364, 633);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(125, 50);
             this.btnClose.Style = KimTools.WinForms.KtStyle.Tailwind;
@@ -375,7 +420,7 @@
             this.btnAdd.IconName = "";
             this.btnAdd.IconSize = 16;
             this.btnAdd.IconStroke = 2.5D;
-            this.btnAdd.Location = new System.Drawing.Point(508, 525);
+            this.btnAdd.Location = new System.Drawing.Point(508, 633);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(125, 50);
             this.btnAdd.Style = KimTools.WinForms.KtStyle.Tailwind;
@@ -424,7 +469,7 @@
             this.txbSalePrice.TextMarginBottom = 0;
             this.txbSalePrice.TextPlaceholder = "";
             this.txbSalePrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSalePrice_KeyPress);
-            this.txbSalePrice.TextChange += new System.EventHandler(this.txbSalePrice_TextChange);
+            this.txbSalePrice.TextChange += new System.EventHandler(this.TextBook_TextChange);
             // 
             // txbCostPrice
             // 
@@ -467,7 +512,7 @@
             this.txbCostPrice.TextMarginBottom = 0;
             this.txbCostPrice.TextPlaceholder = "";
             this.txbCostPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCostPrice_KeyPress);
-            this.txbCostPrice.TextChange += new System.EventHandler(this.txbCostPrice_TextChange);
+            this.txbCostPrice.TextChange += new System.EventHandler(this.TextBook_TextChange);
             // 
             // PublishingDatePicker
             // 
@@ -493,120 +538,139 @@
             this.PublishingDatePicker.Size = new System.Drawing.Size(236, 32);
             this.PublishingDatePicker.TabIndex = 10;
             // 
-            // txtStock
+            // ktLabel1
             // 
-            this.txtStock.AcceptsReturn = false;
-            this.txtStock.AcceptsTab = false;
-            this.txtStock.AnimationSpeed = 200;
-            this.txtStock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtStock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtStock.AutoSizeHeight = true;
-            this.txtStock.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.txtStock.Bg = KimTools.WinForms.KtColor.ForeColor;
-            this.txtStock.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStock.CustomBorderColor = System.Drawing.Color.Empty;
-            this.txtStock.CustomBorderColorActive = System.Drawing.Color.Empty;
-            this.txtStock.CustomBorderColorDisabled = System.Drawing.Color.Empty;
-            this.txtStock.CustomFillColor = System.Drawing.Color.White;
-            this.txtStock.CustomIconLeft = null;
-            this.txtStock.CustomIconRight = null;
-            this.txtStock.CustomPlaceholderColor = System.Drawing.Color.Empty;
-            this.txtStock.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStock.ForeColor = System.Drawing.Color.Black;
-            this.txtStock.HideSelection = true;
-            this.txtStock.Lines = new string[0];
-            this.txtStock.Location = new System.Drawing.Point(497, 60);
-            this.txtStock.MaxLength = 32767;
-            this.txtStock.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtStock.Modified = false;
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Password = false;
-            this.txtStock.PasswordChar = '\0';
-            this.txtStock.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtStock.SelectedText = "";
-            this.txtStock.SelectionLength = 0;
-            this.txtStock.SelectionStart = 0;
-            this.txtStock.ShortcutsEnabled = true;
-            this.txtStock.Size = new System.Drawing.Size(160, 52);
-            this.txtStock.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Custom;
-            this.txtStock.TabIndex = 4;
-            this.txtStock.TextMarginBottom = 0;
-            this.txtStock.TextPlaceholder = "";
-            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
-            this.txtStock.TextChange += new System.EventHandler(this.txtStock_TextChange);
+            this.ktLabel1.AutoSize = true;
+            this.ktLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.ktLabel1.ForeColor = System.Drawing.Color.Black;
+            this.ktLabel1.KtFontSize = KimTools.WinForms.KtFont.Default;
+            this.ktLabel1.LabelColor = KimTools.WinForms.KtColor.Tailwind_Black;
+            this.ktLabel1.Location = new System.Drawing.Point(38, 512);
+            this.ktLabel1.Name = "ktLabel1";
+            this.ktLabel1.Size = new System.Drawing.Size(56, 25);
+            this.ktLabel1.TabIndex = 2;
+            this.ktLabel1.Text = "Stock";
             // 
-            // txtTitle
+            // lblPages
             // 
-            this.txtTitle.AcceptsReturn = false;
-            this.txtTitle.AcceptsTab = false;
-            this.txtTitle.AnimationSpeed = 200;
-            this.txtTitle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtTitle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtTitle.AutoSizeHeight = true;
-            this.txtTitle.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.txtTitle.Bg = KimTools.WinForms.KtColor.ForeColor;
-            this.txtTitle.Content = KimTools.WinForms.KtColor.BackColor;
-            this.txtTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTitle.CustomBorderColor = System.Drawing.Color.Empty;
-            this.txtTitle.CustomBorderColorActive = System.Drawing.Color.Empty;
-            this.txtTitle.CustomBorderColorDisabled = System.Drawing.Color.Empty;
-            this.txtTitle.CustomFillColor = System.Drawing.Color.White;
-            this.txtTitle.CustomIconLeft = null;
-            this.txtTitle.CustomIconRight = null;
-            this.txtTitle.CustomPlaceholderColor = System.Drawing.Color.Empty;
-            this.txtTitle.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.ForeColor = System.Drawing.Color.Black;
-            this.txtTitle.HideSelection = true;
-            this.txtTitle.Lines = new string[0];
-            this.txtTitle.Location = new System.Drawing.Point(165, 60);
-            this.txtTitle.MaxLength = 32767;
-            this.txtTitle.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtTitle.Modified = false;
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Password = false;
-            this.txtTitle.PasswordChar = '\0';
-            this.txtTitle.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTitle.SelectedText = "";
-            this.txtTitle.SelectionLength = 0;
-            this.txtTitle.SelectionStart = 0;
-            this.txtTitle.ShortcutsEnabled = true;
-            this.txtTitle.Size = new System.Drawing.Size(295, 52);
-            this.txtTitle.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Custom;
-            this.txtTitle.TabIndex = 2;
-            this.txtTitle.TextMarginBottom = 0;
-            this.txtTitle.TextPlaceholder = "";
-            this.txtTitle.TextChange += new System.EventHandler(this.txtTitle_TextChange);
+            this.lblPages.AutoSize = true;
+            this.lblPages.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblPages.ForeColor = System.Drawing.Color.Black;
+            this.lblPages.KtFontSize = KimTools.WinForms.KtFont.Default;
+            this.lblPages.LabelColor = KimTools.WinForms.KtColor.Tailwind_Black;
+            this.lblPages.Location = new System.Drawing.Point(397, 512);
+            this.lblPages.Name = "lblPages";
+            this.lblPages.Size = new System.Drawing.Size(60, 25);
+            this.lblPages.TabIndex = 4;
+            this.lblPages.Text = "Pages";
             // 
-            // BookCover
+            // txbStock
             // 
-            this.BookCover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BookCover.Image = global::BookStore.Properties.Resources.add_book;
-            this.BookCover.Location = new System.Drawing.Point(34, 17);
-            this.BookCover.Name = "BookCover";
-            this.BookCover.Size = new System.Drawing.Size(100, 135);
-            this.BookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BookCover.TabIndex = 0;
-            this.BookCover.TabStop = false;
-            this.BookCover.Click += new System.EventHandler(this.BookCover_Click);
+            this.txbStock.AcceptsReturn = false;
+            this.txbStock.AcceptsTab = false;
+            this.txbStock.AnimationSpeed = 200;
+            this.txbStock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbStock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbStock.AutoSizeHeight = true;
+            this.txbStock.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.txbStock.Bg = KimTools.WinForms.KtColor.ForeColor;
+            this.txbStock.BorderRadius = 0;
+            this.txbStock.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbStock.CustomBorderColor = System.Drawing.Color.Empty;
+            this.txbStock.CustomBorderColorActive = System.Drawing.Color.Empty;
+            this.txbStock.CustomBorderColorDisabled = System.Drawing.Color.Empty;
+            this.txbStock.CustomFillColor = System.Drawing.Color.White;
+            this.txbStock.CustomIconLeft = null;
+            this.txbStock.CustomIconRight = null;
+            this.txbStock.CustomPlaceholderColor = System.Drawing.Color.Empty;
+            this.txbStock.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbStock.ForeColor = System.Drawing.Color.Black;
+            this.txbStock.HideSelection = true;
+            this.txbStock.Lines = new string[0];
+            this.txbStock.Location = new System.Drawing.Point(38, 559);
+            this.txbStock.MaxLength = 32767;
+            this.txbStock.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbStock.Modified = false;
+            this.txbStock.Name = "txbStock";
+            this.txbStock.Password = false;
+            this.txbStock.PasswordChar = '\0';
+            this.txbStock.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbStock.SelectedText = "";
+            this.txbStock.SelectionLength = 0;
+            this.txbStock.SelectionStart = 0;
+            this.txbStock.ShortcutsEnabled = true;
+            this.txbStock.Size = new System.Drawing.Size(236, 44);
+            this.txbStock.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Custom;
+            this.txbStock.TabIndex = 3;
+            this.txbStock.TextMarginBottom = 0;
+            this.txbStock.TextPlaceholder = "";
+            this.txbStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_KeyPress);
+            this.txbStock.TextChange += new System.EventHandler(this.TextBook_TextChange);
+            // 
+            // txbPages
+            // 
+            this.txbPages.AcceptsReturn = false;
+            this.txbPages.AcceptsTab = false;
+            this.txbPages.AnimationSpeed = 200;
+            this.txbPages.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txbPages.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txbPages.AutoSizeHeight = true;
+            this.txbPages.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.txbPages.Bg = KimTools.WinForms.KtColor.ForeColor;
+            this.txbPages.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txbPages.CustomBorderColor = System.Drawing.Color.Empty;
+            this.txbPages.CustomBorderColorActive = System.Drawing.Color.Empty;
+            this.txbPages.CustomBorderColorDisabled = System.Drawing.Color.Empty;
+            this.txbPages.CustomFillColor = System.Drawing.Color.White;
+            this.txbPages.CustomIconLeft = null;
+            this.txbPages.CustomIconRight = null;
+            this.txbPages.CustomPlaceholderColor = System.Drawing.Color.Empty;
+            this.txbPages.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPages.ForeColor = System.Drawing.Color.Black;
+            this.txbPages.HideSelection = true;
+            this.txbPages.Lines = new string[0];
+            this.txbPages.Location = new System.Drawing.Point(397, 559);
+            this.txbPages.MaxLength = 32767;
+            this.txbPages.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txbPages.Modified = false;
+            this.txbPages.Name = "txbPages";
+            this.txbPages.Password = false;
+            this.txbPages.PasswordChar = '\0';
+            this.txbPages.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txbPages.SelectedText = "";
+            this.txbPages.SelectionLength = 0;
+            this.txbPages.SelectionStart = 0;
+            this.txbPages.ShortcutsEnabled = true;
+            this.txbPages.Size = new System.Drawing.Size(236, 44);
+            this.txbPages.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Custom;
+            this.txbPages.TabIndex = 11;
+            this.txbPages.TextMarginBottom = 0;
+            this.txbPages.TextPlaceholder = "";
+            this.txbPages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_KeyPress);
+            this.txbPages.TextChange += new System.EventHandler(this.TextBook_TextChange);
             // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(671, 604);
+            this.ClientSize = new System.Drawing.Size(671, 714);
             this.Controls.Add(this.IsSequelSwith);
             this.Controls.Add(this.lblIsSequel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.txbPages);
+            this.Controls.Add(this.txbStock);
             this.Controls.Add(this.txbSalePrice);
             this.Controls.Add(this.txbCostPrice);
             this.Controls.Add(this.PublishingDatePicker);
             this.Controls.Add(this.lblPublishingDate);
             this.Controls.Add(this.cmbGenre);
+            this.Controls.Add(this.lblPages);
             this.Controls.Add(this.lblGenre);
             this.Controls.Add(this.lblSalePrice);
             this.Controls.Add(this.cmbPublisher);
+            this.Controls.Add(this.ktLabel1);
             this.Controls.Add(this.lblPublisher);
             this.Controls.Add(this.lblCostPrice);
             this.Controls.Add(this.cmbAuthor);
@@ -642,11 +706,13 @@
         private KimTools.WinForms.KtLabel lblSalePrice;
         private KimTools.WinForms.KtTextBox txbCostPrice;
         private KimTools.WinForms.KtTextBox txbSalePrice;
-        private KimTools.WinForms.KtLabel lblStock;
         private KimTools.WinForms.KtButton btnAdd;
         private KimTools.WinForms.KtButton btnClose;
         private KimTools.WinForms.KtLabel lblIsSequel;
         private KimTools.WinForms.KtSwitch IsSequelSwith;
-        private KimTools.WinForms.KtTextBox txtStock;
+        private KimTools.WinForms.KtLabel ktLabel1;
+        private KimTools.WinForms.KtLabel lblPages;
+        private KimTools.WinForms.KtTextBox txbStock;
+        private KimTools.WinForms.KtTextBox txbPages;
     }
 }

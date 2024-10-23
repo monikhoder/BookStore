@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.IO;
 using System.Linq;
+using System.Web.UI.WebControls;
 
 namespace BookStore
 {
@@ -65,7 +68,12 @@ namespace BookStore
                 _db.SaveChanges();
             }
         }
-
+        // Get Genre Id by name
+        public int GetGenreIdByName(string name)
+        {
+            Genre genre = _db.Genres.FirstOrDefault(g => g.GenreName == name);
+            return genre?.GenreID ?? -1;
+        }
         // Get the first genre's ID
         public int GetGenreFirstID()
         {
@@ -200,7 +208,12 @@ namespace BookStore
                 _db.SaveChanges();
             }
         }
-
+        //Get autorId by Name
+        public int GetAuthorIdByName(string name)
+        {
+            Author author = _db.Authors.FirstOrDefault(a => a.FullName == name);
+            return author?.AuthorID ?? -1;
+        }
         // Get the first author's ID
         public int GetAuthorFirstID()
         {
@@ -270,6 +283,12 @@ namespace BookStore
                 _db.SaveChanges();
             }
         }
+        //Get Publisher Id by name
+        public int GetPublisherIdByName(string name)
+        {
+            Publisher publisher = _db.Publishers.FirstOrDefault(p => p.PublisherName == name);
+            return publisher?.PublisherID ?? -1;
+        }
 
         // Get the first publisher's ID
         public int GetPublisherFirstID()
@@ -294,6 +313,34 @@ namespace BookStore
         public int GetBookCountByPublisherID(int id)
         {
             return _db.Books.Count(b => b.PublisherID == id);
+        }
+
+        // Add Book 
+
+        public void AddBook(string name, int genreID, int authorID, int publisherID,DateTime publishDate,float costprice, float saleprice, int stock,int Pages, byte[] bookcover, bool isSequel)
+        {
+            if (bookcover == null)
+            {
+                bookcover = new byte[0];
+            }
+            Book newBook = new Book
+            {
+                Name = name,
+                GenreID = genreID,
+                AuthorID = authorID,
+                PublisherID = publisherID,
+                Stock = stock,
+                BookCover = bookcover,
+                IsSequel = isSequel,
+                PublishingDate = publishDate,
+                CostPrice = costprice,
+                SalePrice = saleprice,
+                Pages = Pages,
+                Created = DateTime.Now,
+                Updated = DateTime.Now
+            };
+            _db.Books.Add(newBook);
+            _db.SaveChanges();
         }
 
     }

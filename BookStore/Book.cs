@@ -33,6 +33,7 @@ namespace BookStore
         public byte[] BookCover { get; set; }
         public System.DateTime Created { get; set; }
         public System.DateTime Updated { get; set; }
+        public int Stock { get; set; }
     
         public virtual Author Author { get; set; }
         public virtual Genre Genre { get; set; }
