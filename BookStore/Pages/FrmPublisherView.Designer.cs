@@ -1,6 +1,6 @@
 ﻿namespace BookStore.Pages
 {
-    partial class FrmGenresView
+    partial class FrmPublisherView
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             KimTools.WinForms.KtTableColumn ktTableColumn3 = new KimTools.WinForms.KtTableColumn();
             KimTools.WinForms.KtTableColumn ktTableColumn4 = new KimTools.WinForms.KtTableColumn();
             KimTools.WinForms.KtTableColumn ktTableColumn5 = new KimTools.WinForms.KtTableColumn();
-            this.tblGenres = new KimTools.WinForms.KtTable();
+            this.tblPublisher = new KimTools.WinForms.KtTable();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.TopLeftPanel = new System.Windows.Forms.Panel();
             this.btnDelete = new KimTools.WinForms.KtButton();
@@ -48,16 +48,16 @@
             this.centerpanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tblGenres
+            // tblPublisher
             // 
-            this.tblGenres.AutoScroll = true;
-            this.tblGenres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.tblPublisher.AutoScroll = true;
+            this.tblPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             ktTableColumn1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             ktTableColumn1.Fill = "";
             ktTableColumn1.Format = "";
             ktTableColumn1.Group = "";
             ktTableColumn1.IsPrimaryKey = true;
-            ktTableColumn1.Key = "tblID";
+            ktTableColumn1.Key = "tblId";
             ktTableColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
             ktTableColumn1.Search = false;
             ktTableColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -79,7 +79,7 @@
             ktTableColumn2.Search = true;
             ktTableColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn2.Template = "";
-            ktTableColumn2.Title = "Genres";
+            ktTableColumn2.Title = "Name";
             ktTableColumn2.ToolTip = "";
             ktTableColumn2.Type = KimTools.WinForms.KtTableColumnTypes.Text;
             ktTableColumn2.Value = "";
@@ -137,26 +137,26 @@
             ktTableColumn5.Visible = true;
             ktTableColumn5.Width = 0;
             ktTableColumn5.Width_ = "";
-            this.tblGenres.Columns = new KimTools.WinForms.KtTableColumn[] {
+            this.tblPublisher.Columns = new KimTools.WinForms.KtTableColumn[] {
         ktTableColumn1,
         ktTableColumn2,
         ktTableColumn3,
         ktTableColumn4,
         ktTableColumn5};
-            this.tblGenres.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblGenres.KeyCaseSensitive = false;
-            this.tblGenres.Latency = 500;
-            this.tblGenres.Location = new System.Drawing.Point(0, 0);
-            this.tblGenres.MultiSelect = false;
-            this.tblGenres.Name = "tblGenres";
-            this.tblGenres.Padding = new System.Windows.Forms.Padding(5);
-            this.tblGenres.ShowFooter = true;
-            this.tblGenres.ShowHeader = false;
-            this.tblGenres.ShowSearch = false;
-            this.tblGenres.Size = new System.Drawing.Size(872, 476);
-            this.tblGenres.TabIndex = 0;
-            this.tblGenres.CellClick += new KimTools.WinForms.KtTable.KtTableRowCellEventArgs(this.tblGenres_CellClick);
-            this.tblGenres.RowSelected += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblGenres_RowSelected);
+            this.tblPublisher.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblPublisher.KeyCaseSensitive = false;
+            this.tblPublisher.Latency = 500;
+            this.tblPublisher.Location = new System.Drawing.Point(0, 0);
+            this.tblPublisher.MultiSelect = false;
+            this.tblPublisher.Name = "tblPublisher";
+            this.tblPublisher.Padding = new System.Windows.Forms.Padding(5);
+            this.tblPublisher.ShowFooter = true;
+            this.tblPublisher.ShowHeader = false;
+            this.tblPublisher.ShowSearch = false;
+            this.tblPublisher.Size = new System.Drawing.Size(872, 476);
+            this.tblPublisher.TabIndex = 0;
+            this.tblPublisher.CellClick += new KimTools.WinForms.KtTable.KtTableRowCellEventArgs(this.tblPublisher_CellClick);
+            this.tblPublisher.RowSelected += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblPublisher_RowSelected);
             // 
             // TopPanel
             // 
@@ -296,7 +296,7 @@
             // 
             // centerpanel
             // 
-            this.centerpanel.Controls.Add(this.tblGenres);
+            this.centerpanel.Controls.Add(this.tblPublisher);
             this.centerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.centerpanel.Location = new System.Drawing.Point(0, 56);
             this.centerpanel.Name = "centerpanel";
@@ -321,7 +321,7 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // FrmGenresView
+            // FrmPublisherView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -331,10 +331,10 @@
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmGenresView";
+            this.Name = "FrmPublisherView";
             this.Opacity = 1D;
             this.Text = "FrmGenresView";
-            this.Load += new System.EventHandler(this.FrmGenresView_Load);
+            this.Load += new System.EventHandler(this.FrmPublisherView_Load);
             this.TopPanel.ResumeLayout(false);
             this.TopLeftPanel.ResumeLayout(false);
             this.centerpanel.ResumeLayout(false);
@@ -345,7 +345,7 @@
         #endregion
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private KimTools.WinForms.KtTable tblGenres;
+        private KimTools.WinForms.KtTable tblPublisher;
         private System.Windows.Forms.Panel TopPanel;
         private KimTools.WinForms.KtTextBox txtSearch;
         private System.Windows.Forms.Panel centerpanel;

@@ -125,11 +125,35 @@
     <Compile Include="Book.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Component\AddPublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\AddPublisher.Designer.cs">
+      <DependentUpon>AddPublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\AddAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\AddAuthor.Designer.cs">
+      <DependentUpon>AddAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Component\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Component\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UpdatePublisher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\UpdatePublisher.Designer.cs">
+      <DependentUpon>UpdatePublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Component\UpdateAuthor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Component\UpdateAuthor.Designer.cs">
+      <DependentUpon>UpdateAuthor.cs</DependentUpon>
     </Compile>
     <Compile Include="Component\UpdateUser.cs">
       <SubType>Form</SubType>
@@ -186,6 +210,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmBooksView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FrmBooksView.Designer.cs">
+      <DependentUpon>FrmBooksView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmPublisherView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FrmPublisherView.Designer.cs">
+      <DependentUpon>FrmPublisherView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FrmAuthorView .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FrmAuthorView .Designer.cs">
+      <DependentUpon>FrmAuthorView .cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FrmUsersView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,8 +263,20 @@
     <Compile Include="User.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Component\AddPublisher.resx">
+      <DependentUpon>AddPublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\AddAuthor.resx">
+      <DependentUpon>AddAuthor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Component\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UpdatePublisher.resx">
+      <DependentUpon>UpdatePublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Component\UpdateAuthor.resx">
+      <DependentUpon>UpdateAuthor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Component\UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>
@@ -235,6 +295,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmBooksView.resx">
+      <DependentUpon>FrmBooksView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmPublisherView.resx">
+      <DependentUpon>FrmPublisherView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmAuthorView .resx">
+      <DependentUpon>FrmAuthorView .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FrmUsersView.resx">
       <DependentUpon>FrmUsersView.cs</DependentUpon>

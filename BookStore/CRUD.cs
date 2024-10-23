@@ -82,6 +82,12 @@ namespace BookStore
             Genre genre = _db.Genres.FirstOrDefault(g => g.GenreID == id);
             return genre?.GenreName;
         }
+        // Get book count by Genre
+
+        public int GetBookCountByGenreID(int id)
+        {
+            return _db.Books.Count(b => b.GenreID == id);
+        }
 
         public List<User> GetUser(string word = "")
         {
@@ -149,7 +155,146 @@ namespace BookStore
                 _db.SaveChanges();
             }
         }
+        // Get authors with optional search word
+        public List<Author> GetAuthors(string word = "")
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                return _db.Authors.ToList();
+            }
+            return _db.Authors.Where(a => a.FullName.ToLower().Contains(word.ToLower())).ToList();
+        }
 
+        // Edit an existing author
+        public void EditAuthor(int id, string name)
+        {
+            Author authorToEdit = _db.Authors.FirstOrDefault(a => a.AuthorID == id);
+            if (authorToEdit != null)
+            {
+                authorToEdit.FullName = name;
+                authorToEdit.Updated = DateTime.Now;
+                _db.SaveChanges();
+            }
+        }
+
+        // Add a new author
+        public void AddAuthor(string name)
+        {
+            Author newAuthor = new Author
+            {
+                FullName = name,
+                Created = DateTime.Now,
+                Updated = DateTime.Now
+            };
+            _db.Authors.Add(newAuthor);
+            _db.SaveChanges();
+        }
+
+        // Delete an existing author
+        public void DeleteAuthor(int id)
+        {
+            Author author = _db.Authors.FirstOrDefault(a => a.AuthorID == id);
+            if (author != null)
+            {
+                _db.Authors.Remove(author);
+                _db.SaveChanges();
+            }
+        }
+
+        // Get the first author's ID
+        public int GetAuthorFirstID()
+        {
+            return _db.Authors.FirstOrDefault()?.AuthorID ?? -1;
+        }
+
+        // Get the total number of authors
+        public int GetAuthorCount()
+        {
+            return _db.Authors.Count();
+        }
+
+        // Get the author's name by ID
+        public string GetAuthorName(int id)
+        {
+            Author author = _db.Authors.FirstOrDefault(a => a.AuthorID == id);
+            return author?.FullName;
+        }
+        //Get Book Count by Author ID
+        public int GetBookCountByAuthorID(int id)
+        {
+            return _db.Books.Count(b => b.AuthorID == id);
+        }
+
+        // Get publishers with optional search word
+        public List<Publisher> GetPublishers(string word = "")
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                return _db.Publishers.ToList();
+            }
+            return _db.Publishers.Where(p => p.PublisherName.ToLower().Contains(word.ToLower())).ToList();
+        }
+
+        // Edit an existing publisher
+        public void EditPublisher(int id, string name)
+        {
+            Publisher publisherToEdit = _db.Publishers.FirstOrDefault(p => p.PublisherID == id);
+            if (publisherToEdit != null)
+            {
+                publisherToEdit.PublisherName = name;
+                publisherToEdit.Updated = DateTime.Now;
+                _db.SaveChanges();
+            }
+        }
+
+        // Add a new publisher
+        public void AddPublisher(string name)
+        {
+            Publisher newPublisher = new Publisher
+            {
+                PublisherName = name,
+                Created = DateTime.Now,
+                Updated = DateTime.Now
+            };
+            _db.Publishers.Add(newPublisher);
+            _db.SaveChanges();
+        }
+
+        // Delete an existing publisher
+        public void DeletePublisher(int id)
+        {
+            Publisher publisher = _db.Publishers.FirstOrDefault(p => p.PublisherID == id);
+            if (publisher != null)
+            {
+                _db.Publishers.Remove(publisher);
+                _db.SaveChanges();
+            }
+        }
+
+        // Get the first publisher's ID
+        public int GetPublisherFirstID()
+        {
+            return _db.Publishers.FirstOrDefault()?.PublisherID ?? -1;
+        }
+
+        // Get the total number of publishers
+        public int GetPublisherCount()
+        {
+            return _db.Publishers.Count();
+        }
+
+        // Get the publisher's name by ID
+        public string GetPublisherName(int id)
+        {
+            Publisher publisher = _db.Publishers.FirstOrDefault(p => p.PublisherID == id);
+            return publisher?.PublisherName;
+        }
+        // Get book count by publisher
+
+        public int GetBookCountByPublisherID(int id)
+        {
+            return _db.Books.Count(b => b.PublisherID == id);
+        }
 
     }
 }

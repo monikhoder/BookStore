@@ -38,7 +38,7 @@
             this.lblQ.AutoSize = true;
             this.lblQ.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQ.ForeColor = System.Drawing.Color.Red;
-            this.lblQ.Location = new System.Drawing.Point(44, 18);
+            this.lblQ.Location = new System.Drawing.Point(6, 18);
             this.lblQ.Name = "lblQ";
             this.lblQ.Size = new System.Drawing.Size(329, 28);
             this.lblQ.TabIndex = 0;
@@ -98,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(425, 163);
+            this.ClientSize = new System.Drawing.Size(447, 163);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnyes);
             this.Controls.Add(this.lblQ);

@@ -38,6 +38,7 @@ namespace BookStore.Pages
                 var genres = tblGenres.NewRow();
                 genres["tblID"] = genre.GenreID;
                 genres["tblName"] = genre.GenreName;
+                genres["tblBook"] = db.GetBookCountByGenreID(genre.GenreID);
                 genres["tblCreated"] = genre.Created;
                 genres["tblUpdated"] = genre.Updated;
             }
@@ -69,7 +70,7 @@ namespace BookStore.Pages
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteDialog deleteDialog = new DeleteDialog();
-            deleteDialog.lblQ.Text = "Are you sure you want to delete this genre?";
+            deleteDialog.lblQ.Text = $"Are you sure you want to delete {GenreName} from genre?";
             deleteDialog.ShowDialog();
             if (deleteDialog.DialogResult == DialogResult.OK)
             {

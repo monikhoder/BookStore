@@ -45,7 +45,7 @@ namespace BookStore.Pages
                 Users["tblCreated"] = user.Created;
                 Users["tblUpdated"] = user.Updated;
             }
-            if (db.GetGenreCount() == 0)
+            if (db.GetUserCount() == 0)
             {
                 btnDelete.Enabled = false;
                 btnEdit.Enabled = false;
@@ -73,7 +73,7 @@ namespace BookStore.Pages
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteDialog deleteDialog = new DeleteDialog();
-            deleteDialog.lblQ.Text = "Are you sure you want to delete this User?";
+            deleteDialog.lblQ.Text = $"Are you sure you want to delete {UName} from User list?";
             deleteDialog.ShowDialog();
             if (deleteDialog.DialogResult == DialogResult.OK)
             {

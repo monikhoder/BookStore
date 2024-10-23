@@ -25,15 +25,15 @@ namespace BookStore
             if (Islogin)
             {
                 lblWelcome.Text = $"Welcome {Username}";
-                AddControls(new Pages.FrmGenresView());
+                AddControls(new Pages.Dashboard());
             }
             else
             {
                 FrmLogin frmLogin = new FrmLogin();
-                if (frmLogin.ShowDialog() == DialogResult.OK) // Show as modal
+                if (frmLogin.ShowDialog() == DialogResult.OK) 
                 {
                     lblWelcome.Text = $"Welcome {Username}";
-                    AddControls(new Pages.FrmGenresView());
+                    AddControls(new Pages.Dashboard());
                 }
                 else
                 {
@@ -63,6 +63,26 @@ namespace BookStore
         private void btnUser_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmUsersView());
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            AddControls(new Pages.FrmBooksView());
+        }
+
+        private void btnAuthor_Click(object sender, EventArgs e)
+        {
+            AddControls(new Pages.FrmAuthorView());
+        }
+
+        private void btnPublisher_Click(object sender, EventArgs e)
+        {
+            AddControls(new Pages.FrmPublisherView());
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            AddControls(new Pages.Dashboard());
         }
     }
 }

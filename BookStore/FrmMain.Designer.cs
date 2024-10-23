@@ -40,6 +40,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ktButton6 = new KimTools.WinForms.KtButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPublisher = new KimTools.WinForms.KtButton();
+            this.btnAuthor = new KimTools.WinForms.KtButton();
             this.btnDashboard = new KimTools.WinForms.KtButton();
             this.btnUser = new KimTools.WinForms.KtButton();
             this.btnGenres = new KimTools.WinForms.KtButton();
@@ -200,6 +202,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnPublisher);
+            this.panel1.Controls.Add(this.btnAuthor);
             this.panel1.Controls.Add(this.btnDashboard);
             this.panel1.Controls.Add(this.btnUser);
             this.panel1.Controls.Add(this.btnGenres);
@@ -209,6 +213,60 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(247, 511);
             this.panel1.TabIndex = 3;
+            // 
+            // btnPublisher
+            // 
+            this.btnPublisher.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPublisher.BackColor = System.Drawing.Color.Empty;
+            this.btnPublisher.Bg = KimTools.WinForms.KtColor.None;
+            this.btnPublisher.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnPublisher.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnPublisher.CustomColors = new System.Drawing.Color[0];
+            this.btnPublisher.FlatAppearance.BorderSize = 0;
+            this.btnPublisher.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPublisher.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPublisher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPublisher.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublisher.ForeColor = System.Drawing.Color.Black;
+            this.btnPublisher.IconName = "Tabler.outline.category";
+            this.btnPublisher.IconSize = 22;
+            this.btnPublisher.IconStroke = 2D;
+            this.btnPublisher.LabelShade = KimTools.WinForms.KtShade.Light_60;
+            this.btnPublisher.Location = new System.Drawing.Point(9, 376);
+            this.btnPublisher.Name = "btnPublisher";
+            this.btnPublisher.Size = new System.Drawing.Size(232, 67);
+            this.btnPublisher.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnPublisher.TabIndex = 4;
+            this.btnPublisher.Text = "Publisher         ";
+            this.btnPublisher.UseVisualStyleBackColor = false;
+            this.btnPublisher.Click += new System.EventHandler(this.btnPublisher_Click);
+            // 
+            // btnAuthor
+            // 
+            this.btnAuthor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAuthor.BackColor = System.Drawing.Color.Empty;
+            this.btnAuthor.Bg = KimTools.WinForms.KtColor.None;
+            this.btnAuthor.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnAuthor.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnAuthor.CustomColors = new System.Drawing.Color[0];
+            this.btnAuthor.FlatAppearance.BorderSize = 0;
+            this.btnAuthor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAuthor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAuthor.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAuthor.ForeColor = System.Drawing.Color.Black;
+            this.btnAuthor.IconName = "Tabler.outline.category";
+            this.btnAuthor.IconSize = 22;
+            this.btnAuthor.IconStroke = 2D;
+            this.btnAuthor.LabelShade = KimTools.WinForms.KtShade.Light_60;
+            this.btnAuthor.Location = new System.Drawing.Point(9, 302);
+            this.btnAuthor.Name = "btnAuthor";
+            this.btnAuthor.Size = new System.Drawing.Size(232, 67);
+            this.btnAuthor.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnAuthor.TabIndex = 3;
+            this.btnAuthor.Text = "Authors         ";
+            this.btnAuthor.UseVisualStyleBackColor = false;
+            this.btnAuthor.Click += new System.EventHandler(this.btnAuthor_Click);
             // 
             // btnDashboard
             // 
@@ -235,6 +293,7 @@
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "Dashboard  ";
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // btnUser
             // 
@@ -254,7 +313,7 @@
             this.btnUser.IconSize = 22;
             this.btnUser.IconStroke = 2D;
             this.btnUser.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnUser.Location = new System.Drawing.Point(12, 312);
+            this.btnUser.Location = new System.Drawing.Point(12, 445);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(232, 67);
             this.btnUser.Style = KimTools.WinForms.KtStyle.Ghost;
@@ -281,7 +340,7 @@
             this.btnGenres.IconSize = 22;
             this.btnGenres.IconStroke = 2D;
             this.btnGenres.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnGenres.Location = new System.Drawing.Point(12, 239);
+            this.btnGenres.Location = new System.Drawing.Point(12, 229);
             this.btnGenres.Name = "btnGenres";
             this.btnGenres.Size = new System.Drawing.Size(232, 67);
             this.btnGenres.Style = KimTools.WinForms.KtStyle.Ghost;
@@ -308,7 +367,7 @@
             this.btnOrder.IconSize = 22;
             this.btnOrder.IconStroke = 2D;
             this.btnOrder.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnOrder.Location = new System.Drawing.Point(12, 82);
+            this.btnOrder.Location = new System.Drawing.Point(12, 79);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(232, 67);
             this.btnOrder.Style = KimTools.WinForms.KtStyle.Ghost;
@@ -335,13 +394,14 @@
             this.btnBook.IconSize = 22;
             this.btnBook.IconStroke = 2D;
             this.btnBook.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnBook.Location = new System.Drawing.Point(12, 155);
+            this.btnBook.Location = new System.Drawing.Point(12, 152);
             this.btnBook.Name = "btnBook";
             this.btnBook.Size = new System.Drawing.Size(232, 67);
             this.btnBook.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnBook.TabIndex = 2;
             this.btnBook.Text = "Book          ";
             this.btnBook.UseVisualStyleBackColor = false;
+            this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
             // LogoPanel
             // 
@@ -421,5 +481,7 @@
         private System.Windows.Forms.Panel panel4;
         private KimTools.WinForms.KtPictureBox ktPictureBox1;
         private System.Windows.Forms.Panel CenterPanel;
+        private KimTools.WinForms.KtButton btnAuthor;
+        private KimTools.WinForms.KtButton btnPublisher;
     }
 }
