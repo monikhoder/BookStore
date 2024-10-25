@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using KimTools.WinForms;
 
-namespace BookStore.Component
+namespace BookStore.Dialogs
 {
     public partial class DeleteDialog : KtWindow
     {

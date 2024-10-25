@@ -1,6 +1,6 @@
-﻿namespace BookStore.Component
+﻿namespace BookStore.Dialogs
 {
-    partial class UpdateAuthor
+    partial class UpdatePublisher
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateAuthor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdatePublisher));
             this.btnSave = new KimTools.WinForms.KtButton();
             this.btnClose = new KimTools.WinForms.KtButton();
             this.txtName = new KimTools.WinForms.KtTextBox();
@@ -135,9 +135,9 @@
             this.ktLabel1.KtFontSize = KimTools.WinForms.KtFont.Default;
             this.ktLabel1.Location = new System.Drawing.Point(41, 155);
             this.ktLabel1.Name = "ktLabel1";
-            this.ktLabel1.Size = new System.Drawing.Size(124, 25);
+            this.ktLabel1.Size = new System.Drawing.Size(144, 25);
             this.ktLabel1.TabIndex = 3;
-            this.ktLabel1.Text = "Author Name";
+            this.ktLabel1.Text = "Publisher Name";
             // 
             // ktPictureBox1
             // 
@@ -162,9 +162,9 @@
             this.lblAdd.KtFontSize = KimTools.WinForms.KtFont.H3;
             this.lblAdd.Location = new System.Drawing.Point(127, 80);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(129, 32);
+            this.lblAdd.Size = new System.Drawing.Size(162, 32);
             this.lblAdd.TabIndex = 5;
-            this.lblAdd.Text = "Edit Auhor";
+            this.lblAdd.Text = "Edit Publisher";
             // 
             // txtId
             // 
@@ -206,7 +206,7 @@
             this.txtId.TextMarginBottom = 0;
             this.txtId.TextPlaceholder = "";
             // 
-            // UpdateAuthor
+            // UpdatePublisher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,9 +219,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateAuthor";
+            this.Name = "UpdatePublisher";
             this.Text = "AddGenre";
-            this.Load += new System.EventHandler(this.UpdateAuthor_Load);
+            this.Load += new System.EventHandler(this.UpdatePublisher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

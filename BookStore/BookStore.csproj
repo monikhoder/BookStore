@@ -125,70 +125,76 @@
     <Compile Include="Book.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Component\AddBook.cs">
+    <Compile Include="Components\TileItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\TileItem.Designer.cs">
+      <DependentUpon>TileItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\AddBook.Designer.cs">
+    <Compile Include="Dialogs\AddBook.Designer.cs">
       <DependentUpon>AddBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\AddPublisher.cs">
+    <Compile Include="Dialogs\AddPublisher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\AddPublisher.Designer.cs">
+    <Compile Include="Dialogs\AddPublisher.Designer.cs">
       <DependentUpon>AddPublisher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\AddAuthor.cs">
+    <Compile Include="Dialogs\AddAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\AddAuthor.Designer.cs">
+    <Compile Include="Dialogs\AddAuthor.Designer.cs">
       <DependentUpon>AddAuthor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\AddUser.cs">
+    <Compile Include="Dialogs\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\AddUser.Designer.cs">
+    <Compile Include="Dialogs\AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\UpdateBook.cs">
+    <Compile Include="Dialogs\UpdateBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\UpdateBook.Designer.cs">
+    <Compile Include="Dialogs\UpdateBook.Designer.cs">
       <DependentUpon>UpdateBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\UpdatePublisher.cs">
+    <Compile Include="Dialogs\UpdatePublisher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\UpdatePublisher.Designer.cs">
+    <Compile Include="Dialogs\UpdatePublisher.Designer.cs">
       <DependentUpon>UpdatePublisher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\UpdateAuthor.cs">
+    <Compile Include="Dialogs\UpdateAuthor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\UpdateAuthor.Designer.cs">
+    <Compile Include="Dialogs\UpdateAuthor.Designer.cs">
       <DependentUpon>UpdateAuthor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\UpdateUser.cs">
+    <Compile Include="Dialogs\UpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\UpdateUser.Designer.cs">
+    <Compile Include="Dialogs\UpdateUser.Designer.cs">
       <DependentUpon>UpdateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\UpdateGenre.cs">
+    <Compile Include="Dialogs\UpdateGenre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\UpdateGenre.Designer.cs">
+    <Compile Include="Dialogs\UpdateGenre.Designer.cs">
       <DependentUpon>UpdateGenre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\AddGenre.cs">
+    <Compile Include="Dialogs\AddGenre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\AddGenre.Designer.cs">
+    <Compile Include="Dialogs\AddGenre.Designer.cs">
       <DependentUpon>AddGenre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Component\DeleteDialog.cs">
+    <Compile Include="Dialogs\DeleteDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Component\DeleteDialog.Designer.cs">
+    <Compile Include="Dialogs\DeleteDialog.Designer.cs">
       <DependentUpon>DeleteDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
@@ -234,6 +240,12 @@
     <Compile Include="Pages\FrmBooksView.Designer.cs">
       <DependentUpon>FrmBooksView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FrmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FrmOrder.Designer.cs">
+      <DependentUpon>FrmOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FrmPublisherView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,37 +287,40 @@
     <Compile Include="User.cs">
       <DependentUpon>ModelDatabase.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Component\AddBook.resx">
+    <EmbeddedResource Include="Components\TileItem.resx">
+      <DependentUpon>TileItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddBook.resx">
       <DependentUpon>AddBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\AddPublisher.resx">
+    <EmbeddedResource Include="Dialogs\AddPublisher.resx">
       <DependentUpon>AddPublisher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\AddAuthor.resx">
+    <EmbeddedResource Include="Dialogs\AddAuthor.resx">
       <DependentUpon>AddAuthor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\AddUser.resx">
+    <EmbeddedResource Include="Dialogs\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\UpdateBook.resx">
+    <EmbeddedResource Include="Dialogs\UpdateBook.resx">
       <DependentUpon>UpdateBook.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\UpdatePublisher.resx">
+    <EmbeddedResource Include="Dialogs\UpdatePublisher.resx">
       <DependentUpon>UpdatePublisher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\UpdateAuthor.resx">
+    <EmbeddedResource Include="Dialogs\UpdateAuthor.resx">
       <DependentUpon>UpdateAuthor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\UpdateUser.resx">
+    <EmbeddedResource Include="Dialogs\UpdateUser.resx">
       <DependentUpon>UpdateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\UpdateGenre.resx">
+    <EmbeddedResource Include="Dialogs\UpdateGenre.resx">
       <DependentUpon>UpdateGenre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\AddGenre.resx">
+    <EmbeddedResource Include="Dialogs\AddGenre.resx">
       <DependentUpon>AddGenre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Component\DeleteDialog.resx">
+    <EmbeddedResource Include="Dialogs\DeleteDialog.resx">
       <DependentUpon>DeleteDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
@@ -319,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FrmBooksView.resx">
       <DependentUpon>FrmBooksView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FrmOrder.resx">
+      <DependentUpon>FrmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FrmPublisherView.resx">
       <DependentUpon>FrmPublisherView.cs</DependentUpon>
@@ -384,6 +402,7 @@
       <DependentUpon>ModelDatabase.edmx</DependentUpon>
       <LastGenOutput>ModelDatabase.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\add-book1.png" />
     <None Include="Resources\add-book.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

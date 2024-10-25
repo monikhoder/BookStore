@@ -39,7 +39,7 @@
             this.LeftPanel = new KimTools.WinForms.KtPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ktButton6 = new KimTools.WinForms.KtButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.MenuPanel = new System.Windows.Forms.Panel();
             this.btnPublisher = new KimTools.WinForms.KtButton();
             this.btnAuthor = new KimTools.WinForms.KtButton();
             this.btnDashboard = new KimTools.WinForms.KtButton();
@@ -56,7 +56,7 @@
             this.panel3.SuspendLayout();
             this.LeftPanel.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.MenuPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -87,14 +87,14 @@
             this.TopPanel.Location = new System.Drawing.Point(247, 0);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.ShowBorders = true;
-            this.TopPanel.Size = new System.Drawing.Size(1018, 63);
+            this.TopPanel.Size = new System.Drawing.Size(1133, 63);
             this.TopPanel.TabIndex = 1;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.ktPictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(911, 0);
+            this.panel4.Location = new System.Drawing.Point(1026, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(107, 63);
             this.panel4.TabIndex = 3;
@@ -154,7 +154,7 @@
             this.LeftPanel.BorderSize = KimTools.WinForms.KtSize.Default;
             this.LeftPanel.BorderThickness = 1;
             this.LeftPanel.Controls.Add(this.panel2);
-            this.LeftPanel.Controls.Add(this.panel1);
+            this.LeftPanel.Controls.Add(this.MenuPanel);
             this.LeftPanel.Controls.Add(this.LogoPanel);
             this.LeftPanel.CustomColors = new System.Drawing.Color[0];
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -162,14 +162,14 @@
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.ShowBorders = true;
-            this.LeftPanel.Size = new System.Drawing.Size(247, 715);
+            this.LeftPanel.Size = new System.Drawing.Size(247, 789);
             this.LeftPanel.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.ktButton6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 637);
+            this.panel2.Location = new System.Drawing.Point(0, 711);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(247, 78);
             this.panel2.TabIndex = 4;
@@ -200,19 +200,20 @@
             this.ktButton6.Text = "Setting        ";
             this.ktButton6.UseVisualStyleBackColor = false;
             // 
-            // panel1
+            // MenuPanel
             // 
-            this.panel1.Controls.Add(this.btnPublisher);
-            this.panel1.Controls.Add(this.btnAuthor);
-            this.panel1.Controls.Add(this.btnDashboard);
-            this.panel1.Controls.Add(this.btnUser);
-            this.panel1.Controls.Add(this.btnGenres);
-            this.panel1.Controls.Add(this.btnOrder);
-            this.panel1.Controls.Add(this.btnBook);
-            this.panel1.Location = new System.Drawing.Point(0, 110);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(247, 511);
-            this.panel1.TabIndex = 3;
+            this.MenuPanel.AutoScroll = true;
+            this.MenuPanel.Controls.Add(this.btnPublisher);
+            this.MenuPanel.Controls.Add(this.btnAuthor);
+            this.MenuPanel.Controls.Add(this.btnDashboard);
+            this.MenuPanel.Controls.Add(this.btnUser);
+            this.MenuPanel.Controls.Add(this.btnGenres);
+            this.MenuPanel.Controls.Add(this.btnOrder);
+            this.MenuPanel.Controls.Add(this.btnBook);
+            this.MenuPanel.Location = new System.Drawing.Point(0, 110);
+            this.MenuPanel.Name = "MenuPanel";
+            this.MenuPanel.Size = new System.Drawing.Size(247, 582);
+            this.MenuPanel.TabIndex = 3;
             // 
             // btnPublisher
             // 
@@ -232,9 +233,9 @@
             this.btnPublisher.IconSize = 22;
             this.btnPublisher.IconStroke = 2D;
             this.btnPublisher.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnPublisher.Location = new System.Drawing.Point(9, 376);
+            this.btnPublisher.Location = new System.Drawing.Point(3, 379);
             this.btnPublisher.Name = "btnPublisher";
-            this.btnPublisher.Size = new System.Drawing.Size(232, 67);
+            this.btnPublisher.Size = new System.Drawing.Size(244, 62);
             this.btnPublisher.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnPublisher.TabIndex = 4;
             this.btnPublisher.Text = "Publisher         ";
@@ -259,9 +260,9 @@
             this.btnAuthor.IconSize = 22;
             this.btnAuthor.IconStroke = 2D;
             this.btnAuthor.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnAuthor.Location = new System.Drawing.Point(9, 302);
+            this.btnAuthor.Location = new System.Drawing.Point(0, 305);
             this.btnAuthor.Name = "btnAuthor";
-            this.btnAuthor.Size = new System.Drawing.Size(232, 67);
+            this.btnAuthor.Size = new System.Drawing.Size(247, 67);
             this.btnAuthor.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnAuthor.TabIndex = 3;
             this.btnAuthor.Text = "Authors         ";
@@ -286,9 +287,9 @@
             this.btnDashboard.IconSize = 22;
             this.btnDashboard.IconStroke = 2D;
             this.btnDashboard.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnDashboard.Location = new System.Drawing.Point(12, 9);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 23);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(232, 67);
+            this.btnDashboard.Size = new System.Drawing.Size(244, 67);
             this.btnDashboard.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "Dashboard  ";
@@ -313,9 +314,9 @@
             this.btnUser.IconSize = 22;
             this.btnUser.IconStroke = 2D;
             this.btnUser.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnUser.Location = new System.Drawing.Point(12, 445);
+            this.btnUser.Location = new System.Drawing.Point(3, 444);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(232, 67);
+            this.btnUser.Size = new System.Drawing.Size(244, 67);
             this.btnUser.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnUser.TabIndex = 2;
             this.btnUser.Text = "User            ";
@@ -340,9 +341,9 @@
             this.btnGenres.IconSize = 22;
             this.btnGenres.IconStroke = 2D;
             this.btnGenres.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnGenres.Location = new System.Drawing.Point(12, 229);
+            this.btnGenres.Location = new System.Drawing.Point(3, 234);
             this.btnGenres.Name = "btnGenres";
-            this.btnGenres.Size = new System.Drawing.Size(232, 67);
+            this.btnGenres.Size = new System.Drawing.Size(241, 67);
             this.btnGenres.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnGenres.TabIndex = 2;
             this.btnGenres.Text = "Genres         ";
@@ -367,9 +368,9 @@
             this.btnOrder.IconSize = 22;
             this.btnOrder.IconStroke = 2D;
             this.btnOrder.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnOrder.Location = new System.Drawing.Point(12, 79);
+            this.btnOrder.Location = new System.Drawing.Point(3, 93);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(232, 67);
+            this.btnOrder.Size = new System.Drawing.Size(241, 67);
             this.btnOrder.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnOrder.TabIndex = 2;
             this.btnOrder.Text = "Order         ";
@@ -394,9 +395,9 @@
             this.btnBook.IconSize = 22;
             this.btnBook.IconStroke = 2D;
             this.btnBook.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnBook.Location = new System.Drawing.Point(12, 152);
+            this.btnBook.Location = new System.Drawing.Point(3, 166);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(232, 67);
+            this.btnBook.Size = new System.Drawing.Size(241, 67);
             this.btnBook.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnBook.TabIndex = 2;
             this.btnBook.Text = "Book          ";
@@ -427,14 +428,14 @@
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CenterPanel.Location = new System.Drawing.Point(247, 63);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1018, 652);
+            this.CenterPanel.Size = new System.Drawing.Size(1133, 726);
             this.CenterPanel.TabIndex = 2;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1265, 715);
+            this.ClientSize = new System.Drawing.Size(1380, 789);
             this.Controls.Add(this.CenterPanel);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.LeftPanel);
@@ -454,7 +455,7 @@
             this.panel3.PerformLayout();
             this.LeftPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.MenuPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -469,7 +470,7 @@
         private System.Windows.Forms.Panel LogoPanel;
         private KimTools.WinForms.KtButton btnBook;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel MenuPanel;
         private KimTools.WinForms.KtButton btnDashboard;
         private KimTools.WinForms.KtButton btnUser;
         private KimTools.WinForms.KtButton btnGenres;

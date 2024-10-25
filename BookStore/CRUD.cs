@@ -96,6 +96,12 @@ namespace BookStore
         {
             return _db.Books.Count(b => b.GenreID == id);
         }
+        //Get book price by ID
+        public double GetBookPriceByID(int id)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
+            return book?.SalePrice ?? 0;
+        }
 
         public List<User> GetUser(string word = "")
         {

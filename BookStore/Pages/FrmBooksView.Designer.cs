@@ -57,7 +57,7 @@
             // tblBook
             // 
             this.tblBook.AutoScroll = true;
-            this.tblBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
+            this.tblBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             ktTableColumn1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn1.Fill = "";
             ktTableColumn1.Format = "";
@@ -440,12 +440,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(872, 532);
             this.Controls.Add(this.centerpanel);
             this.Controls.Add(this.TopPanel);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBooksView";
             this.Opacity = 1D;

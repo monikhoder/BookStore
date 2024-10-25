@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace BookStore.Component
+namespace BookStore.Dialogs
 {
     public partial class AddBook : Form
     {

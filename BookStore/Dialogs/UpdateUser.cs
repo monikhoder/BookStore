@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookStore.Component
+namespace BookStore.Dialogs
 {
-    public partial class UpdateGenre : Form
+    public partial class UpdateUser : Form
     {
         CRUD db = new CRUD();
-        public UpdateGenre()
+        public UpdateUser()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace BookStore.Component
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            db.EditGenre(Convert.ToInt32(txtId.Text), txtName.Text);
+            db.EditUser(Convert.ToInt32(txtId.Text), txtName.Text, cmbRole.Text);
             this.Close();
         }
 

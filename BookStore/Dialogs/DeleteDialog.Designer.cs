@@ -1,4 +1,4 @@
-﻿namespace BookStore.Component
+﻿namespace BookStore.Dialogs
 {
     partial class DeleteDialog
     {

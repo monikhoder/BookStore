@@ -1,6 +1,6 @@
-﻿namespace BookStore.Component
+﻿namespace BookStore.Dialogs
 {
-    partial class UpdateBook
+    partial class AddBook
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBook));
-            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState1 = new KimTools.WinForms.KtSwitch.KtSwitchState();
-            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState2 = new KimTools.WinForms.KtSwitch.KtSwitchState();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBook));
+            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState3 = new KimTools.WinForms.KtSwitch.KtSwitchState();
+            KimTools.WinForms.KtSwitch.KtSwitchState ktSwitchState4 = new KimTools.WinForms.KtSwitch.KtSwitchState();
             this.Toppanel = new System.Windows.Forms.Panel();
             this.txtTitle = new KimTools.WinForms.KtTextBox();
             this.lblBookTitle = new KimTools.WinForms.KtLabel();
@@ -47,7 +47,7 @@
             this.lblIsSequel = new KimTools.WinForms.KtLabel();
             this.IsSequelSwith = new KimTools.WinForms.KtSwitch();
             this.btnClose = new KimTools.WinForms.KtButton();
-            this.btnUpdate = new KimTools.WinForms.KtButton();
+            this.btnAdd = new KimTools.WinForms.KtButton();
             this.txbSalePrice = new KimTools.WinForms.KtTextBox();
             this.txbCostPrice = new KimTools.WinForms.KtTextBox();
             this.PublishingDatePicker = new KimTools.WinForms.KtDate();
@@ -55,14 +55,12 @@
             this.lblPages = new KimTools.WinForms.KtLabel();
             this.txbStock = new KimTools.WinForms.KtTextBox();
             this.txbPages = new KimTools.WinForms.KtTextBox();
-            this.txbId = new KimTools.WinForms.KtTextBox();
             this.Toppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BookCover)).BeginInit();
             this.SuspendLayout();
             // 
             // Toppanel
             // 
-            this.Toppanel.Controls.Add(this.txbId);
             this.Toppanel.Controls.Add(this.txtTitle);
             this.Toppanel.Controls.Add(this.lblBookTitle);
             this.Toppanel.Controls.Add(this.BookCover);
@@ -95,7 +93,7 @@
             this.txtTitle.ForeColor = System.Drawing.Color.Black;
             this.txtTitle.HideSelection = true;
             this.txtTitle.Lines = new string[0];
-            this.txtTitle.Location = new System.Drawing.Point(238, 60);
+            this.txtTitle.Location = new System.Drawing.Point(165, 60);
             this.txtTitle.MaxLength = 32767;
             this.txtTitle.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtTitle.Modified = false;
@@ -366,12 +364,12 @@
             this.IsSequelSwith.BackColor = System.Drawing.Color.Transparent;
             this.IsSequelSwith.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IsSequelSwith.BackgroundImage")));
             this.IsSequelSwith.Checked = false;
-            ktSwitchState1.Bg = System.Drawing.Color.Empty;
-            ktSwitchState1.Thumb = System.Drawing.Color.Empty;
-            this.IsSequelSwith.CustomStateOff = ktSwitchState1;
-            ktSwitchState2.Bg = System.Drawing.Color.Empty;
-            ktSwitchState2.Thumb = System.Drawing.Color.Empty;
-            this.IsSequelSwith.CustomStateOn = ktSwitchState2;
+            ktSwitchState3.Bg = System.Drawing.Color.Empty;
+            ktSwitchState3.Thumb = System.Drawing.Color.Empty;
+            this.IsSequelSwith.CustomStateOff = ktSwitchState3;
+            ktSwitchState4.Bg = System.Drawing.Color.Empty;
+            ktSwitchState4.Thumb = System.Drawing.Color.Empty;
+            this.IsSequelSwith.CustomStateOn = ktSwitchState4;
             this.IsSequelSwith.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.IsSequelSwith.InnerCirclePadding = 5;
             this.IsSequelSwith.Location = new System.Drawing.Point(141, 637);
@@ -407,29 +405,29 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnUpdate
+            // btnAdd
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Empty;
-            this.btnUpdate.BorderShape = KimTools.WinForms.KtSize.Default;
-            this.btnUpdate.BorderSize = KimTools.WinForms.KtSize.Default;
-            this.btnUpdate.CustomColors = new System.Drawing.Color[0];
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.IconName = "";
-            this.btnUpdate.IconSize = 16;
-            this.btnUpdate.IconStroke = 2.5D;
-            this.btnUpdate.Location = new System.Drawing.Point(508, 633);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(125, 50);
-            this.btnUpdate.Style = KimTools.WinForms.KtStyle.Tailwind;
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.Empty;
+            this.btnAdd.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnAdd.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnAdd.CustomColors = new System.Drawing.Color[0];
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.IconName = "";
+            this.btnAdd.IconSize = 16;
+            this.btnAdd.IconStroke = 2.5D;
+            this.btnAdd.Location = new System.Drawing.Point(508, 633);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(125, 50);
+            this.btnAdd.Style = KimTools.WinForms.KtStyle.Tailwind;
+            this.btnAdd.TabIndex = 12;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txbSalePrice
             // 
@@ -651,49 +649,7 @@
             this.txbPages.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Number_KeyPress);
             this.txbPages.TextChange += new System.EventHandler(this.TextBook_TextChange);
             // 
-            // txbId
-            // 
-            this.txbId.AcceptsReturn = false;
-            this.txbId.AcceptsTab = false;
-            this.txbId.AnimationSpeed = 200;
-            this.txbId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txbId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txbId.AutoSizeHeight = true;
-            this.txbId.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.txbId.Bg = KimTools.WinForms.KtColor.ForeColor;
-            this.txbId.Content = KimTools.WinForms.KtColor.BackColor;
-            this.txbId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txbId.CustomBorderColor = System.Drawing.Color.Empty;
-            this.txbId.CustomBorderColorActive = System.Drawing.Color.Empty;
-            this.txbId.CustomBorderColorDisabled = System.Drawing.Color.Empty;
-            this.txbId.CustomFillColor = System.Drawing.Color.White;
-            this.txbId.CustomIconLeft = null;
-            this.txbId.CustomIconRight = null;
-            this.txbId.CustomPlaceholderColor = System.Drawing.Color.Empty;
-            this.txbId.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbId.ForeColor = System.Drawing.Color.Black;
-            this.txbId.HideSelection = true;
-            this.txbId.Lines = new string[0];
-            this.txbId.Location = new System.Drawing.Point(167, 60);
-            this.txbId.MaxLength = 32767;
-            this.txbId.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txbId.Modified = true;
-            this.txbId.Name = "txbId";
-            this.txbId.Password = false;
-            this.txbId.PasswordChar = '\0';
-            this.txbId.ReadOnly = true;
-            this.txbId.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txbId.SelectedText = "";
-            this.txbId.SelectionLength = 0;
-            this.txbId.SelectionStart = 0;
-            this.txbId.ShortcutsEnabled = true;
-            this.txbId.Size = new System.Drawing.Size(65, 52);
-            this.txbId.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Custom;
-            this.txbId.TabIndex = 3;
-            this.txbId.TextMarginBottom = 0;
-            this.txbId.TextPlaceholder = "";
-            // 
-            // UpdateBook
+            // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -702,7 +658,7 @@
             this.Controls.Add(this.IsSequelSwith);
             this.Controls.Add(this.lblIsSequel);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txbPages);
             this.Controls.Add(this.txbStock);
             this.Controls.Add(this.txbSalePrice);
@@ -721,7 +677,7 @@
             this.Controls.Add(this.lblAuthor);
             this.Controls.Add(this.Toppanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateBook";
+            this.Name = "AddBook";
             this.Text = "AddBook";
             this.Load += new System.EventHandler(this.AddBook_Load);
             this.Toppanel.ResumeLayout(false);
@@ -736,28 +692,27 @@
 
         private System.Windows.Forms.PictureBox BookCover;
         private System.Windows.Forms.Panel Toppanel;
+        private KimTools.WinForms.KtTextBox txtTitle;
         private KimTools.WinForms.KtLabel lblBookTitle;
         private KimTools.WinForms.KtLabel lblAuthor;
+        private KimTools.WinForms.KtComboBox cmbAuthor;
+        private KimTools.WinForms.KtComboBox cmbPublisher;
         private KimTools.WinForms.KtLabel lblPublisher;
         private KimTools.WinForms.KtLabel lblPublishingDate;
+        private KimTools.WinForms.KtComboBox cmbGenre;
         private KimTools.WinForms.KtLabel lblGenre;
+        private KimTools.WinForms.KtDate PublishingDatePicker;
         private KimTools.WinForms.KtLabel lblCostPrice;
         private KimTools.WinForms.KtLabel lblSalePrice;
-        private KimTools.WinForms.KtButton btnUpdate;
+        private KimTools.WinForms.KtTextBox txbCostPrice;
+        private KimTools.WinForms.KtTextBox txbSalePrice;
+        private KimTools.WinForms.KtButton btnAdd;
         private KimTools.WinForms.KtButton btnClose;
         private KimTools.WinForms.KtLabel lblIsSequel;
+        private KimTools.WinForms.KtSwitch IsSequelSwith;
         private KimTools.WinForms.KtLabel ktLabel1;
         private KimTools.WinForms.KtLabel lblPages;
-        public KimTools.WinForms.KtTextBox txtTitle;
-        public KimTools.WinForms.KtComboBox cmbAuthor;
-        public KimTools.WinForms.KtComboBox cmbPublisher;
-        public KimTools.WinForms.KtComboBox cmbGenre;
-        public KimTools.WinForms.KtDate PublishingDatePicker;
-        public KimTools.WinForms.KtTextBox txbCostPrice;
-        public KimTools.WinForms.KtTextBox txbSalePrice;
-        public KimTools.WinForms.KtSwitch IsSequelSwith;
-        public KimTools.WinForms.KtTextBox txbStock;
-        public KimTools.WinForms.KtTextBox txbPages;
-        public KimTools.WinForms.KtTextBox txbId;
+        private KimTools.WinForms.KtTextBox txbStock;
+        private KimTools.WinForms.KtTextBox txbPages;
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace BookStore.Component
+﻿namespace BookStore.Dialogs
 {
-    partial class AddAuthor
+    partial class UpdateGenre
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAuthor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateGenre));
             this.btnSave = new KimTools.WinForms.KtButton();
             this.btnClose = new KimTools.WinForms.KtButton();
             this.txtName = new KimTools.WinForms.KtTextBox();
             this.ktLabel1 = new KimTools.WinForms.KtLabel();
             this.ktPictureBox1 = new KimTools.WinForms.KtPictureBox();
             this.lblAdd = new KimTools.WinForms.KtLabel();
+            this.txtId = new KimTools.WinForms.KtTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@
             this.txtName.ForeColor = System.Drawing.Color.Empty;
             this.txtName.HideSelection = true;
             this.txtName.Lines = new string[0];
-            this.txtName.Location = new System.Drawing.Point(38, 183);
+            this.txtName.Location = new System.Drawing.Point(127, 183);
             this.txtName.MaxLength = 32767;
             this.txtName.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtName.Modified = false;
@@ -119,7 +120,7 @@
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
             this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(457, 51);
+            this.txtName.Size = new System.Drawing.Size(368, 51);
             this.txtName.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Tailwind;
             this.txtName.TabIndex = 2;
             this.txtName.TextMarginBottom = 0;
@@ -134,9 +135,9 @@
             this.ktLabel1.KtFontSize = KimTools.WinForms.KtFont.Default;
             this.ktLabel1.Location = new System.Drawing.Point(41, 155);
             this.ktLabel1.Name = "ktLabel1";
-            this.ktLabel1.Size = new System.Drawing.Size(124, 25);
+            this.ktLabel1.Size = new System.Drawing.Size(117, 25);
             this.ktLabel1.TabIndex = 3;
-            this.ktLabel1.Text = "Author Name";
+            this.ktLabel1.Text = "Genre Name";
             // 
             // ktPictureBox1
             // 
@@ -161,15 +162,57 @@
             this.lblAdd.KtFontSize = KimTools.WinForms.KtFont.H3;
             this.lblAdd.Location = new System.Drawing.Point(127, 80);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(141, 32);
+            this.lblAdd.Size = new System.Drawing.Size(128, 32);
             this.lblAdd.TabIndex = 5;
-            this.lblAdd.Text = "Add Author";
+            this.lblAdd.Text = "Edit Genre";
+            this.lblAdd.Click += new System.EventHandler(this.lblAdd_Click);
             // 
-            // AddAuthor
+            // txtId
+            // 
+            this.txtId.AcceptsReturn = false;
+            this.txtId.AcceptsTab = false;
+            this.txtId.AnimationSpeed = 200;
+            this.txtId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtId.AutoSizeHeight = true;
+            this.txtId.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.txtId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtId.CustomBorderColor = System.Drawing.Color.Empty;
+            this.txtId.CustomBorderColorActive = System.Drawing.Color.Empty;
+            this.txtId.CustomBorderColorDisabled = System.Drawing.Color.Empty;
+            this.txtId.CustomFillColor = System.Drawing.Color.Empty;
+            this.txtId.CustomIconLeft = null;
+            this.txtId.CustomIconRight = null;
+            this.txtId.CustomPlaceholderColor = System.Drawing.Color.Empty;
+            this.txtId.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.ForeColor = System.Drawing.Color.Empty;
+            this.txtId.HideSelection = true;
+            this.txtId.Lines = new string[0];
+            this.txtId.Location = new System.Drawing.Point(41, 183);
+            this.txtId.MaxLength = 32767;
+            this.txtId.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtId.Modified = false;
+            this.txtId.Name = "txtId";
+            this.txtId.Password = false;
+            this.txtId.PasswordChar = '\0';
+            this.txtId.ReadOnly = true;
+            this.txtId.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtId.SelectedText = "";
+            this.txtId.SelectionLength = 0;
+            this.txtId.SelectionStart = 0;
+            this.txtId.ShortcutsEnabled = true;
+            this.txtId.Size = new System.Drawing.Size(84, 51);
+            this.txtId.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Tailwind;
+            this.txtId.TabIndex = 6;
+            this.txtId.TextMarginBottom = 0;
+            this.txtId.TextPlaceholder = "";
+            // 
+            // UpdateGenre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 424);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblAdd);
             this.Controls.Add(this.ktPictureBox1);
             this.Controls.Add(this.ktLabel1);
@@ -177,9 +220,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddAuthor";
+            this.Name = "UpdateGenre";
             this.Text = "AddGenre";
-            this.Load += new System.EventHandler(this.AddAuthor_Load);
+            this.Load += new System.EventHandler(this.AddGenre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,9 +233,10 @@
 
         private KimTools.WinForms.KtButton btnSave;
         private KimTools.WinForms.KtButton btnClose;
-        private KimTools.WinForms.KtTextBox txtName;
         private KimTools.WinForms.KtLabel ktLabel1;
         private KimTools.WinForms.KtPictureBox ktPictureBox1;
         public KimTools.WinForms.KtLabel lblAdd;
+        public KimTools.WinForms.KtTextBox txtName;
+        public KimTools.WinForms.KtTextBox txtId;
     }
 }

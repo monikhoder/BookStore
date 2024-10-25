@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookStore.Component
+namespace BookStore.Dialogs
 {
-    public partial class AddUser : Form
+    public partial class AddPublisher : Form
     {
         CRUD db = new CRUD();
-        public AddUser()
+        public AddPublisher()
         {
             InitializeComponent();
         }
@@ -22,12 +22,6 @@ namespace BookStore.Component
         {
             this.Close();
         }
-
-        private void AddGenre_Load(object sender, EventArgs e)
-        {
-            btnSave.Enabled = false;
-        }
-
         private void txtName_TextChange(object sender, EventArgs e)
         {
             if (txtName.Text == "")
@@ -42,8 +36,13 @@ namespace BookStore.Component
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            db.AddUser(txtName.Text, cmbRole.Text);
+            db.AddPublisher(txtName.Text);
             this.Close();
+        }
+
+        private void AddPublisher_Load(object sender, EventArgs e)
+        {
+            btnSave.Enabled = false;
         }
     }
 }

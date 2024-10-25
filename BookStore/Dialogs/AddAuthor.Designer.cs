@@ -1,6 +1,6 @@
-﻿namespace BookStore.Component
+﻿namespace BookStore.Dialogs
 {
-    partial class AddPublisher
+    partial class AddAuthor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPublisher));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAuthor));
             this.btnSave = new KimTools.WinForms.KtButton();
             this.btnClose = new KimTools.WinForms.KtButton();
             this.txtName = new KimTools.WinForms.KtTextBox();
@@ -134,9 +134,9 @@
             this.ktLabel1.KtFontSize = KimTools.WinForms.KtFont.Default;
             this.ktLabel1.Location = new System.Drawing.Point(41, 155);
             this.ktLabel1.Name = "ktLabel1";
-            this.ktLabel1.Size = new System.Drawing.Size(144, 25);
+            this.ktLabel1.Size = new System.Drawing.Size(124, 25);
             this.ktLabel1.TabIndex = 3;
-            this.ktLabel1.Text = "Publisher Name";
+            this.ktLabel1.Text = "Author Name";
             // 
             // ktPictureBox1
             // 
@@ -161,11 +161,11 @@
             this.lblAdd.KtFontSize = KimTools.WinForms.KtFont.H3;
             this.lblAdd.Location = new System.Drawing.Point(127, 80);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(165, 32);
+            this.lblAdd.Size = new System.Drawing.Size(141, 32);
             this.lblAdd.TabIndex = 5;
-            this.lblAdd.Text = "Add Publisher";
+            this.lblAdd.Text = "Add Author";
             // 
-            // AddPublisher
+            // AddAuthor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,9 +177,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddPublisher";
+            this.Name = "AddAuthor";
             this.Text = "AddGenre";
-            this.Load += new System.EventHandler(this.AddPublisher_Load);
+            this.Load += new System.EventHandler(this.AddAuthor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

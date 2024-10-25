@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookStore.Component
+namespace BookStore.Dialogs
 {
-    public partial class AddPublisher : Form
+    public partial class UpdateGenre : Form
     {
         CRUD db = new CRUD();
-        public AddPublisher()
+        public UpdateGenre()
         {
             InitializeComponent();
         }
@@ -22,6 +22,12 @@ namespace BookStore.Component
         {
             this.Close();
         }
+
+        private void AddGenre_Load(object sender, EventArgs e)
+        {
+            btnSave.Enabled = false;
+        }
+
         private void txtName_TextChange(object sender, EventArgs e)
         {
             if (txtName.Text == "")
@@ -36,13 +42,13 @@ namespace BookStore.Component
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            db.AddPublisher(txtName.Text);
+            db.EditGenre(Convert.ToInt32(txtId.Text), txtName.Text);
             this.Close();
         }
 
-        private void AddPublisher_Load(object sender, EventArgs e)
+        private void lblAdd_Click(object sender, EventArgs e)
         {
-            btnSave.Enabled = false;
+
         }
     }
 }

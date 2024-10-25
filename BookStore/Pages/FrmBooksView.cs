@@ -1,4 +1,4 @@
-﻿using BookStore.Component;
+﻿using BookStore.Dialogs;
 using KimTools.WinForms;
 using System;
 using System.Collections;

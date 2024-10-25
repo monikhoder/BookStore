@@ -1,6 +1,6 @@
-﻿namespace BookStore.Component
+﻿namespace BookStore.Dialogs
 {
-    partial class AddUser
+    partial class AddPublisher
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPublisher));
             this.btnSave = new KimTools.WinForms.KtButton();
             this.btnClose = new KimTools.WinForms.KtButton();
             this.txtName = new KimTools.WinForms.KtTextBox();
             this.ktLabel1 = new KimTools.WinForms.KtLabel();
             this.ktPictureBox1 = new KimTools.WinForms.KtPictureBox();
             this.lblAdd = new KimTools.WinForms.KtLabel();
-            this.ktLabel2 = new KimTools.WinForms.KtLabel();
-            this.cmbRole = new KimTools.WinForms.KtComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,7 +119,7 @@
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
             this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(423, 51);
+            this.txtName.Size = new System.Drawing.Size(457, 51);
             this.txtName.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Tailwind;
             this.txtName.TabIndex = 2;
             this.txtName.TextMarginBottom = 0;
@@ -136,9 +134,9 @@
             this.ktLabel1.KtFontSize = KimTools.WinForms.KtFont.Default;
             this.ktLabel1.Location = new System.Drawing.Point(41, 155);
             this.ktLabel1.Name = "ktLabel1";
-            this.ktLabel1.Size = new System.Drawing.Size(61, 25);
+            this.ktLabel1.Size = new System.Drawing.Size(144, 25);
             this.ktLabel1.TabIndex = 3;
-            this.ktLabel1.Text = "Name";
+            this.ktLabel1.Text = "Publisher Name";
             // 
             // ktPictureBox1
             // 
@@ -163,76 +161,15 @@
             this.lblAdd.KtFontSize = KimTools.WinForms.KtFont.H3;
             this.lblAdd.Location = new System.Drawing.Point(127, 80);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(114, 32);
+            this.lblAdd.Size = new System.Drawing.Size(165, 32);
             this.lblAdd.TabIndex = 5;
-            this.lblAdd.Text = "Add User";
+            this.lblAdd.Text = "Add Publisher";
             // 
-            // ktLabel2
-            // 
-            this.ktLabel2.AutoSize = true;
-            this.ktLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.ktLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
-            this.ktLabel2.KtFontSize = KimTools.WinForms.KtFont.Default;
-            this.ktLabel2.Location = new System.Drawing.Point(41, 252);
-            this.ktLabel2.Name = "ktLabel2";
-            this.ktLabel2.Size = new System.Drawing.Size(49, 25);
-            this.ktLabel2.TabIndex = 7;
-            this.ktLabel2.Text = "Role";
-            // 
-            // cmbRole
-            // 
-            this.cmbRole.BackColor = System.Drawing.Color.Transparent;
-            this.cmbRole.BackgroundColor = System.Drawing.Color.White;
-            this.cmbRole.BorderColor = System.Drawing.Color.Silver;
-            this.cmbRole.BorderRadius = 1;
-            this.cmbRole.Color = System.Drawing.Color.Silver;
-            this.cmbRole.Direction = KimTools.WinForms.KtComboBox.Directions.Down;
-            this.cmbRole.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbRole.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cmbRole.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cmbRole.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.cmbRole.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.cmbRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbRole.DropdownBorderThickness = KimTools.WinForms.KtComboBox.BorderThickness.Thin;
-            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRole.DropDownTextAlign = KimTools.WinForms.KtComboBox.TextAlign.Left;
-            this.cmbRole.FillDropDown = true;
-            this.cmbRole.FillIndicator = false;
-            this.cmbRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cmbRole.ForeColor = System.Drawing.Color.Black;
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Icon = null;
-            this.cmbRole.IndicatorAlignment = KimTools.WinForms.KtComboBox.Indicator.Right;
-            this.cmbRole.IndicatorColor = System.Drawing.Color.Gray;
-            this.cmbRole.IndicatorLocation = KimTools.WinForms.KtComboBox.Indicator.Right;
-            this.cmbRole.ItemBackColor = System.Drawing.Color.White;
-            this.cmbRole.ItemBorderColor = System.Drawing.Color.White;
-            this.cmbRole.ItemForeColor = System.Drawing.Color.Black;
-            this.cmbRole.ItemHeight = 26;
-            this.cmbRole.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.cmbRole.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cmbRole.Items.AddRange(new object[] {
-            "Admin",
-            "Management",
-            "Sale",
-            "Cashier",
-            "Stock"});
-            this.cmbRole.ItemTopMargin = 3;
-            this.cmbRole.Location = new System.Drawing.Point(41, 280);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(420, 32);
-            this.cmbRole.TabIndex = 8;
-            this.cmbRole.TextAlignment = KimTools.WinForms.KtComboBox.TextAlign.Left;
-            this.cmbRole.TextLeftMargin = 5;
-            // 
-            // AddUser
+            // AddPublisher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 424);
-            this.Controls.Add(this.cmbRole);
-            this.Controls.Add(this.ktLabel2);
             this.Controls.Add(this.lblAdd);
             this.Controls.Add(this.ktPictureBox1);
             this.Controls.Add(this.ktLabel1);
@@ -240,9 +177,9 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddUser";
+            this.Name = "AddPublisher";
             this.Text = "AddGenre";
-            this.Load += new System.EventHandler(this.AddGenre_Load);
+            this.Load += new System.EventHandler(this.AddPublisher_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -257,7 +194,5 @@
         private KimTools.WinForms.KtLabel ktLabel1;
         private KimTools.WinForms.KtPictureBox ktPictureBox1;
         public KimTools.WinForms.KtLabel lblAdd;
-        private KimTools.WinForms.KtLabel ktLabel2;
-        private KimTools.WinForms.KtComboBox cmbRole;
     }
 }
