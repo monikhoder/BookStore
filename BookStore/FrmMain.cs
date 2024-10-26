@@ -13,9 +13,12 @@ namespace BookStore
 {
     public partial class FrmMain : KtWindow
     {
+        CRUD db = new CRUD();
         public static string Username = "XXX";
-        public static bool Islogin = true;
-        public static int UserId = 3;
+        public static bool Islogin = false;
+        public static int UserId = 0;
+        private string Role = "XXX";
+        private string Name = "XXX";
         public FrmMain()
         {
             InitializeComponent();
@@ -25,7 +28,7 @@ namespace BookStore
         {
             if (Islogin)
             {
-                lblWelcome.Text = $"Welcome {Username}";
+                lblWelcome.Text = $"Dashboard";
                 AddControls(new Pages.Dashboard());
             }
             else
@@ -33,8 +36,12 @@ namespace BookStore
                 FrmLogin frmLogin = new FrmLogin();
                 if (frmLogin.ShowDialog() == DialogResult.OK) 
                 {
-                    lblWelcome.Text = $"Welcome {Username}";
+                    
+                    lblWelcome.Text = $"Dashboard";
                     AddControls(new Pages.Dashboard());
+                    lblUser.Text = db.GetName(UserId);
+                    Role = db.GetUserRole(UserId);
+                    if (Role != "Admin" && Role != "Management") { btnUser.Visible = false; }
                 }
                 else
                 {

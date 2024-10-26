@@ -125,12 +125,6 @@
     <Compile Include="Book.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Components\TileItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\TileItem.Designer.cs">
-      <DependentUpon>TileItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\AddBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,9 +281,6 @@
     <Compile Include="User.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Components\TileItem.resx">
-      <DependentUpon>TileItem.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AddBook.resx">
       <DependentUpon>AddBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,6 +396,9 @@
   <ItemGroup>
     <None Include="Resources\add-book1.png" />
     <None Include="Resources\add-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

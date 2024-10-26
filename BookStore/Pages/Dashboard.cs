@@ -21,20 +21,7 @@ namespace BookStore.Pages
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            byte[] imageData = db.GetBookCoverById(8);
-
-            if (imageData != null)
-            {
-                // Convert the byte array to an image and display it
-                using (MemoryStream ms = new MemoryStream(imageData))
-                {
-                    bookCover.Image = Image.FromStream(ms);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No image found for the given ID.");
-            }
+          
 
 
 

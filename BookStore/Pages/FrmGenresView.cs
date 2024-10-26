@@ -42,16 +42,7 @@ namespace BookStore.Pages
                 genres["tblCreated"] = genre.Created;
                 genres["tblUpdated"] = genre.Updated;
             }
-            if (db.GetUserCount() == 0)
-            {
-                btnDelete.Enabled = false;
-                btnEdit.Enabled = false;
-            }
-            else
-            {
-                btnDelete.Enabled = true;
-                btnEdit.Enabled = true;
-            }
+            btnenable();
         }
 
         private void txtSearch_TextChange(object sender, EventArgs e)
@@ -109,6 +100,21 @@ namespace BookStore.Pages
             updateGenre.StartPosition = FormStartPosition.CenterParent;
             updateGenre.ShowDialog();
             LoadGenres();
+        }
+        private void btnenable()
+        {
+            if (db.GetGenreCount() == 0)
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+            }
+            else
+            {
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }
+
+
         }
     }
 }

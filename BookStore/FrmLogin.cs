@@ -62,6 +62,7 @@ namespace BookStore
                 {
                     FrmMain.Islogin = true;
                     FrmMain.Username = txtUsername.Text;
+                    FrmMain.UserId = db.GetUserID(txtUsername.Text);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

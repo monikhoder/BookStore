@@ -70,6 +70,7 @@ namespace BookStore.Pages
         {
             Loadbooks();
             NewOrderbtnEnable();
+            btnAddToCardEnable();
         }
 
         private void tblBook_CellClick(KtTable table, KtTableRow row, KtTableColumn column)
@@ -227,6 +228,7 @@ namespace BookStore.Pages
         }
         private void btnAddToCardEnable()
         {
+            if (db.GetBookCount() == 0) { btnAddtoCard.Enabled = false; }
             if (db.GetBookStockById(BookId) <= 0) { btnAddtoCard.Enabled = false; } else { btnAddtoCard.Enabled = true; }
             foreach (var item in card)
             {

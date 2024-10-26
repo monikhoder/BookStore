@@ -94,21 +94,19 @@ namespace BookStore.Pages
         private void LoadPublishers()
         {
             tblPublisher.Clear();
-            var dtPublishers = db.GetPublishers(txtSearch.Text);  // Fetch the publishers based on search input
+            var dtPublishers = db.GetPublishers(txtSearch.Text); 
 
             foreach (var publisher in dtPublishers)
             {
                 var publishers = tblPublisher.NewRow();
                 publishers["tblId"] = publisher.PublisherID;
                 publishers["tblName"] = publisher.PublisherName;
-                publishers["tblBook"] = db.GetBookCountByPublisherID(publisher.PublisherID);  // Get book count by publisher
+                publishers["tblBook"] = db.GetBookCountByPublisherID(publisher.PublisherID);
                 publishers["tblCreated"] = publisher.Created;
                 publishers["tblUpdated"] = publisher.Updated;
 
-                tblPublisher.Rows.Add(publishers);  // Add the row to the publisher table
+                tblPublisher.Rows.Add(publishers); 
             }
-
-            // Enable or disable buttons based on the number of publishers
             if (db.GetPublisherCount() == 0)
             {
                 btnDelete.Enabled = false;

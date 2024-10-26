@@ -33,12 +33,13 @@
             this.MainFrmThemes = new KimTools.WinForms.KtTheme(this.components);
             this.TopPanel = new KimTools.WinForms.KtPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.ktPictureBox1 = new KimTools.WinForms.KtPictureBox();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.Profilepicture = new KimTools.WinForms.KtPictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblWelcome = new KimTools.WinForms.KtLabel();
             this.LeftPanel = new KimTools.WinForms.KtPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ktButton6 = new KimTools.WinForms.KtButton();
+            this.btnSetting = new KimTools.WinForms.KtButton();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.btnPublisher = new KimTools.WinForms.KtButton();
             this.btnAuthor = new KimTools.WinForms.KtButton();
@@ -52,7 +53,7 @@
             this.CenterPanel = new System.Windows.Forms.Panel();
             this.TopPanel.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Profilepicture)).BeginInit();
             this.panel3.SuspendLayout();
             this.LeftPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,38 +85,46 @@
             this.TopPanel.CustomColors = new System.Drawing.Color[0];
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
-            this.TopPanel.Location = new System.Drawing.Point(247, 0);
+            this.TopPanel.Location = new System.Drawing.Point(241, 0);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.ShowBorders = true;
-            this.TopPanel.Size = new System.Drawing.Size(1133, 63);
+            this.TopPanel.Size = new System.Drawing.Size(1139, 63);
             this.TopPanel.TabIndex = 1;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.ktPictureBox1);
+            this.panel4.Controls.Add(this.lblUser);
+            this.panel4.Controls.Add(this.Profilepicture);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1026, 0);
+            this.panel4.Location = new System.Drawing.Point(954, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(107, 63);
+            this.panel4.Size = new System.Drawing.Size(185, 63);
             this.panel4.TabIndex = 3;
             // 
-            // ktPictureBox1
+            // lblUser
             // 
-            this.ktPictureBox1.AllowFocused = false;
-            this.ktPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ktPictureBox1.AutoSizeHeight = true;
-            this.ktPictureBox1.BorderRadius = 22;
-            this.ktPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("ktPictureBox1.Image")));
-            this.ktPictureBox1.IsCircle = true;
-            this.ktPictureBox1.Location = new System.Drawing.Point(37, 8);
-            this.ktPictureBox1.Name = "ktPictureBox1";
-            this.ktPictureBox1.Size = new System.Drawing.Size(44, 44);
-            this.ktPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ktPictureBox1.TabIndex = 2;
-            this.ktPictureBox1.TabStop = false;
-            this.ktPictureBox1.Type = KimTools.WinForms.KtPictureBox.Types.Circle;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(17, 21);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(61, 25);
+            this.lblUser.TabIndex = 3;
+            this.lblUser.Text = "Name";
+            // 
+            // Profilepicture
+            // 
+            this.Profilepicture.AllowFocused = false;
+            this.Profilepicture.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Profilepicture.AutoSizeHeight = true;
+            this.Profilepicture.BorderRadius = 22;
+            this.Profilepicture.Image = ((System.Drawing.Image)(resources.GetObject("Profilepicture.Image")));
+            this.Profilepicture.IsCircle = true;
+            this.Profilepicture.Location = new System.Drawing.Point(121, 8);
+            this.Profilepicture.Name = "Profilepicture";
+            this.Profilepicture.Size = new System.Drawing.Size(44, 44);
+            this.Profilepicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Profilepicture.TabIndex = 2;
+            this.Profilepicture.TabStop = false;
+            this.Profilepicture.Type = KimTools.WinForms.KtPictureBox.Types.Circle;
             // 
             // panel3
             // 
@@ -162,43 +171,43 @@
             this.LeftPanel.Location = new System.Drawing.Point(0, 0);
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.ShowBorders = true;
-            this.LeftPanel.Size = new System.Drawing.Size(247, 789);
+            this.LeftPanel.Size = new System.Drawing.Size(241, 789);
             this.LeftPanel.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ktButton6);
+            this.panel2.Controls.Add(this.btnSetting);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 711);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 78);
+            this.panel2.Size = new System.Drawing.Size(241, 78);
             this.panel2.TabIndex = 4;
             // 
-            // ktButton6
+            // btnSetting
             // 
-            this.ktButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ktButton6.BackColor = System.Drawing.Color.Empty;
-            this.ktButton6.Bg = KimTools.WinForms.KtColor.None;
-            this.ktButton6.BorderShape = KimTools.WinForms.KtSize.Default;
-            this.ktButton6.BorderSize = KimTools.WinForms.KtSize.Default;
-            this.ktButton6.CustomColors = new System.Drawing.Color[0];
-            this.ktButton6.FlatAppearance.BorderSize = 0;
-            this.ktButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.ktButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.ktButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ktButton6.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ktButton6.ForeColor = System.Drawing.Color.Black;
-            this.ktButton6.IconName = "Tabler.outline.settings";
-            this.ktButton6.IconSize = 22;
-            this.ktButton6.IconStroke = 2D;
-            this.ktButton6.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.ktButton6.Location = new System.Drawing.Point(9, 3);
-            this.ktButton6.Name = "ktButton6";
-            this.ktButton6.Size = new System.Drawing.Size(232, 67);
-            this.ktButton6.Style = KimTools.WinForms.KtStyle.Ghost;
-            this.ktButton6.TabIndex = 3;
-            this.ktButton6.Text = "Setting        ";
-            this.ktButton6.UseVisualStyleBackColor = false;
+            this.btnSetting.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSetting.BackColor = System.Drawing.Color.Empty;
+            this.btnSetting.Bg = KimTools.WinForms.KtColor.None;
+            this.btnSetting.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnSetting.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnSetting.CustomColors = new System.Drawing.Color[0];
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSetting.ForeColor = System.Drawing.Color.Black;
+            this.btnSetting.IconName = "Tabler.outline.settings";
+            this.btnSetting.IconSize = 22;
+            this.btnSetting.IconStroke = 2D;
+            this.btnSetting.LabelShade = KimTools.WinForms.KtShade.Light_60;
+            this.btnSetting.Location = new System.Drawing.Point(6, 3);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(235, 67);
+            this.btnSetting.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnSetting.TabIndex = 3;
+            this.btnSetting.Text = "Setting        ";
+            this.btnSetting.UseVisualStyleBackColor = false;
             // 
             // MenuPanel
             // 
@@ -210,14 +219,16 @@
             this.MenuPanel.Controls.Add(this.btnGenres);
             this.MenuPanel.Controls.Add(this.btnOrder);
             this.MenuPanel.Controls.Add(this.btnBook);
-            this.MenuPanel.Location = new System.Drawing.Point(0, 110);
+            this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MenuPanel.Location = new System.Drawing.Point(0, 104);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(247, 582);
+            this.MenuPanel.Size = new System.Drawing.Size(241, 685);
             this.MenuPanel.TabIndex = 3;
             // 
             // btnPublisher
             // 
-            this.btnPublisher.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPublisher.BackColor = System.Drawing.Color.Empty;
             this.btnPublisher.Bg = KimTools.WinForms.KtColor.None;
             this.btnPublisher.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -229,13 +240,13 @@
             this.btnPublisher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPublisher.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPublisher.ForeColor = System.Drawing.Color.Black;
-            this.btnPublisher.IconName = "Tabler.outline.category";
+            this.btnPublisher.IconName = "Tabler.outline.home_up";
             this.btnPublisher.IconSize = 22;
             this.btnPublisher.IconStroke = 2D;
             this.btnPublisher.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnPublisher.Location = new System.Drawing.Point(3, 379);
+            this.btnPublisher.Location = new System.Drawing.Point(5, 276);
             this.btnPublisher.Name = "btnPublisher";
-            this.btnPublisher.Size = new System.Drawing.Size(244, 62);
+            this.btnPublisher.Size = new System.Drawing.Size(233, 56);
             this.btnPublisher.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnPublisher.TabIndex = 4;
             this.btnPublisher.Text = "Publisher         ";
@@ -244,7 +255,8 @@
             // 
             // btnAuthor
             // 
-            this.btnAuthor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAuthor.BackColor = System.Drawing.Color.Empty;
             this.btnAuthor.Bg = KimTools.WinForms.KtColor.None;
             this.btnAuthor.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -256,13 +268,13 @@
             this.btnAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAuthor.Font = new System.Drawing.Font("Segoe UI Semilight", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuthor.ForeColor = System.Drawing.Color.Black;
-            this.btnAuthor.IconName = "Tabler.outline.category";
+            this.btnAuthor.IconName = "Hero.outline.user-plus";
             this.btnAuthor.IconSize = 22;
             this.btnAuthor.IconStroke = 2D;
             this.btnAuthor.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnAuthor.Location = new System.Drawing.Point(0, 305);
+            this.btnAuthor.Location = new System.Drawing.Point(3, 220);
             this.btnAuthor.Name = "btnAuthor";
-            this.btnAuthor.Size = new System.Drawing.Size(247, 67);
+            this.btnAuthor.Size = new System.Drawing.Size(236, 49);
             this.btnAuthor.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnAuthor.TabIndex = 3;
             this.btnAuthor.Text = "Authors         ";
@@ -271,7 +283,8 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDashboard.BackColor = System.Drawing.Color.Empty;
             this.btnDashboard.Bg = KimTools.WinForms.KtColor.None;
             this.btnDashboard.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -287,9 +300,9 @@
             this.btnDashboard.IconSize = 22;
             this.btnDashboard.IconStroke = 2D;
             this.btnDashboard.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnDashboard.Location = new System.Drawing.Point(0, 23);
+            this.btnDashboard.Location = new System.Drawing.Point(3, -3);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(244, 67);
+            this.btnDashboard.Size = new System.Drawing.Size(238, 55);
             this.btnDashboard.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnDashboard.TabIndex = 2;
             this.btnDashboard.Text = "Dashboard  ";
@@ -298,7 +311,8 @@
             // 
             // btnUser
             // 
-            this.btnUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUser.BackColor = System.Drawing.Color.Empty;
             this.btnUser.Bg = KimTools.WinForms.KtColor.None;
             this.btnUser.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -314,9 +328,9 @@
             this.btnUser.IconSize = 22;
             this.btnUser.IconStroke = 2D;
             this.btnUser.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnUser.Location = new System.Drawing.Point(3, 444);
+            this.btnUser.Location = new System.Drawing.Point(5, 332);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(244, 67);
+            this.btnUser.Size = new System.Drawing.Size(233, 55);
             this.btnUser.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnUser.TabIndex = 2;
             this.btnUser.Text = "User            ";
@@ -325,7 +339,8 @@
             // 
             // btnGenres
             // 
-            this.btnGenres.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGenres.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGenres.BackColor = System.Drawing.Color.Empty;
             this.btnGenres.Bg = KimTools.WinForms.KtColor.None;
             this.btnGenres.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -341,9 +356,9 @@
             this.btnGenres.IconSize = 22;
             this.btnGenres.IconStroke = 2D;
             this.btnGenres.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnGenres.Location = new System.Drawing.Point(3, 234);
+            this.btnGenres.Location = new System.Drawing.Point(5, 160);
             this.btnGenres.Name = "btnGenres";
-            this.btnGenres.Size = new System.Drawing.Size(241, 67);
+            this.btnGenres.Size = new System.Drawing.Size(236, 53);
             this.btnGenres.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnGenres.TabIndex = 2;
             this.btnGenres.Text = "Genres         ";
@@ -352,7 +367,8 @@
             // 
             // btnOrder
             // 
-            this.btnOrder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOrder.BackColor = System.Drawing.Color.Empty;
             this.btnOrder.Bg = KimTools.WinForms.KtColor.None;
             this.btnOrder.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -368,9 +384,9 @@
             this.btnOrder.IconSize = 22;
             this.btnOrder.IconStroke = 2D;
             this.btnOrder.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnOrder.Location = new System.Drawing.Point(3, 93);
+            this.btnOrder.Location = new System.Drawing.Point(5, 50);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(241, 67);
+            this.btnOrder.Size = new System.Drawing.Size(236, 52);
             this.btnOrder.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnOrder.TabIndex = 2;
             this.btnOrder.Text = "Order         ";
@@ -379,7 +395,8 @@
             // 
             // btnBook
             // 
-            this.btnBook.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBook.BackColor = System.Drawing.Color.Empty;
             this.btnBook.Bg = KimTools.WinForms.KtColor.None;
             this.btnBook.BorderShape = KimTools.WinForms.KtSize.Default;
@@ -395,9 +412,9 @@
             this.btnBook.IconSize = 22;
             this.btnBook.IconStroke = 2D;
             this.btnBook.LabelShade = KimTools.WinForms.KtShade.Light_60;
-            this.btnBook.Location = new System.Drawing.Point(3, 166);
+            this.btnBook.Location = new System.Drawing.Point(5, 101);
             this.btnBook.Name = "btnBook";
-            this.btnBook.Size = new System.Drawing.Size(241, 67);
+            this.btnBook.Size = new System.Drawing.Size(236, 53);
             this.btnBook.Style = KimTools.WinForms.KtStyle.Ghost;
             this.btnBook.TabIndex = 2;
             this.btnBook.Text = "Book          ";
@@ -410,7 +427,7 @@
             this.LogoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogoPanel.Location = new System.Drawing.Point(0, 0);
             this.LogoPanel.Name = "LogoPanel";
-            this.LogoPanel.Size = new System.Drawing.Size(247, 104);
+            this.LogoPanel.Size = new System.Drawing.Size(241, 104);
             this.LogoPanel.TabIndex = 1;
             // 
             // pictureBox1
@@ -426,9 +443,9 @@
             // CenterPanel
             // 
             this.CenterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CenterPanel.Location = new System.Drawing.Point(247, 63);
+            this.CenterPanel.Location = new System.Drawing.Point(241, 63);
             this.CenterPanel.Name = "CenterPanel";
-            this.CenterPanel.Size = new System.Drawing.Size(1133, 726);
+            this.CenterPanel.Size = new System.Drawing.Size(1139, 726);
             this.CenterPanel.TabIndex = 2;
             // 
             // FrmMain
@@ -450,7 +467,8 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.TopPanel.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox1)).EndInit();
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Profilepicture)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.LeftPanel.ResumeLayout(false);
@@ -475,14 +493,15 @@
         private KimTools.WinForms.KtButton btnUser;
         private KimTools.WinForms.KtButton btnGenres;
         private KimTools.WinForms.KtButton btnOrder;
-        private KimTools.WinForms.KtButton ktButton6;
+        private KimTools.WinForms.KtButton btnSetting;
         private System.Windows.Forms.Panel panel2;
         private KimTools.WinForms.KtLabel lblWelcome;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private KimTools.WinForms.KtPictureBox ktPictureBox1;
+        private KimTools.WinForms.KtPictureBox Profilepicture;
         private System.Windows.Forms.Panel CenterPanel;
         private KimTools.WinForms.KtButton btnAuthor;
         private KimTools.WinForms.KtButton btnPublisher;
+        private System.Windows.Forms.Label lblUser;
     }
 }

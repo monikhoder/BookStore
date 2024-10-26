@@ -56,7 +56,7 @@ namespace BookStore.Pages
         }
         private void btnenable()
         {
-            if (Id == 0)
+            if (db.GetBookCount() == 0)
             {
                 btnDelete.Enabled = false;
                 btnEdit.Enabled = false;
@@ -66,6 +66,7 @@ namespace BookStore.Pages
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
             }
+            
 
         }
 
@@ -86,7 +87,6 @@ namespace BookStore.Pages
             {
                 db.DeleteBook(Id);
                 Loadbooks();
-                Id = 0;
             }
             
         }
@@ -118,7 +118,7 @@ namespace BookStore.Pages
         {
             Id = Convert.ToInt32(row["tblID"]);
             BookTitle = row["tblTitle"].ToString();
-
+            btnenable();
         }
 
         private void tblBook_RowSelected(KtTable table, KtTableRow row)
@@ -132,8 +132,8 @@ namespace BookStore.Pages
             {
                 Id = db.GetBookFirstID();
                 BookTitle = db.GetBookTitleById(Id);
-            }
 
+            }           
         }
 
         private void FrmBooksView_Load(object sender, EventArgs e)

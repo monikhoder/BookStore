@@ -22,6 +22,24 @@ namespace BookStore
             User user = _db.Users.FirstOrDefault(u => u.Username == username && u.UPassword == password);
             return user != null;
         }
+        // Get user ID by username
+        public int GetUserID(string username)
+        {
+            User user = _db.Users.FirstOrDefault(u => u.Username == username);
+            return user?.UserID ?? -1;
+        }
+        // Get user role by id
+        public string GetUserRole(int id)
+        {
+            User user = _db.Users.FirstOrDefault(u => u.UserID == id);
+            return user?.Role;
+        }
+        // Get Name by id
+        public string GetName(int id)
+        {
+            User user = _db.Users.FirstOrDefault(u => u.UserID == id);
+            return user?.UName;
+        }
 
         // Get genres with optional search word
         public List<Genre> GetGenres(string word = "")
@@ -101,6 +119,11 @@ namespace BookStore
         {
             Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
             return book?.SalePrice ?? 0;
+        }
+        // Get book count
+        public int GetBookCount()
+        {
+            return _db.Books.Count();
         }
 
         public List<User> GetUser(string word = "")
