@@ -15,6 +15,7 @@ namespace BookStore
     {
         public static string Username = "XXX";
         public static bool Islogin = true;
+        public static int UserId = 3;
         public FrmMain()
         {
             InitializeComponent();

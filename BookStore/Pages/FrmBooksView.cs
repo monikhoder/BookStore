@@ -52,6 +52,21 @@ namespace BookStore.Pages
                 books["tblIsSequel"] = sequal;
                 books["tblStock"] = book.Stock;
             }
+            btnenable();
+        }
+        private void btnenable()
+        {
+            if (Id == 0)
+            {
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+            }
+            else
+            {
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
+            }
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -71,8 +86,9 @@ namespace BookStore.Pages
             {
                 db.DeleteBook(Id);
                 Loadbooks();
+                Id = 0;
             }
-
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -123,6 +139,7 @@ namespace BookStore.Pages
         private void FrmBooksView_Load(object sender, EventArgs e)
         {
             Loadbooks();
+            btnenable();
         }
     }
 }

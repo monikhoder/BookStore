@@ -25,8 +25,8 @@
           <Property Name="Pages" Type="int" Nullable="false" />
           <Property Name="GenreID" Type="int" Nullable="false" />
           <Property Name="PublishingDate" Type="date" Nullable="false" />
-          <Property Name="CostPrice" Type="float" Nullable="false" />
-          <Property Name="SalePrice" Type="float" Nullable="false" />
+          <Property Name="CostPrice" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="SalePrice" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="Stock" Type="int" Nullable="false" />
           <Property Name="IsSequel" Type="bit" Nullable="false" />
           <Property Name="BookCover" Type="varbinary(max)" />
@@ -52,28 +52,25 @@
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SaleDetail">
           <Key>
             <PropertyRef Name="SaleDetailId" />
           </Key>
-          <Property Name="SaleDetailId" Type="int" Nullable="false" />
+          <Property Name="SaleDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SaleId" Type="int" />
           <Property Name="BookId" Type="int" />
           <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
           <Property Name="Quantity" Type="int" />
-          <Property Name="UnitPrice" Type="float" />
-          <Property Name="TotalPrice" Type="float" />
+          <Property Name="UnitPrice" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="TotalPrice" Type="decimal" Precision="5" Scale="2" />
         </EntityType>
         <EntityType Name="Sales">
           <Key>
             <PropertyRef Name="SaleID" />
           </Key>
           <Property Name="SaleID" Type="int" Nullable="false" />
-          <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="TotalAmount" Type="float" Nullable="false" />
+          <Property Name="TotalAmount" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Updated" Type="datetime" Nullable="false" />
         </EntityType>
@@ -177,20 +174,10 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
           <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Publisher" EntityType="Self.Publisher" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleDetail" EntityType="Self.SaleDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SaleDetail" EntityType="Self.SaleDetail" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SaleDetail].[SaleDetailId] AS [SaleDetailId], 
-    [SaleDetail].[SaleId] AS [SaleId], 
-    [SaleDetail].[BookId] AS [BookId], 
-    [SaleDetail].[Discount] AS [Discount], 
-    [SaleDetail].[Quantity] AS [Quantity], 
-    [SaleDetail].[UnitPrice] AS [UnitPrice], 
-    [SaleDetail].[TotalPrice] AS [TotalPrice]
-    FROM [dbo].[SaleDetail] AS [SaleDetail]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__Books__AuthorID__412EB0B6" Association="Self.FK__Books__AuthorID__412EB0B6">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Books" EntitySet="Books" />
@@ -241,8 +228,9 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
           <Property Name="Pages" Type="Int32" Nullable="false" />
           <Property Name="GenreID" Type="Int32" Nullable="false" />
           <Property Name="PublishingDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="CostPrice" Type="Double" Nullable="false" />
-          <Property Name="SalePrice" Type="Double" Nullable="false" />
+          <Property Name="CostPrice" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="SalePrice" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="Stock" Type="Int32" Nullable="false" />
           <Property Name="IsSequel" Type="Boolean" Nullable="false" />
           <Property Name="BookCover" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
@@ -251,7 +239,6 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
           <NavigationProperty Name="Genre" Relationship="Self.FK__Books__GenreID__4316F928" FromRole="Books" ToRole="Genres" />
           <NavigationProperty Name="Publisher" Relationship="Self.FK__Books__Publishin__4222D4EF" FromRole="Books" ToRole="Publisher" />
           <NavigationProperty Name="SaleDetails" Relationship="Self.FK_SaleDaetail_Books" FromRole="Books" ToRole="SaleDetail" />
-          <Property Name="Stock" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Genre">
           <Key>
@@ -279,9 +266,8 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
             <PropertyRef Name="SaleID" />
           </Key>
           <Property Name="SaleID" Type="Int32" Nullable="false" />
-          <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
-          <Property Name="TotalAmount" Type="Double" Nullable="false" />
+          <Property Name="TotalAmount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Updated" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="SaleDetails" Relationship="Self.FK_SaleDaetail_Sales" FromRole="Sales" ToRole="SaleDetail" />
@@ -320,8 +306,8 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
           <Property Name="BookId" Type="Int32" />
           <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="Quantity" Type="Int32" />
-          <Property Name="UnitPrice" Type="Double" />
-          <Property Name="TotalPrice" Type="Double" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="5" Scale="2" />
           <NavigationProperty Name="Book" Relationship="Self.FK_SaleDaetail_Books" FromRole="SaleDetail" ToRole="Books" />
           <NavigationProperty Name="Sale" Relationship="Self.FK_SaleDaetail_Sales" FromRole="SaleDetail" ToRole="Sales" />
         </EntityType>
@@ -397,7 +383,7 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BookStoreDatabase" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BookStoreDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Authors" EntityType="Self.Author" />
           <EntitySet Name="Books" EntityType="Self.Book" />
           <EntitySet Name="Genres" EntityType="Self.Genre" />
@@ -436,7 +422,7 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreDatabase">
+        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreDB">
           <EntitySetMapping Name="Authors">
             <EntityTypeMapping TypeName="BookStoreModel.Author">
               <MappingFragment StoreEntitySet="Authors">
@@ -450,7 +436,6 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="BookStoreModel.Book">
               <MappingFragment StoreEntitySet="Books">
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
                 <ScalarProperty Name="BookID" ColumnName="BookID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
@@ -460,6 +445,7 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
                 <ScalarProperty Name="PublishingDate" ColumnName="PublishingDate" />
                 <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
                 <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
                 <ScalarProperty Name="IsSequel" ColumnName="IsSequel" />
                 <ScalarProperty Name="BookCover" ColumnName="BookCover" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
@@ -492,7 +478,6 @@ warning 6002: The table/view 'BookStore.dbo.SaleDetail' does not have a primary 
             <EntityTypeMapping TypeName="BookStoreModel.Sale">
               <MappingFragment StoreEntitySet="Sales">
                 <ScalarProperty Name="SaleID" ColumnName="SaleID" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
                 <ScalarProperty Name="Created" ColumnName="Created" />

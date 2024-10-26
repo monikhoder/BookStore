@@ -9,11 +9,11 @@ namespace BookStore
 {
     public class CRUD
     {
-        private readonly BookStoreDatabase _db;
+        private readonly BookStoreDB _db;
 
         public CRUD()
         {
-            _db = new BookStoreDatabase();
+            _db = new BookStoreDB();
         }
 
         // Validate user credentials
@@ -97,7 +97,7 @@ namespace BookStore
             return _db.Books.Count(b => b.GenreID == id);
         }
         //Get book price by ID
-        public double GetBookPriceByID(int id)
+        public decimal GetBookPriceByID(int id)
         {
             Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
             return book?.SalePrice ?? 0;
@@ -323,11 +323,11 @@ namespace BookStore
 
         // Add Book 
 
-        public void AddBook(string name, int genreID, int authorID, int publisherID,DateTime publishDate,float costprice, float saleprice, int stock,int Pages, byte[] bookcover, bool isSequel)
+        public void AddBook(string name, int genreID, int authorID, int publisherID,DateTime publishDate,decimal costprice, decimal saleprice, int stock,int Pages, byte[] bookcover, bool isSequel)
         {
             if (bookcover == null)
             {
-                bookcover = new byte[0];
+                bookcover = null;
             }
             Book newBook = new Book
             {
@@ -391,7 +391,7 @@ namespace BookStore
             return _db.Books.Where(b => b.BookID == id).ToList();
         }
         //Edit book
-        public void EditBook(int id, string name, int genreID, int authorID, int publisherID, DateTime publishDate, float costprice, float saleprice, int stock, int Pages, bool isSequel)
+        public void EditBook(int id, string name, int genreID, int authorID, int publisherID, DateTime publishDate, decimal costprice, decimal saleprice, int stock, int Pages, bool isSequel)
         {
             Book bookToEdit = _db.Books.FirstOrDefault(b => b.BookID == id);
             if (bookToEdit != null)
@@ -410,7 +410,7 @@ namespace BookStore
                 _db.SaveChanges();
             }
         }
-            // Change book cover
+        // Change book cover
         public void ChangeBookCover(int id, byte[] bookcover)
         {
                 Book bookToEdit = _db.Books.FirstOrDefault(b => b.BookID == id);
@@ -420,6 +420,66 @@ namespace BookStore
                     _db.SaveChanges();
                 }
         }
+        //Get book Stock by Id
+        public int GetBookStockById(int id)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == id);
+            return book?.Stock ?? -1;
+        }
         
+        // Add new sale 
+        public void AddSale(int saleId, int userID, decimal totalPrice)
+        {
+            Sale newSale = new Sale
+            {
+                SaleID = saleId,
+                UserId = userID,
+                TotalAmount = totalPrice,
+                Created = DateTime.Now,
+                Updated = DateTime.Now
+            };
+            _db.Sales.Add(newSale);
+            _db.SaveChanges();
+        }
+        //Add new sale detail
+        public void AddSaleDetail(int saleId, int bookId, int quantity,decimal discount, decimal price, decimal total)
+        {
+            SaleDetail newSaleDetail = new SaleDetail
+            {
+                SaleId = saleId,
+                BookId = bookId,
+                Discount = discount,
+                Quantity = quantity,
+                UnitPrice = price,
+                TotalPrice = total,
+            };
+            _db.SaleDetails.Add(newSaleDetail);
+            _db.SaveChanges();
+        }
+        // Get last sale Id
+        public int GetLastSaleId()
+        {
+            return _db.Sales.OrderByDescending(s => s.SaleID).FirstOrDefault()?.SaleID ?? -1;
+        }
+        // Book stock decrease
+        public void BookStockDecrease(int bookId, int quantity)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == bookId);
+            if (book != null)
+            {
+                book.Stock -= quantity;
+                _db.SaveChanges();
+            }
+        }
+        //Book stock increase
+        public void BookStockIncrease(int bookId, int quantity)
+        {
+            Book book = _db.Books.FirstOrDefault(b => b.BookID == bookId);
+            if (book != null)
+            {
+                book.Stock += quantity;
+                _db.SaveChanges();
+            }
+        }
     }
 }

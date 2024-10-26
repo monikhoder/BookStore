@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            KimTools.WinForms.KtTableColumn ktTableColumn37 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn38 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn39 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn40 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn41 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn42 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn43 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn44 = new KimTools.WinForms.KtTableColumn();
-            KimTools.WinForms.KtTableColumn ktTableColumn45 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn10 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn11 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn12 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn13 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn14 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn15 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn16 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn17 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn18 = new KimTools.WinForms.KtTableColumn();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.TopLeftPanel = new System.Windows.Forms.Panel();
             this.btnCancel = new KimTools.WinForms.KtButton();
@@ -44,6 +44,8 @@
             this.txtSearch = new KimTools.WinForms.KtTextBox();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.buttomPanel = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txbDiscount = new KimTools.WinForms.KtTextBox();
             this.lblDiscountSet = new System.Windows.Forms.Label();
             this.btnAddtoCard = new KimTools.WinForms.KtButton();
@@ -84,9 +86,9 @@
             this.TopLeftPanel.Controls.Add(this.btnCancel);
             this.TopLeftPanel.Controls.Add(this.btnAdd);
             this.TopLeftPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TopLeftPanel.Location = new System.Drawing.Point(692, 0);
+            this.TopLeftPanel.Location = new System.Drawing.Point(653, 0);
             this.TopLeftPanel.Name = "TopLeftPanel";
-            this.TopLeftPanel.Size = new System.Drawing.Size(329, 60);
+            this.TopLeftPanel.Size = new System.Drawing.Size(368, 60);
             this.TopLeftPanel.TabIndex = 2;
             // 
             // btnCancel
@@ -112,6 +114,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
@@ -128,7 +131,7 @@
             this.btnAdd.IconName = "Tabler.outline.plus";
             this.btnAdd.IconSize = 18;
             this.btnAdd.IconStroke = 2.5D;
-            this.btnAdd.Location = new System.Drawing.Point(171, 14);
+            this.btnAdd.Location = new System.Drawing.Point(216, 14);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(124, 39);
             this.btnAdd.Style = KimTools.WinForms.KtStyle.Material;
@@ -194,6 +197,8 @@
             // 
             // buttomPanel
             // 
+            this.buttomPanel.Controls.Add(this.label2);
+            this.buttomPanel.Controls.Add(this.label1);
             this.buttomPanel.Controls.Add(this.txbDiscount);
             this.buttomPanel.Controls.Add(this.lblDiscountSet);
             this.buttomPanel.Controls.Add(this.btnAddtoCard);
@@ -204,8 +209,28 @@
             this.buttomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttomPanel.Location = new System.Drawing.Point(0, 299);
             this.buttomPanel.Name = "buttomPanel";
-            this.buttomPanel.Size = new System.Drawing.Size(692, 181);
+            this.buttomPanel.Size = new System.Drawing.Size(647, 181);
             this.buttomPanel.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(174, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 28);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Price :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(174, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 30);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Title :";
             // 
             // txbDiscount
             // 
@@ -284,6 +309,7 @@
             this.btnAddtoCard.Text = "Add to Card";
             this.btnAddtoCard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddtoCard.UseVisualStyleBackColor = false;
+            this.btnAddtoCard.Click += new System.EventHandler(this.btnAddtoCard_Click);
             // 
             // txbQuntity
             // 
@@ -327,12 +353,16 @@
             this.txbQuntity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbQuntity.TextMarginBottom = 0;
             this.txbQuntity.TextPlaceholder = "";
+            this.txbQuntity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbQuntity_KeyPress);
+            this.txbQuntity.IconLeftClick += new System.EventHandler(this.txbQuntity_IconLeftClick);
+            this.txbQuntity.IconRightClick += new System.EventHandler(this.txbQuntity_IconRightClick);
+            this.txbQuntity.Leave += new System.EventHandler(this.txbQuntity_Leave);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(172, 77);
+            this.lblPrice.Location = new System.Drawing.Point(237, 81);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(66, 28);
             this.lblPrice.TabIndex = 3;
@@ -342,7 +372,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(172, 34);
+            this.lblTitle.Location = new System.Drawing.Point(235, 34);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(68, 30);
             this.lblTitle.TabIndex = 2;
@@ -359,90 +389,92 @@
             // 
             // BookCover
             // 
-            this.BookCover.Image = global::BookStore.Properties.Resources.add_book;
+            this.BookCover.ErrorImage = global::BookStore.Properties.Resources.add_book;
+            this.BookCover.Image = global::BookStore.Properties.Resources.book;
             this.BookCover.Location = new System.Drawing.Point(23, 6);
             this.BookCover.Name = "BookCover";
             this.BookCover.Size = new System.Drawing.Size(108, 146);
             this.BookCover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BookCover.TabIndex = 0;
             this.BookCover.TabStop = false;
+            this.BookCover.WaitOnLoad = true;
             // 
             // tblBook
             // 
             this.tblBook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
-            ktTableColumn37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn37.Fill = "";
-            ktTableColumn37.Format = "";
-            ktTableColumn37.Group = "";
-            ktTableColumn37.IsPrimaryKey = false;
-            ktTableColumn37.Key = "tblId";
-            ktTableColumn37.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn37.Search = false;
-            ktTableColumn37.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn37.Template = "";
-            ktTableColumn37.Title = "ID";
-            ktTableColumn37.ToolTip = "";
-            ktTableColumn37.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn37.Value = "";
-            ktTableColumn37.Visible = true;
-            ktTableColumn37.Width = 50;
-            ktTableColumn37.Width_ = "50";
-            ktTableColumn38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn38.Fill = "";
-            ktTableColumn38.Format = "";
-            ktTableColumn38.Group = "";
-            ktTableColumn38.IsPrimaryKey = false;
-            ktTableColumn38.Key = "tblTitle";
-            ktTableColumn38.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn38.Search = true;
-            ktTableColumn38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn38.Template = "";
-            ktTableColumn38.Title = "Title";
-            ktTableColumn38.ToolTip = "";
-            ktTableColumn38.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn38.Value = "";
-            ktTableColumn38.Visible = true;
-            ktTableColumn38.Width = 0;
-            ktTableColumn38.Width_ = "";
-            ktTableColumn39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn39.Fill = "";
-            ktTableColumn39.Format = "";
-            ktTableColumn39.Group = "";
-            ktTableColumn39.IsPrimaryKey = false;
-            ktTableColumn39.Key = "tblPrice";
-            ktTableColumn39.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn39.Search = true;
-            ktTableColumn39.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn39.Template = "";
-            ktTableColumn39.Title = "Price";
-            ktTableColumn39.ToolTip = "";
-            ktTableColumn39.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn39.Value = "";
-            ktTableColumn39.Visible = true;
-            ktTableColumn39.Width = 70;
-            ktTableColumn39.Width_ = "70";
-            ktTableColumn40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn40.Fill = "";
-            ktTableColumn40.Format = "";
-            ktTableColumn40.Group = "";
-            ktTableColumn40.IsPrimaryKey = false;
-            ktTableColumn40.Key = "tblStock";
-            ktTableColumn40.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn40.Search = true;
-            ktTableColumn40.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn40.Template = "";
-            ktTableColumn40.Title = "Stock";
-            ktTableColumn40.ToolTip = "";
-            ktTableColumn40.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn40.Value = "";
-            ktTableColumn40.Visible = true;
-            ktTableColumn40.Width = 70;
-            ktTableColumn40.Width_ = "70";
+            ktTableColumn10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn10.Fill = "";
+            ktTableColumn10.Format = "";
+            ktTableColumn10.Group = "";
+            ktTableColumn10.IsPrimaryKey = false;
+            ktTableColumn10.Key = "tblId";
+            ktTableColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn10.Search = false;
+            ktTableColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn10.Template = "";
+            ktTableColumn10.Title = "ID";
+            ktTableColumn10.ToolTip = "";
+            ktTableColumn10.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn10.Value = "";
+            ktTableColumn10.Visible = true;
+            ktTableColumn10.Width = 50;
+            ktTableColumn10.Width_ = "50";
+            ktTableColumn11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn11.Fill = "";
+            ktTableColumn11.Format = "";
+            ktTableColumn11.Group = "";
+            ktTableColumn11.IsPrimaryKey = false;
+            ktTableColumn11.Key = "tblTitle";
+            ktTableColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn11.Search = true;
+            ktTableColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn11.Template = "";
+            ktTableColumn11.Title = "Title";
+            ktTableColumn11.ToolTip = "";
+            ktTableColumn11.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn11.Value = "";
+            ktTableColumn11.Visible = true;
+            ktTableColumn11.Width = 0;
+            ktTableColumn11.Width_ = "";
+            ktTableColumn12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn12.Fill = "";
+            ktTableColumn12.Format = "";
+            ktTableColumn12.Group = "";
+            ktTableColumn12.IsPrimaryKey = false;
+            ktTableColumn12.Key = "tblPrice";
+            ktTableColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn12.Search = true;
+            ktTableColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn12.Template = "";
+            ktTableColumn12.Title = "Price";
+            ktTableColumn12.ToolTip = "";
+            ktTableColumn12.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn12.Value = "";
+            ktTableColumn12.Visible = true;
+            ktTableColumn12.Width = 70;
+            ktTableColumn12.Width_ = "70";
+            ktTableColumn13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn13.Fill = "";
+            ktTableColumn13.Format = "";
+            ktTableColumn13.Group = "";
+            ktTableColumn13.IsPrimaryKey = false;
+            ktTableColumn13.Key = "tblStock";
+            ktTableColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn13.Search = true;
+            ktTableColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn13.Template = "";
+            ktTableColumn13.Title = "Stock";
+            ktTableColumn13.ToolTip = "";
+            ktTableColumn13.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn13.Value = "";
+            ktTableColumn13.Visible = true;
+            ktTableColumn13.Width = 70;
+            ktTableColumn13.Width_ = "70";
             this.tblBook.Columns = new KimTools.WinForms.KtTableColumn[] {
-        ktTableColumn37,
-        ktTableColumn38,
-        ktTableColumn39,
-        ktTableColumn40};
+        ktTableColumn10,
+        ktTableColumn11,
+        ktTableColumn12,
+        ktTableColumn13};
             this.tblBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblBook.KeyCaseSensitive = false;
             this.tblBook.Latency = 500;
@@ -453,7 +485,7 @@
             this.tblBook.ShowFooter = false;
             this.tblBook.ShowHeader = false;
             this.tblBook.ShowSearch = false;
-            this.tblBook.Size = new System.Drawing.Size(692, 480);
+            this.tblBook.Size = new System.Drawing.Size(647, 480);
             this.tblBook.TabIndex = 0;
             this.tblBook.CellClick += new KimTools.WinForms.KtTable.KtTableRowCellEventArgs(this.tblBook_CellClick);
             this.tblBook.RowSelected += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblBook_RowSelected);
@@ -463,9 +495,9 @@
             this.RightPanel.Controls.Add(this.ButtomRight);
             this.RightPanel.Controls.Add(this.tblOrder);
             this.RightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RightPanel.Location = new System.Drawing.Point(692, 0);
+            this.RightPanel.Location = new System.Drawing.Point(647, 0);
             this.RightPanel.Name = "RightPanel";
-            this.RightPanel.Size = new System.Drawing.Size(329, 480);
+            this.RightPanel.Size = new System.Drawing.Size(374, 480);
             this.RightPanel.TabIndex = 1;
             // 
             // ButtomRight
@@ -474,7 +506,7 @@
             this.ButtomRight.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ButtomRight.Location = new System.Drawing.Point(0, 392);
             this.ButtomRight.Name = "ButtomRight";
-            this.ButtomRight.Size = new System.Drawing.Size(329, 88);
+            this.ButtomRight.Size = new System.Drawing.Size(374, 88);
             this.ButtomRight.TabIndex = 1;
             // 
             // lblTotalPrice
@@ -483,105 +515,105 @@
             this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.Location = new System.Drawing.Point(33, 32);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(191, 30);
+            this.lblTotalPrice.Size = new System.Drawing.Size(200, 30);
             this.lblTotalPrice.TabIndex = 4;
-            this.lblTotalPrice.Text = "Sub Price : 00.00 $";
+            this.lblTotalPrice.Text = "Total Price : 00.00 $";
             // 
             // tblOrder
             // 
             this.tblOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(64)))));
             this.tblOrder.ColorBase = KimTools.WinForms.KtColor.Secondary;
-            ktTableColumn41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn41.Fill = "";
-            ktTableColumn41.Format = "";
-            ktTableColumn41.Group = "";
-            ktTableColumn41.IsPrimaryKey = true;
-            ktTableColumn41.Key = "tblTile";
-            ktTableColumn41.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn41.Search = true;
-            ktTableColumn41.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn41.Template = "";
-            ktTableColumn41.Title = "Title";
-            ktTableColumn41.ToolTip = "";
-            ktTableColumn41.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn41.Value = "";
-            ktTableColumn41.Visible = true;
-            ktTableColumn41.Width = 0;
-            ktTableColumn41.Width_ = "";
-            ktTableColumn42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn42.Fill = "";
-            ktTableColumn42.Format = "";
-            ktTableColumn42.Group = "";
-            ktTableColumn42.IsPrimaryKey = false;
-            ktTableColumn42.Key = "tblUnitPrice";
-            ktTableColumn42.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn42.Search = true;
-            ktTableColumn42.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn42.Template = "";
-            ktTableColumn42.Title = "Unit Price";
-            ktTableColumn42.ToolTip = "";
-            ktTableColumn42.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn42.Value = "";
-            ktTableColumn42.Visible = true;
-            ktTableColumn42.Width = 0;
-            ktTableColumn42.Width_ = "";
-            ktTableColumn43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn43.Fill = "";
-            ktTableColumn43.Format = "";
-            ktTableColumn43.Group = "";
-            ktTableColumn43.IsPrimaryKey = false;
-            ktTableColumn43.Key = "tblDiscountPercent";
-            ktTableColumn43.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn43.Search = true;
-            ktTableColumn43.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn43.Template = "";
-            ktTableColumn43.Title = "Dis";
-            ktTableColumn43.ToolTip = "";
-            ktTableColumn43.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn43.Value = "";
-            ktTableColumn43.Visible = true;
-            ktTableColumn43.Width = 0;
-            ktTableColumn43.Width_ = "";
-            ktTableColumn44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn44.Fill = "";
-            ktTableColumn44.Format = "";
-            ktTableColumn44.Group = "";
-            ktTableColumn44.IsPrimaryKey = false;
-            ktTableColumn44.Key = "tblQTY";
-            ktTableColumn44.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn44.Search = false;
-            ktTableColumn44.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn44.Template = "";
-            ktTableColumn44.Title = "QTY";
-            ktTableColumn44.ToolTip = "";
-            ktTableColumn44.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn44.Value = "";
-            ktTableColumn44.Visible = true;
-            ktTableColumn44.Width = 0;
-            ktTableColumn44.Width_ = "";
-            ktTableColumn45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn45.Fill = "";
-            ktTableColumn45.Format = "";
-            ktTableColumn45.Group = "";
-            ktTableColumn45.IsPrimaryKey = false;
-            ktTableColumn45.Key = "tblTotal";
-            ktTableColumn45.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn45.Search = true;
-            ktTableColumn45.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn45.Template = "";
-            ktTableColumn45.Title = "T.Price";
-            ktTableColumn45.ToolTip = "";
-            ktTableColumn45.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn45.Value = "";
-            ktTableColumn45.Visible = true;
-            ktTableColumn45.Width = 0;
-            ktTableColumn45.Width_ = "";
+            ktTableColumn14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn14.Fill = "";
+            ktTableColumn14.Format = "";
+            ktTableColumn14.Group = "";
+            ktTableColumn14.IsPrimaryKey = true;
+            ktTableColumn14.Key = "tblTitle";
+            ktTableColumn14.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn14.Search = true;
+            ktTableColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn14.Template = "";
+            ktTableColumn14.Title = "Title";
+            ktTableColumn14.ToolTip = "";
+            ktTableColumn14.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn14.Value = "";
+            ktTableColumn14.Visible = true;
+            ktTableColumn14.Width = 0;
+            ktTableColumn14.Width_ = "";
+            ktTableColumn15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn15.Fill = "";
+            ktTableColumn15.Format = "";
+            ktTableColumn15.Group = "";
+            ktTableColumn15.IsPrimaryKey = false;
+            ktTableColumn15.Key = "tblUnitPrice";
+            ktTableColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn15.Search = true;
+            ktTableColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn15.Template = "";
+            ktTableColumn15.Title = "Unit Price";
+            ktTableColumn15.ToolTip = "";
+            ktTableColumn15.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn15.Value = "";
+            ktTableColumn15.Visible = true;
+            ktTableColumn15.Width = 0;
+            ktTableColumn15.Width_ = "";
+            ktTableColumn16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn16.Fill = "";
+            ktTableColumn16.Format = "";
+            ktTableColumn16.Group = "";
+            ktTableColumn16.IsPrimaryKey = false;
+            ktTableColumn16.Key = "tblDiscountPercent";
+            ktTableColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn16.Search = true;
+            ktTableColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn16.Template = "";
+            ktTableColumn16.Title = "Dis";
+            ktTableColumn16.ToolTip = "";
+            ktTableColumn16.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn16.Value = "";
+            ktTableColumn16.Visible = true;
+            ktTableColumn16.Width = 0;
+            ktTableColumn16.Width_ = "";
+            ktTableColumn17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn17.Fill = "";
+            ktTableColumn17.Format = "";
+            ktTableColumn17.Group = "";
+            ktTableColumn17.IsPrimaryKey = false;
+            ktTableColumn17.Key = "tblQTY";
+            ktTableColumn17.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn17.Search = false;
+            ktTableColumn17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn17.Template = "";
+            ktTableColumn17.Title = "QTY";
+            ktTableColumn17.ToolTip = "";
+            ktTableColumn17.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn17.Value = "";
+            ktTableColumn17.Visible = true;
+            ktTableColumn17.Width = 0;
+            ktTableColumn17.Width_ = "";
+            ktTableColumn18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn18.Fill = "";
+            ktTableColumn18.Format = "";
+            ktTableColumn18.Group = "";
+            ktTableColumn18.IsPrimaryKey = false;
+            ktTableColumn18.Key = "tblTotal";
+            ktTableColumn18.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn18.Search = true;
+            ktTableColumn18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn18.Template = "";
+            ktTableColumn18.Title = "T.Price";
+            ktTableColumn18.ToolTip = "";
+            ktTableColumn18.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn18.Value = "";
+            ktTableColumn18.Visible = true;
+            ktTableColumn18.Width = 0;
+            ktTableColumn18.Width_ = "";
             this.tblOrder.Columns = new KimTools.WinForms.KtTableColumn[] {
-        ktTableColumn41,
-        ktTableColumn42,
-        ktTableColumn43,
-        ktTableColumn44,
-        ktTableColumn45};
+        ktTableColumn14,
+        ktTableColumn15,
+        ktTableColumn16,
+        ktTableColumn17,
+        ktTableColumn18};
             this.tblOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblOrder.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.tblOrder.KeyCaseSensitive = false;
@@ -593,8 +625,9 @@
             this.tblOrder.ShowFooter = false;
             this.tblOrder.ShowHeader = false;
             this.tblOrder.ShowSearch = false;
-            this.tblOrder.Size = new System.Drawing.Size(329, 480);
+            this.tblOrder.Size = new System.Drawing.Size(374, 480);
             this.tblOrder.TabIndex = 0;
+            this.tblOrder.RowUpdated += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblOrder_RowUpdated);
             // 
             // dataGridViewImageColumn1
             // 
@@ -628,6 +661,7 @@
             this.Opacity = 1D;
             this.Text = "FrmGenresView";
             this.Load += new System.EventHandler(this.FrmOrder_Load);
+            this.Leave += new System.EventHandler(this.FrmOrder_Leave);
             this.TopPanel.ResumeLayout(false);
             this.TopLeftPanel.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
@@ -665,5 +699,7 @@
         private KimTools.WinForms.KtTextBox txbQuntity;
         private KimTools.WinForms.KtTextBox txbDiscount;
         private System.Windows.Forms.Label lblDiscountSet;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

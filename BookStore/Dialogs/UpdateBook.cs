@@ -225,8 +225,8 @@ namespace BookStore.Dialogs
             int publisherID = db.GetPublisherIdByName(cmbPublisher.Text);
             DateTime publishDate = PublishingDatePicker.Value;
             bool isSequel = IsSequelSwith.Checked;
-            float costPrice = float.Parse(txbCostPrice.Text);
-            float salePrice = float.Parse(txbSalePrice.Text);
+            decimal costPrice = Convert.ToDecimal(txbCostPrice.Text);
+            decimal salePrice = Convert.ToDecimal(txbSalePrice.Text);
             int stock = int.Parse(txbStock.Text);
             int pages = int.Parse(txbPages.Text);
             db.EditBook(Id,txtTitle.Text,genreID,authorID,publisherID,publishDate,costPrice, salePrice,stock,pages,isSequel);

@@ -19,8 +19,8 @@ namespace BookStore
         public Nullable<int> BookId { get; set; }
         public Nullable<decimal> Discount { get; set; }
         public Nullable<int> Quantity { get; set; }
-        public Nullable<double> UnitPrice { get; set; }
-        public Nullable<double> TotalPrice { get; set; }
+        public Nullable<decimal> UnitPrice { get; set; }
+        public Nullable<decimal> TotalPrice { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Sale Sale { get; set; }

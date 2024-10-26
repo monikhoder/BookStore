@@ -115,7 +115,7 @@ namespace BookStore.Dialogs
         {
             bool isSelectCombo = false;
             bool isTextNotnull = false;
-            if(txbStock.Text.Length > 0 && txtTitle.Text.Length > 0 && txbCostPrice.Text.Length > 0 && txbSalePrice.Text.Length > 0)
+            if(txbStock.Text.Length > 0 && txtTitle.Text.Length > 0 && txbCostPrice.Text.Length > 0 && txbSalePrice.Text.Length > 0 && txbPages.Text.Length > 0)
             {
                 isTextNotnull = true;
             }
@@ -176,8 +176,8 @@ namespace BookStore.Dialogs
             int autId = db.GetAuthorIdByName(cmbAuthor.Text);
             int pubId = db.GetPublisherIdByName(cmbPublisher.Text);
             int stock = Convert.ToInt32(txbStock.Text);
-            float costPrice = float.Parse(txbCostPrice.Text);
-            float salePrice = float.Parse(txbSalePrice.Text);
+            decimal costPrice = Convert.ToDecimal(txbCostPrice.Text);
+            decimal salePrice = Convert.ToDecimal(txbSalePrice.Text);
             int page = Convert.ToInt32(txbPages.Text);
             DateTime publishDate = PublishingDatePicker.Value;
             db.AddBook(txtTitle.Text, genId, autId, pubId, publishDate,costPrice, salePrice, stock,page, bookcover, Sequal);

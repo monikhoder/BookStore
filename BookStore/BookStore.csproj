@@ -120,10 +120,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Author.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Book.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Components\TileItem.cs">
       <SubType>UserControl</SubType>
@@ -211,22 +211,22 @@
     </Compile>
     <Compile Include="CRUD.cs" />
     <Compile Include="Genre.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDatabase.Context.cs">
+    <Compile Include="ModelDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDatabase.Context.tt</DependentUpon>
+      <DependentUpon>ModelDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDatabase.cs">
+    <Compile Include="ModelDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelDatabase.Designer.cs">
+    <Compile Include="ModelDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDatabase.edmx</DependentUpon>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Dashboard.cs">
       <SubType>Form</SubType>
@@ -273,19 +273,19 @@
       <DependentUpon>FrmGenresView.cs</DependentUpon>
     </Compile>
     <Compile Include="Publisher.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Sale.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="SaleDetail.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>ModelDatabase.tt</DependentUpon>
+      <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Components\TileItem.resx">
       <DependentUpon>TileItem.cs</DependentUpon>
@@ -360,12 +360,12 @@
     <EmbeddedResource Include="Pages\FrmGenresView.resx">
       <DependentUpon>FrmGenresView.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="ModelDatabase.edmx">
+    <EntityDeploy Include="ModelDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelDatabase.edmx.diagram">
-      <DependentUpon>ModelDatabase.edmx</DependentUpon>
+    <None Include="ModelDB.edmx.diagram">
+      <DependentUpon>ModelDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -390,18 +390,19 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="ModelDatabase.Context.tt">
+    <Content Include="ModelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDatabase.edmx</DependentUpon>
-      <LastGenOutput>ModelDatabase.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModelDatabase.tt">
+    <Content Include="ModelDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDatabase.edmx</DependentUpon>
-      <LastGenOutput>ModelDatabase.cs</LastGenOutput>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <LastGenOutput>ModelDB.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\add-book1.png" />
     <None Include="Resources\add-book.png" />
   </ItemGroup>
