@@ -104,7 +104,7 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(17, 21);
+            this.lblUser.Location = new System.Drawing.Point(33, 21);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(61, 25);
             this.lblUser.TabIndex = 3;

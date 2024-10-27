@@ -14,10 +14,10 @@ namespace BookStore
     public partial class FrmMain : KtWindow
     {
         CRUD db = new CRUD();
-        public static string Username = "XXX";
-        public static bool Islogin = false;
-        public static int UserId = 0;
-        private string Role = "XXX";
+        public static string Username = "Admin";
+        public static bool Islogin = true;
+        public static int UserId = 8;
+        private string Role = "Admin";
         private string Name = "XXX";
         public FrmMain()
         {

@@ -26,5 +26,10 @@ namespace BookStore.Pages
 
 
         }
+
+        private void ktDivider2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
