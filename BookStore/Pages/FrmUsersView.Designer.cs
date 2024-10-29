@@ -52,7 +52,7 @@
             // tblUser
             // 
             this.tblUser.AutoScroll = true;
-            this.tblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
+            this.tblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
             ktTableColumn1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn1.Fill = "";
             ktTableColumn1.Format = "";
@@ -70,23 +70,23 @@
             ktTableColumn1.Visible = true;
             ktTableColumn1.Width = 50;
             ktTableColumn1.Width_ = "50";
-            ktTableColumn2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            ktTableColumn2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn2.Fill = "";
             ktTableColumn2.Format = "";
             ktTableColumn2.Group = "";
             ktTableColumn2.IsPrimaryKey = false;
             ktTableColumn2.Key = "tblProfile";
-            ktTableColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            ktTableColumn2.Search = false;
+            ktTableColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn2.Search = true;
             ktTableColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn2.Template = "";
             ktTableColumn2.Title = "Profile";
             ktTableColumn2.ToolTip = "";
-            ktTableColumn2.Type = KimTools.WinForms.KtTableColumnTypes.Image;
+            ktTableColumn2.Type = KimTools.WinForms.KtTableColumnTypes.Avatar;
             ktTableColumn2.Value = "";
             ktTableColumn2.Visible = true;
-            ktTableColumn2.Width = 50;
-            ktTableColumn2.Width_ = "50";
+            ktTableColumn2.Width = 70;
+            ktTableColumn2.Width_ = "70";
             ktTableColumn3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
             ktTableColumn3.Fill = "";
             ktTableColumn3.Format = "";
@@ -348,7 +348,7 @@
             this.Controls.Add(this.centerpanel);
             this.Controls.Add(this.TopPanel);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(42)))), ((int)(((byte)(66)))));
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmUsersView";
             this.Opacity = 1D;

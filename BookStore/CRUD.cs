@@ -125,6 +125,11 @@ namespace BookStore
         {
             return _db.Books.Count();
         }
+        // get new book release
+        public List<Book> GetnewBookRelease()
+        {
+            return _db.Books.OrderByDescending(b => b.PublishingDate).ToList();
+        }
 
         public List<User> GetUser(string word = "")
         {
@@ -266,6 +271,7 @@ namespace BookStore
         {
             return _db.Books.Count(b => b.AuthorID == id);
         }
+       
 
         // Get publishers with optional search word
         public List<Publisher> GetPublishers(string word = "")
@@ -504,5 +510,27 @@ namespace BookStore
                 _db.SaveChanges();
             }
         }
+        //Get best seller
+        public List<SalesGroupByUser> GetbestSeller()
+        {
+            var groupedSales = _db.Sales
+                                  .GroupBy(s => s.UserId)
+                                  .Select(g => new SalesGroupByUser
+                                  {
+                                      UserId = g.Key,
+                                      TotalSalesAmount = g.Sum(s => s.TotalAmount),
+                                      SalesRecords = g.ToList()
+                                  })
+                                  .OrderByDescending(g => g.TotalSalesAmount)
+                                  .ToList();
+
+            return groupedSales;
+        }
+    }
+    public class SalesGroupByUser
+    {
+        public int UserId { get; set; }
+        public decimal TotalSalesAmount { get; set; }
+        public List<Sale> SalesRecords { get; set; }
     }
 }
