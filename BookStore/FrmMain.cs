@@ -14,11 +14,10 @@ namespace BookStore
     public partial class FrmMain : KtWindow
     {
         CRUD db = new CRUD();
-        public static string Username = "Admin";
-        public static bool Islogin = true;
-        public static int UserId = 8;
-        private string Role = "Admin";
-        private string Name = "XXX";
+        public static string Username = "XXX";
+        public static bool Islogin = false;
+        public static int UserId;
+        private string Role = "XXX";
         public FrmMain()
         {
             InitializeComponent();
@@ -35,8 +34,7 @@ namespace BookStore
             {
                 FrmLogin frmLogin = new FrmLogin();
                 if (frmLogin.ShowDialog() == DialogResult.OK) 
-                {
-                    
+                {                   
                     lblWelcome.Text = $"Dashboard";
                     AddControls(new Pages.Dashboard());
                     lblUser.Text = db.GetName(UserId);
@@ -61,36 +59,43 @@ namespace BookStore
         private void btnGenres_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmGenresView());
+            lblWelcome.Text = "Genres";
         }
 
         private void btnPH_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmOrder());
+            lblWelcome.Text = "Order";
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmUsersView());
+            lblWelcome.Text = "Users";
         }
 
         private void btnBook_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmBooksView());
+            lblWelcome.Text = "Books";
         }
 
         private void btnAuthor_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmAuthorView());
+            lblWelcome.Text = "Authors";
         }
 
         private void btnPublisher_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.FrmPublisherView());
+            lblWelcome.Text = "Publishers";
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             AddControls(new Pages.Dashboard());
+            lblWelcome.Text = "Dashboard";
         }
     }
 }

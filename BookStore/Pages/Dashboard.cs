@@ -64,6 +64,32 @@ namespace BookStore.Pages
                 tbl["tblAmount"] = $"{item.TotalSalesAmount} $";         
             }
         }
+        private void loadpopularAuthor()
+        {
+            tblAuthor.Clear();
+            int count = 0;
+            var dtauthor = db.GetPopularAuthors();
+            foreach (var item in dtauthor)
+            {
+                var tbl = tblAuthor.NewRow();
+                tbl["tblNo"] = ++count;
+                tbl["tblName"] = db.GetAuthorName(item.AuthorId);
+                tbl["tbltotalSale"] = item.TotalQuantitySold;
+            }
+        }
+        private void loadpopularGenres()
+        {
+            tblGenres.Clear();
+            int count = 0;
+            var dtGenre = db.GetPopularGenres();
+            foreach (var item in dtGenre)
+            {
+                var tbl = tblGenres.NewRow();
+                tbl["No"] = ++count;
+                tbl["tblName"] = db.GetGenreName(item.GenreId);
+                tbl["tblTotal"] = item.TotalQuantitySold;
+            }
+        }
 
         private void btnNewBook_Click(object sender, EventArgs e)
         {
@@ -75,6 +101,18 @@ namespace BookStore.Pages
         {
             DasboardPage.SetPage(bestseller);
             loadbestseller();
+        }
+
+        private void btnPopularAuthor_Click(object sender, EventArgs e)
+        {
+            DasboardPage.SetPage(popularAuthor);
+            loadpopularAuthor();
+        }
+
+        private void btnPopularGenres_Click(object sender, EventArgs e)
+        {
+            DasboardPage.SetPage(popularGenre);
+            loadpopularGenres();
         }
     }
 }

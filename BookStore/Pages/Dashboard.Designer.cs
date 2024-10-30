@@ -45,6 +45,8 @@
             KimTools.WinForms.KtTableColumn ktTableColumn9 = new KimTools.WinForms.KtTableColumn();
             KimTools.WinForms.KtTableColumn ktTableColumn10 = new KimTools.WinForms.KtTableColumn();
             KimTools.WinForms.KtTableColumn ktTableColumn11 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn12 = new KimTools.WinForms.KtTableColumn();
+            KimTools.WinForms.KtTableColumn ktTableColumn13 = new KimTools.WinForms.KtTableColumn();
             this.topPanel = new KimTools.WinForms.KtPanel();
             this.ktPanel4 = new KimTools.WinForms.KtPanel();
             this.lblUser = new KimTools.WinForms.KtLabel();
@@ -77,13 +79,14 @@
             this.popularGenre = new System.Windows.Forms.TabPage();
             this.topMainPanel = new KimTools.WinForms.KtPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ktButton3 = new KimTools.WinForms.KtButton();
+            this.btnPopularGenres = new KimTools.WinForms.KtButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ktButton2 = new KimTools.WinForms.KtButton();
+            this.btnPopularAuthor = new KimTools.WinForms.KtButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ktButton1 = new KimTools.WinForms.KtButton();
             this.panelNewBook = new System.Windows.Forms.Panel();
             this.btnNewBook = new KimTools.WinForms.KtButton();
+            this.tblGenres = new KimTools.WinForms.KtTable();
             this.topPanel.SuspendLayout();
             this.ktPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ktPictureBox3)).BeginInit();
@@ -98,6 +101,7 @@
             this.newbook.SuspendLayout();
             this.bestseller.SuspendLayout();
             this.popularAuthor.SuspendLayout();
+            this.popularGenre.SuspendLayout();
             this.topMainPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -568,10 +572,10 @@
             this.DasboardPage.Location = new System.Drawing.Point(5, 76);
             this.DasboardPage.Multiline = true;
             this.DasboardPage.Name = "DasboardPage";
-            this.DasboardPage.Page = this.bestseller;
-            this.DasboardPage.PageIndex = 1;
-            this.DasboardPage.PageName = "bestseller";
-            this.DasboardPage.PageTitle = "bestseller";
+            this.DasboardPage.Page = this.popularGenre;
+            this.DasboardPage.PageIndex = 3;
+            this.DasboardPage.PageName = "popularGenre";
+            this.DasboardPage.PageTitle = "popularGenre";
             this.DasboardPage.SelectedIndex = 0;
             this.DasboardPage.Size = new System.Drawing.Size(1275, 568);
             this.DasboardPage.TabIndex = 1;
@@ -806,7 +810,7 @@
             ktTableColumn8.Template = "";
             ktTableColumn8.Title = "No";
             ktTableColumn8.ToolTip = "";
-            ktTableColumn8.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn8.Type = KimTools.WinForms.KtTableColumnTypes.Avatar;
             ktTableColumn8.Value = "";
             ktTableColumn8.Visible = true;
             ktTableColumn8.Width = 0;
@@ -833,40 +837,22 @@
             ktTableColumn10.Format = "";
             ktTableColumn10.Group = "";
             ktTableColumn10.IsPrimaryKey = false;
-            ktTableColumn10.Key = "tblBook";
+            ktTableColumn10.Key = "tbltotalSale";
             ktTableColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
             ktTableColumn10.Search = true;
             ktTableColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             ktTableColumn10.Template = "";
-            ktTableColumn10.Title = "Total Book";
+            ktTableColumn10.Title = "Total Sale";
             ktTableColumn10.ToolTip = "";
             ktTableColumn10.Type = KimTools.WinForms.KtTableColumnTypes.Text;
             ktTableColumn10.Value = "";
             ktTableColumn10.Visible = true;
             ktTableColumn10.Width = 0;
             ktTableColumn10.Width_ = "";
-            ktTableColumn11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
-            ktTableColumn11.Fill = "";
-            ktTableColumn11.Format = "";
-            ktTableColumn11.Group = "";
-            ktTableColumn11.IsPrimaryKey = false;
-            ktTableColumn11.Key = "tbltotalSale";
-            ktTableColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
-            ktTableColumn11.Search = true;
-            ktTableColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            ktTableColumn11.Template = "";
-            ktTableColumn11.Title = "Total Sale";
-            ktTableColumn11.ToolTip = "";
-            ktTableColumn11.Type = KimTools.WinForms.KtTableColumnTypes.Text;
-            ktTableColumn11.Value = "";
-            ktTableColumn11.Visible = true;
-            ktTableColumn11.Width = 0;
-            ktTableColumn11.Width_ = "";
             this.tblAuthor.Columns = new KimTools.WinForms.KtTableColumn[] {
         ktTableColumn8,
         ktTableColumn9,
-        ktTableColumn10,
-        ktTableColumn11};
+        ktTableColumn10};
             this.tblAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DaskboardIcon.SetIcons(this.tblAuthor, new KimTools.WinForms.KtIcon[0]);
             this.tblAuthor.KeyCaseSensitive = false;
@@ -883,6 +869,7 @@
             // 
             // popularGenre
             // 
+            this.popularGenre.Controls.Add(this.tblGenres);
             this.DaskboardIcon.SetIcons(this.popularGenre, new KimTools.WinForms.KtIcon[0]);
             this.popularGenre.Location = new System.Drawing.Point(4, 4);
             this.popularGenre.Name = "popularGenre";
@@ -921,7 +908,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.ktButton3);
+            this.panel3.Controls.Add(this.btnPopularGenres);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.DaskboardIcon.SetIcons(this.panel3, new KimTools.WinForms.KtIcon[0]);
             this.panel3.Location = new System.Drawing.Point(640, 0);
@@ -929,37 +916,38 @@
             this.panel3.Size = new System.Drawing.Size(210, 71);
             this.panel3.TabIndex = 3;
             // 
-            // ktButton3
+            // btnPopularGenres
             // 
-            this.ktButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnPopularGenres.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ktButton3.BackColor = System.Drawing.Color.Empty;
-            this.ktButton3.Bg = KimTools.WinForms.KtColor.Tailwind_White;
-            this.ktButton3.BorderShape = KimTools.WinForms.KtSize.Default;
-            this.ktButton3.BorderSize = KimTools.WinForms.KtSize.Default;
-            this.ktButton3.CustomColors = new System.Drawing.Color[0];
-            this.ktButton3.FlatAppearance.BorderSize = 0;
-            this.ktButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.ktButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.ktButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ktButton3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ktButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ktButton3.IconName = "Tabler.solid.arrow_badge_right_filled";
-            this.DaskboardIcon.SetIcons(this.ktButton3, new KimTools.WinForms.KtIcon[0]);
-            this.ktButton3.IconSize = 16;
-            this.ktButton3.IconStroke = 2.5D;
-            this.ktButton3.Location = new System.Drawing.Point(7, 12);
-            this.ktButton3.Name = "ktButton3";
-            this.ktButton3.Size = new System.Drawing.Size(200, 48);
-            this.ktButton3.Style = KimTools.WinForms.KtStyle.Ghost;
-            this.ktButton3.TabIndex = 0;
-            this.ktButton3.Text = " Popular Genres";
-            this.ktButton3.UseVisualStyleBackColor = false;
+            this.btnPopularGenres.BackColor = System.Drawing.Color.Empty;
+            this.btnPopularGenres.Bg = KimTools.WinForms.KtColor.Tailwind_White;
+            this.btnPopularGenres.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnPopularGenres.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnPopularGenres.CustomColors = new System.Drawing.Color[0];
+            this.btnPopularGenres.FlatAppearance.BorderSize = 0;
+            this.btnPopularGenres.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPopularGenres.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPopularGenres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPopularGenres.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPopularGenres.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPopularGenres.IconName = "Tabler.solid.arrow_badge_right_filled";
+            this.DaskboardIcon.SetIcons(this.btnPopularGenres, new KimTools.WinForms.KtIcon[0]);
+            this.btnPopularGenres.IconSize = 16;
+            this.btnPopularGenres.IconStroke = 2.5D;
+            this.btnPopularGenres.Location = new System.Drawing.Point(7, 12);
+            this.btnPopularGenres.Name = "btnPopularGenres";
+            this.btnPopularGenres.Size = new System.Drawing.Size(200, 48);
+            this.btnPopularGenres.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnPopularGenres.TabIndex = 0;
+            this.btnPopularGenres.Text = " Popular Genres";
+            this.btnPopularGenres.UseVisualStyleBackColor = false;
+            this.btnPopularGenres.Click += new System.EventHandler(this.btnPopularGenres_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.ktButton2);
+            this.panel2.Controls.Add(this.btnPopularAuthor);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.DaskboardIcon.SetIcons(this.panel2, new KimTools.WinForms.KtIcon[0]);
             this.panel2.Location = new System.Drawing.Point(418, 0);
@@ -967,33 +955,34 @@
             this.panel2.Size = new System.Drawing.Size(222, 71);
             this.panel2.TabIndex = 2;
             // 
-            // ktButton2
+            // btnPopularAuthor
             // 
-            this.ktButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnPopularAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ktButton2.BackColor = System.Drawing.Color.Empty;
-            this.ktButton2.Bg = KimTools.WinForms.KtColor.Tailwind_White;
-            this.ktButton2.BorderShape = KimTools.WinForms.KtSize.Default;
-            this.ktButton2.BorderSize = KimTools.WinForms.KtSize.Default;
-            this.ktButton2.CustomColors = new System.Drawing.Color[0];
-            this.ktButton2.FlatAppearance.BorderSize = 0;
-            this.ktButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.ktButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.ktButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ktButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ktButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.ktButton2.IconName = "Tabler.solid.arrow_badge_right_filled";
-            this.DaskboardIcon.SetIcons(this.ktButton2, new KimTools.WinForms.KtIcon[0]);
-            this.ktButton2.IconSize = 16;
-            this.ktButton2.IconStroke = 2.5D;
-            this.ktButton2.Location = new System.Drawing.Point(7, 12);
-            this.ktButton2.Name = "ktButton2";
-            this.ktButton2.Size = new System.Drawing.Size(212, 48);
-            this.ktButton2.Style = KimTools.WinForms.KtStyle.Ghost;
-            this.ktButton2.TabIndex = 0;
-            this.ktButton2.Text = "Popular Authors";
-            this.ktButton2.UseVisualStyleBackColor = false;
+            this.btnPopularAuthor.BackColor = System.Drawing.Color.Empty;
+            this.btnPopularAuthor.Bg = KimTools.WinForms.KtColor.Tailwind_White;
+            this.btnPopularAuthor.BorderShape = KimTools.WinForms.KtSize.Default;
+            this.btnPopularAuthor.BorderSize = KimTools.WinForms.KtSize.Default;
+            this.btnPopularAuthor.CustomColors = new System.Drawing.Color[0];
+            this.btnPopularAuthor.FlatAppearance.BorderSize = 0;
+            this.btnPopularAuthor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnPopularAuthor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnPopularAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPopularAuthor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPopularAuthor.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPopularAuthor.IconName = "Tabler.solid.arrow_badge_right_filled";
+            this.DaskboardIcon.SetIcons(this.btnPopularAuthor, new KimTools.WinForms.KtIcon[0]);
+            this.btnPopularAuthor.IconSize = 16;
+            this.btnPopularAuthor.IconStroke = 2.5D;
+            this.btnPopularAuthor.Location = new System.Drawing.Point(7, 12);
+            this.btnPopularAuthor.Name = "btnPopularAuthor";
+            this.btnPopularAuthor.Size = new System.Drawing.Size(212, 48);
+            this.btnPopularAuthor.Style = KimTools.WinForms.KtStyle.Ghost;
+            this.btnPopularAuthor.TabIndex = 0;
+            this.btnPopularAuthor.Text = "Popular Authors";
+            this.btnPopularAuthor.UseVisualStyleBackColor = false;
+            this.btnPopularAuthor.Click += new System.EventHandler(this.btnPopularAuthor_Click);
             // 
             // panel1
             // 
@@ -1073,6 +1062,78 @@
             this.btnNewBook.UseVisualStyleBackColor = false;
             this.btnNewBook.Click += new System.EventHandler(this.btnNewBook_Click);
             // 
+            // tblGenres
+            // 
+            this.tblGenres.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(22)))), ((int)(((byte)(51)))));
+            ktTableColumn11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn11.Fill = "";
+            ktTableColumn11.Format = "";
+            ktTableColumn11.Group = "";
+            ktTableColumn11.IsPrimaryKey = false;
+            ktTableColumn11.Key = "No";
+            ktTableColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn11.Search = true;
+            ktTableColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn11.Template = "";
+            ktTableColumn11.Title = "No";
+            ktTableColumn11.ToolTip = "";
+            ktTableColumn11.Type = KimTools.WinForms.KtTableColumnTypes.Avatar;
+            ktTableColumn11.Value = "";
+            ktTableColumn11.Visible = true;
+            ktTableColumn11.Width = 0;
+            ktTableColumn11.Width_ = "";
+            ktTableColumn12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn12.Fill = "";
+            ktTableColumn12.Format = "";
+            ktTableColumn12.Group = "";
+            ktTableColumn12.IsPrimaryKey = false;
+            ktTableColumn12.Key = "tblName";
+            ktTableColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn12.Search = true;
+            ktTableColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn12.Template = "";
+            ktTableColumn12.Title = "Genre Name";
+            ktTableColumn12.ToolTip = "";
+            ktTableColumn12.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn12.Value = "";
+            ktTableColumn12.Visible = true;
+            ktTableColumn12.Width = 0;
+            ktTableColumn12.Width_ = "";
+            ktTableColumn13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.NotSet;
+            ktTableColumn13.Fill = "";
+            ktTableColumn13.Format = "";
+            ktTableColumn13.Group = "";
+            ktTableColumn13.IsPrimaryKey = false;
+            ktTableColumn13.Key = "tblTotal";
+            ktTableColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.NotSet;
+            ktTableColumn13.Search = true;
+            ktTableColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            ktTableColumn13.Template = "";
+            ktTableColumn13.Title = "Total Sale";
+            ktTableColumn13.ToolTip = "";
+            ktTableColumn13.Type = KimTools.WinForms.KtTableColumnTypes.Text;
+            ktTableColumn13.Value = "";
+            ktTableColumn13.Visible = true;
+            ktTableColumn13.Width = 0;
+            ktTableColumn13.Width_ = "";
+            this.tblGenres.Columns = new KimTools.WinForms.KtTableColumn[] {
+        ktTableColumn11,
+        ktTableColumn12,
+        ktTableColumn13};
+            this.tblGenres.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DaskboardIcon.SetIcons(this.tblGenres, new KimTools.WinForms.KtIcon[0]);
+            this.tblGenres.KeyCaseSensitive = false;
+            this.tblGenres.Latency = 500;
+            this.tblGenres.Location = new System.Drawing.Point(3, 3);
+            this.tblGenres.MultiSelect = false;
+            this.tblGenres.Name = "tblGenres";
+            this.tblGenres.Padding = new System.Windows.Forms.Padding(5);
+            this.tblGenres.ShowFooter = false;
+            this.tblGenres.ShowHeader = false;
+            this.tblGenres.ShowSearch = false;
+            this.tblGenres.Size = new System.Drawing.Size(1261, 529);
+            this.tblGenres.TabIndex = 0;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1104,6 +1165,7 @@
             this.newbook.ResumeLayout(false);
             this.bestseller.ResumeLayout(false);
             this.popularAuthor.ResumeLayout(false);
+            this.popularGenre.ResumeLayout(false);
             this.topMainPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1141,9 +1203,9 @@
         private System.Windows.Forms.Panel panelNewBook;
         private KimTools.WinForms.KtButton btnNewBook;
         private System.Windows.Forms.Panel panel3;
-        private KimTools.WinForms.KtButton ktButton3;
+        private KimTools.WinForms.KtButton btnPopularGenres;
         private System.Windows.Forms.Panel panel2;
-        private KimTools.WinForms.KtButton ktButton2;
+        private KimTools.WinForms.KtButton btnPopularAuthor;
         private System.Windows.Forms.Panel panel1;
         private KimTools.WinForms.KtButton ktButton1;
         private KimTools.WinForms.KtPages DasboardPage;
@@ -1154,5 +1216,6 @@
         private KimTools.WinForms.KtTable tblnewbook;
         private KimTools.WinForms.KtTable tblbestSeller;
         private KimTools.WinForms.KtTable tblAuthor;
+        private KimTools.WinForms.KtTable tblGenres;
     }
 }

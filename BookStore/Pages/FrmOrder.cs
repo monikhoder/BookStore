@@ -51,7 +51,7 @@ namespace BookStore.Pages
             if (card.Count > 0) {
                 int saleid = 1000;
                 decimal price = GetTotalPrice();
-                if (db.GetLastSaleId() != null && db.GetLastSaleId() > 0)
+                if (db.GetLastSaleId() > 0)
                 {
                     saleid = db.GetLastSaleId() + 1;
                 }

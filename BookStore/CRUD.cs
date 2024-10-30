@@ -518,19 +518,70 @@ namespace BookStore
                                   .Select(g => new SalesGroupByUser
                                   {
                                       UserId = g.Key,
-                                      TotalSalesAmount = g.Sum(s => s.TotalAmount),
-                                      SalesRecords = g.ToList()
+                                      TotalSalesAmount = g.Sum(s => s.TotalAmount),                                    
                                   })
                                   .OrderByDescending(g => g.TotalSalesAmount)
                                   .ToList();
 
             return groupedSales;
         }
+        // get popular author
+        public List<PopularAuthor> GetPopularAuthors()
+        {
+            var popularAuthors = _db.SaleDetails
+                                 .Join(_db.Books,
+                                       saleDetail => saleDetail.BookId,
+                                       book => book.BookID,
+                                       (saleDetail, book) => new { saleDetail, book.AuthorID, saleDetail.Quantity })
+                                 .GroupBy(x => x.AuthorID)
+                                 .Select(g => new PopularAuthor
+                                 {
+                                     AuthorId = g.Key,
+                                     TotalQuantitySold = (int)g.Sum(x => x.Quantity)
+                                 })
+                                 .OrderByDescending(g => g.TotalQuantitySold)
+                                 .ToList();
+
+
+            return popularAuthors;
+        }
+        // Get popular genre
+        public List<popularGenre> GetPopularGenres()
+        {
+            var popularGenres = _db.SaleDetails
+                                 .Join(_db.Books,
+                                       saleDetail => saleDetail.BookId,
+                                       book => book.BookID,
+                                       (saleDetail, book) => new { saleDetail, book.GenreID, saleDetail.Quantity })
+                                 .GroupBy(x => x.GenreID)
+                                 .Select(g => new popularGenre
+                                 {
+                                     GenreId = g.Key,
+                                     TotalQuantitySold = (int)g.Sum(x => x.Quantity)
+                                 })
+                                 .OrderByDescending(g => g.TotalQuantitySold)
+                                 .ToList();
+
+
+            return popularGenres;
+        }
+       
     }
     public class SalesGroupByUser
     {
         public int UserId { get; set; }
         public decimal TotalSalesAmount { get; set; }
-        public List<Sale> SalesRecords { get; set; }
     }
+    public class PopularAuthor
+    {
+        public int AuthorId { get; set; }
+        public int TotalQuantitySold { get; set; }
+    }
+    public class popularGenre 
+    {
+        public int GenreId { get; set; }
+        public int TotalQuantitySold { get; set; }
+
+    }
+
 }
