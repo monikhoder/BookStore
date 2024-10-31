@@ -15,7 +15,6 @@ namespace BookStore
     {
         CRUD db = new CRUD();
         public static string Username = "XXX";
-        public static bool Islogin = false;
         public static int UserId;
         private string Role = "XXX";
         public FrmMain()
@@ -25,27 +24,11 @@ namespace BookStore
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            if (Islogin)
-            {
-                lblWelcome.Text = $"Dashboard";
-                AddControls(new Pages.Dashboard());
-            }
-            else
-            {
-                FrmLogin frmLogin = new FrmLogin();
-                if (frmLogin.ShowDialog() == DialogResult.OK) 
-                {                   
-                    lblWelcome.Text = $"Dashboard";
-                    AddControls(new Pages.Dashboard());
-                    lblUser.Text = db.GetName(UserId);
-                    Role = db.GetUserRole(UserId);
-                    if (Role != "Admin" && Role != "Management") { btnUser.Visible = false; }
-                }
-                else
-                {
-                    this.Close();
-                }
-            }
+            lblWelcome.Text = $"Dashboard";
+            AddControls(new Pages.Dashboard());
+            lblUser.Text = db.GetName(UserId);
+            Role = db.GetUserRole(UserId);
+            if (Role != "Admin" && Role != "Management") { btnUser.Visible = false; }
         }
         private void AddControls(Form form)
         {
@@ -61,6 +44,7 @@ namespace BookStore
             AddControls(new Pages.FrmGenresView());
             lblWelcome.Text = "Genres";
         }
+       
 
         private void btnPH_Click(object sender, EventArgs e)
         {

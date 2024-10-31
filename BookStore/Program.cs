@@ -16,7 +16,20 @@ namespace BookStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+
+
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.StartPosition = FormStartPosition.CenterScreen;
+
+            if (frmLogin.ShowDialog() == DialogResult.OK)
+            {
+                
+                Application.Run(new FrmMain());
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
     }
 }

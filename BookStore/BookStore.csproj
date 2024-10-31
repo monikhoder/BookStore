@@ -397,8 +397,6 @@
     <None Include="Resources\add-book1.png" />
     <None Include="Resources\add-book.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

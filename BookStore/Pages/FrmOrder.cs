@@ -35,7 +35,7 @@ namespace BookStore.Pages
         private void Loadbooks()
         {
             tblBook.Clear();
-            var dtbooks = db.GetBooks(txtSearch.Text);
+            var dtbooks = db.GetBooksByTitle(txtSearch.Text);
             foreach (var book in dtbooks)
             {
                var books = tblBook.NewRow();

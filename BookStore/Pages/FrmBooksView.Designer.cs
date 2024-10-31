@@ -41,6 +41,7 @@
             KimTools.WinForms.KtTableColumn ktTableColumn11 = new KimTools.WinForms.KtTableColumn();
             this.tblBook = new KimTools.WinForms.KtTable();
             this.TopPanel = new System.Windows.Forms.Panel();
+            this.cmbSearch = new KimTools.WinForms.KtComboBox();
             this.TopLeftPanel = new System.Windows.Forms.Panel();
             this.btnDelete = new KimTools.WinForms.KtButton();
             this.btnEdit = new KimTools.WinForms.KtButton();
@@ -267,7 +268,7 @@
             this.tblBook.ShowFooter = true;
             this.tblBook.ShowHeader = false;
             this.tblBook.ShowSearch = false;
-            this.tblBook.Size = new System.Drawing.Size(872, 476);
+            this.tblBook.Size = new System.Drawing.Size(893, 489);
             this.tblBook.TabIndex = 0;
             this.tblBook.CellClick += new KimTools.WinForms.KtTable.KtTableRowCellEventArgs(this.tblBook_CellClick);
             this.tblBook.RowSelected += new KimTools.WinForms.KtTable.KtTableRowEventArgs(this.tblBook_RowSelected);
@@ -275,13 +276,61 @@
             // TopPanel
             // 
             this.TopPanel.BackColor = System.Drawing.Color.Transparent;
+            this.TopPanel.Controls.Add(this.cmbSearch);
             this.TopPanel.Controls.Add(this.TopLeftPanel);
             this.TopPanel.Controls.Add(this.txtSearch);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(872, 56);
+            this.TopPanel.Size = new System.Drawing.Size(893, 61);
             this.TopPanel.TabIndex = 1;
+            // 
+            // cmbSearch
+            // 
+            this.cmbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.cmbSearch.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.cmbSearch.BorderColor = System.Drawing.Color.Silver;
+            this.cmbSearch.BorderRadius = 1;
+            this.cmbSearch.Color = System.Drawing.Color.Silver;
+            this.cmbSearch.Direction = KimTools.WinForms.KtComboBox.Directions.Down;
+            this.cmbSearch.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.cmbSearch.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.cmbSearch.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.cmbSearch.DisabledIndicatorColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cmbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbSearch.DropdownBorderThickness = KimTools.WinForms.KtComboBox.BorderThickness.Thin;
+            this.cmbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSearch.DropDownTextAlign = KimTools.WinForms.KtComboBox.TextAlign.Left;
+            this.cmbSearch.FillDropDown = true;
+            this.cmbSearch.FillIndicator = false;
+            this.cmbSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbSearch.ForeColor = System.Drawing.Color.Black;
+            this.cmbSearch.FormattingEnabled = true;
+            this.cmbSearch.Icon = null;
+            this.cmbSearch.IndicatorAlignment = KimTools.WinForms.KtComboBox.Indicator.Right;
+            this.cmbSearch.IndicatorColor = System.Drawing.Color.Gray;
+            this.cmbSearch.IndicatorLocation = KimTools.WinForms.KtComboBox.Indicator.Right;
+            this.cmbSearch.ItemBackColor = System.Drawing.Color.White;
+            this.cmbSearch.ItemBorderColor = System.Drawing.Color.SlateBlue;
+            this.cmbSearch.ItemForeColor = System.Drawing.Color.Black;
+            this.cmbSearch.ItemHeight = 26;
+            this.cmbSearch.ItemHighLightColor = System.Drawing.Color.SlateBlue;
+            this.cmbSearch.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.cmbSearch.Items.AddRange(new object[] {
+            "Book Title",
+            "Author",
+            "Genre"});
+            this.cmbSearch.ItemTopMargin = 3;
+            this.cmbSearch.Location = new System.Drawing.Point(311, 19);
+            this.cmbSearch.Name = "cmbSearch";
+            this.cmbSearch.Size = new System.Drawing.Size(140, 32);
+            this.cmbSearch.TabIndex = 3;
+            this.cmbSearch.Text = null;
+            this.cmbSearch.TextAlignment = KimTools.WinForms.KtComboBox.TextAlign.Left;
+            this.cmbSearch.TextLeftMargin = 5;
+            this.cmbSearch.SelectedIndexChanged += new System.EventHandler(this.cmbSearch_SelectedIndexChanged);
             // 
             // TopLeftPanel
             // 
@@ -289,9 +338,9 @@
             this.TopLeftPanel.Controls.Add(this.btnEdit);
             this.TopLeftPanel.Controls.Add(this.btnAdd);
             this.TopLeftPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.TopLeftPanel.Location = new System.Drawing.Point(624, 0);
+            this.TopLeftPanel.Location = new System.Drawing.Point(645, 0);
             this.TopLeftPanel.Name = "TopLeftPanel";
-            this.TopLeftPanel.Size = new System.Drawing.Size(248, 56);
+            this.TopLeftPanel.Size = new System.Drawing.Size(248, 61);
             this.TopLeftPanel.TabIndex = 2;
             // 
             // btnDelete
@@ -390,7 +439,7 @@
             this.txtSearch.HideSelection = true;
             this.txtSearch.IconLeft = "Tabler.outline.search";
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(14, 7);
+            this.txtSearch.Location = new System.Drawing.Point(14, 16);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -402,7 +451,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(282, 39);
+            this.txtSearch.Size = new System.Drawing.Size(282, 38);
             this.txtSearch.Style = KimTools.WinForms.KtTextBox.KtTextBoxStyle.Tailwind;
             this.txtSearch.TabIndex = 0;
             this.txtSearch.TextMarginBottom = 0;
@@ -413,9 +462,9 @@
             // 
             this.centerpanel.Controls.Add(this.tblBook);
             this.centerpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.centerpanel.Location = new System.Drawing.Point(0, 56);
+            this.centerpanel.Location = new System.Drawing.Point(0, 61);
             this.centerpanel.Name = "centerpanel";
-            this.centerpanel.Size = new System.Drawing.Size(872, 476);
+            this.centerpanel.Size = new System.Drawing.Size(893, 489);
             this.centerpanel.TabIndex = 2;
             // 
             // dataGridViewImageColumn1
@@ -441,7 +490,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(222)))), ((int)(((byte)(225)))));
-            this.ClientSize = new System.Drawing.Size(872, 532);
+            this.ClientSize = new System.Drawing.Size(893, 550);
             this.Controls.Add(this.centerpanel);
             this.Controls.Add(this.TopPanel);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
@@ -469,5 +518,6 @@
         private System.Windows.Forms.Panel TopLeftPanel;
         private KimTools.WinForms.KtButton btnDelete;
         private KimTools.WinForms.KtButton btnEdit;
+        private KimTools.WinForms.KtComboBox cmbSearch;
     }
 }

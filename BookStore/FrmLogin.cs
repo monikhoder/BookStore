@@ -60,19 +60,16 @@ namespace BookStore
             {
                 if(db.IsValidUser(txtUsername.Text,txtPassword.Text) == true)
                 {
-                    FrmMain.Islogin = true;
                     FrmMain.Username = txtUsername.Text;
                     FrmMain.UserId = db.GetUserID(txtUsername.Text);
                     this.DialogResult = DialogResult.OK;
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
                     lblLogin.Visible = true;
                 }
             }
-
-
         }
 
         private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
@@ -103,7 +100,8 @@ namespace BookStore
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.DialogResult = DialogResult.Cancel;
+           this.Close();
         }
     }
 }

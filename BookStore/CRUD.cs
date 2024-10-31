@@ -377,14 +377,32 @@ namespace BookStore
             _db.Books.Add(newBook);
             _db.SaveChanges();
         }
-        //Get book
-        public List<Book> GetBooks(string word = "")
+        //Get book by title
+        public List<Book> GetBooksByTitle(string word = "")
         {
             if (string.IsNullOrEmpty(word))
             {
                 return _db.Books.ToList();
             }
             return _db.Books.Where(b => b.Name.ToLower().Contains(word.ToLower())).ToList();
+        }
+        //get book by author name
+        public List<Book> GetBooksByAuthorName(string word = "")
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                return _db.Books.ToList();
+            }
+            return _db.Books.Where(b => b.Author.FullName.ToLower().Contains(word.ToLower())).ToList();
+        }
+        // Get book by Genre
+        public List<Book> GetBooksByGenre(string word = "")
+        {
+            if (string.IsNullOrEmpty(word))
+            {
+                return _db.Books.ToList();
+            }
+            return _db.Books.Where(b => b.Genre.GenreName.ToLower().Contains(word.ToLower())).ToList();
         }
         // Get book cover by Id
         public byte[] GetBookCoverById(int id)

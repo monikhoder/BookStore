@@ -31,12 +31,37 @@ namespace BookStore.Pages
         private void Loadbooks()
         {
             tblBook.Clear();
-            var dtbooks = db.GetBooks(txtSearch.Text);
-            foreach (var book in dtbooks)
+            if(cmbSearch.Text == "Author")
+            {
+                var dtbooks = db.GetBooksByAuthorName(txtSearch.Text);
+                AddbooktoTable(dtbooks);
+            
+
+            }else if(cmbSearch.Text == "Genre")
+            {
+                var dtbooks = db.GetBooksByGenre(txtSearch.Text);
+                AddbooktoTable(dtbooks);
+            }
+            else
+            {
+                var dtbooks = db.GetBooksByTitle(txtSearch.Text);
+                AddbooktoTable(dtbooks);
+
+            }
+
+
+
+
+            
+            btnenable();
+        }
+        private void AddbooktoTable(List<Book> booklist)
+        {
+            foreach (var book in booklist)
             {
                 string sequal = "NO";
                 if (book.IsSequel == true)
-                { 
+                {
                     sequal = "YES";
                 }
                 var books = tblBook.NewRow();
@@ -52,7 +77,6 @@ namespace BookStore.Pages
                 books["tblIsSequel"] = sequal;
                 books["tblStock"] = book.Stock;
             }
-            btnenable();
         }
         private void btnenable()
         {
@@ -140,6 +164,11 @@ namespace BookStore.Pages
         {
             Loadbooks();
             btnenable();
+        }
+
+        private void cmbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Loadbooks();
         }
     }
 }
